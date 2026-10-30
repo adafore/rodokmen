@@ -1,0 +1,97 @@
+{
+  "popis": "Sporná čtení – místa, kde opakovaná strojová čtení dávají zásadně rozporné výsledky a další pokusy týmž nástrojem nemají smysl. Pro kontrolního agenta: u každého přesný pramen, oblast, otázka a varianty čtení. Čteno vizuálním modelem glm-5v-turbo (z-ai vision), jediný dostupný bezplatný nástroj v prostředí; opakování týmž modelem není nezávislá kontrola.",
+  "zaznamy": [
+    {
+      "id": "SP-1",
+      "pramen": "MZA, kniha 2785 (rejstřík oddaných 1819–1882), snímek 12, LEVÁ strana, 1. řádek sekce F (oblast cca y 500–650 plného rozlišení, x 0–3084)",
+      "url_prohlizec": "https://www.mza.cz/actapublica/matrika/detail/2774?image=216000010-000253-003370-000000-002785-000000-FM-B09320-00120.jp2",
+      "otazka": "Jaké je přesné jméno ženicha a nevěsty v prvním řádku sekce F (sňatek z února 1838, odkaz na stranu 109)?",
+      "soubory": [
+        "dukazy/R2785_sn012L_radek1.jpg",
+        "dukazy/R2785_sn012L_r1_a.jpg",
+        "dukazy/R2785_sn012L_r1_b.jpg",
+        "dukazy/R2785_sn012L_r1_c.jpg",
+        "dukazy/R2785_sn012L_r1_jmena.jpg",
+        "dukazy/R2785_sn012L_p300.jpg",
+        "dukazy/R2785_sn012_left_top_full.jpg"
+      ],
+      "varianty_cteni": {
+        "rok": ["1838 (2×)", "1688 (1×, zřejmě misread)"],
+        "datum": ["20. Febr", "25. Febr", "26. února"],
+        "zenich": ["Joseph Foudrnik", "Ferdinand Jpp?f", "Josef Forstnik", "Josef (bez příjmení)"],
+        "nevesta": ["Josefa (?), 1×", "Anna, 2×", "[?] nečitelné, 2×"],
+        "strana": ["109 (2×)", "69 (1×)", "90 (1×)"]
+      },
+      "vyznam_pro_rodokmen": "Sekce F rejstříku začíná tímto řádkem (1838). Pokud jde o 'Josefa Forejtníka + Veroniku', šlo by pravděpodobně o sňatek rodičů Karla Forejtníka. Rozporná čtení nevěsty (Josefa/Anna/?) vs. očekávaná Veronika Vystoupilová ale znemožňují tvrdit shodu. Sekce F dále neobsahuje žádný jasně čitelný řádek 'Josef + Veronika' v letech 1819–1855 (řádky s nevěstou Veronikou: jen ~1875 'Hanuš? Forejtník + Veronika R?' – jiné osoby).",
+      "stav": "nerozhodnuto – nutné lidské/lepší čtení; NEPOUŽÍVAT jako doložený sňatek rodičů"
+    },
+    {
+      "id": "SP-2",
+      "pramen": "MZA, kniha 2753 (oddací 1819–1847), snímek 55, PRAVÁ strana, rok 1838, zápis č. 2 (oblast cca y 500–1500 plného rozlišení, x 2906–5811)",
+      "url_prohlizec": "https://www.mza.cz/actapublica/matrika/detail/2754?image=216000010-000253-003370-000000-002753-000000-00-B08780-00550.jp2",
+      "otazka": "Kdo je ženich a nevěsta druhého zápisu roku 1838 a kdo jsou jejich rodiče? Jde o pár z rejstříkové reference 'str. 109'?",
+      "soubory": [
+        "dukazy/K2753_sn055_R_1838_1.jpg",
+        "dukazy/K2753_sn055_R_1838_2.jpg",
+        "dukazy/K2753_1838_datum.jpg",
+        "dukazy/K2753_1838_zenich.jpg",
+        "dukazy/K2753_1838_nevesta.jpg",
+        "dukazy/K2753_sn055R_a.jpg",
+        "dukazy/K2753_sn055R_b.jpg",
+        "dukazy/K2753_sn055R_c.jpg"
+      ],
+      "varianty_cteni": {
+        "zenich_2_zapisu": ["Josef, tkadlec?, otec Matěj?, matka Anna?", "částečné zlomky"],
+        "nevesta_2_zapisu": ["[?] jméno", "otec Jiřík?/Jos.?, matka Johanna?"],
+        "poznamka": "Žádné čtení nedalo nevěstu Veroniku ani otce Václava Vystoupila, které by odpovídaly hledanému páru. Zápis č. 1 (30. 1. 1838) čten jako Laurentius/Andreas Na.. + Barbara Sti... (rovněž nejisté)."
+      },
+      "vyznam_pro_rodokmen": "Zápis nemůže být bez dalšího ověření prohlášen za sňatek Josefa Forejtníka a Veroniky Vystoupilové. Naopak: pokud by čtení 'otec Matěj, matka Anna' u ženicha byla správná, jde o JINÉHO Josefa (náš Josef čtvrtláník; otec neznám). Kniha 2734 z 1. kola navíc naznačila jinou rodinu 'Václav Forejtník + Anna' (fol. ~231).",
+      "stav": "nerozhodnuto – nutné lidské/lepší čtení; vyloučení našeho páru není ani dokázáno"
+    },
+    {
+      "id": "SP-3",
+      "pramen": "MZA, kniha 2755 (oddací 1883–1948), snímek 85, strana 172 – zápis sňatku Bohuslava Forejtníka a Anny Dobrovolné z 26. 4. 1921, buňka data narození nevěsty a buňka rodičů nevěsty (oblast cca x 5500–7350, y 2000–3300 plného rozlišení)",
+      "url_prohlizec": "https://www.mza.cz/actapublica/matrika/detail/12400?image=216000010-000253-003370-000000-002755-000000-00-00850.jp2",
+      "otazka": "Jaký rok je u data narození nevěsty (27/6. 1900 nebo 1901)? a Jak se jmenuje matka nevěsty (rozená kdo)?",
+      "soubory": [
+        "dukazy/C_stred_nevesta.jpg",
+        "dukazy/C_nev_a.jpg",
+        "dukazy/C_nev_b.jpg",
+        "dukazy/C_nev_c.jpg",
+        "dukazy/C_sn85_stred.jpg",
+        "dukazy/C_sn85_dole_A.jpg",
+        "dukazy/C_sn85_dole_B.jpg"
+      ],
+      "varianty_cteni": {
+        "rok_narozeni_nevesty": ["27/6. 1900 (2× – shodné s rodným zápisem syna Jaroslava z 11/1921, kde čteno „nar. 27/6. 1900“)", "27/6. 1901 (1×)", "1. ledna 1901 (1×)"],
+        "matka_nevesty": ["[?] – ve většině čtení nečitelná", "Jana? rozená Tihlářová? (1×, v rodném zápisu Jaroslava)", "Jaroslava? rozená Klačinová? (1×, tentýž zápis)"],
+        "poznamka": "Věk nevěsty 20 let při sňatku v dubnu 1921 je slučitelný jak s 27/6 1900, tak s 1/1 1901. V datech proto uvádíme 27/6. 1900 (2 přímá čtení ve dvou různých matrikách) s odkazem sem."
+      },
+      "vyznam_pro_rodokmen": "Rok narození Anny Dobrovolné (1900 vs. 1901) a jméno její matky (dosud neověřeno – v datech matka = null). Řešení: lidské čtení strany 172 (oddací) a sloupce rodičů v knize 2736 sn. 207.",
+      "stav": "rok 1900 převažuje (2:2, ale obě čtení 1900 z nezávislých matrik); jméno matky nerozhodnuto – nedopĺňovat do dat"
+    },
+    {
+      "id": "SP-4",
+      "pramen": "MZA, kniha 3443 (oddací farnosti Tvrdonice 1909–1925), snímek 49 – zápis sňatku z 25. 6. 1919 páru Cyrila Koska a Alžběty Trpělkové (podle převzatého přepisu); celá strana",
+      "url_prohlizec": "https://www.mza.cz/actapublica/matrika/detail/258?image=216000010-00253-003370-000000-003443-000000-FM-B09549-00490.jp2",
+      "otazka": "Kdo je ženich a nevěsta prvního zápisu s datem 25. června 1919 a kdo jsou jejich rodiče? (Očekáváno dle převzatého přepisu: Cyril Kosek, rodiče Josef Kosek + Františka; Alžběta Trpělková, rodiče Josef Trpělka + Juliána.)",
+      "soubory": [
+        "dukazy/F_tvrdonice_3443_sn49_native.jpg",
+        "dukazy/F_tvrdonice_3443_sn49_celkem.png",
+        "dukazy/F_sn49_p1.jpg",
+        "dukazy/F_sn49_zapis_top.jpg",
+        "dukazy/F_sn49_zenich.jpg",
+        "dukazy/F_sn49_nevesta.jpg",
+        "dukazy/F_browser_sn49.png"
+      ],
+      "varianty_cteni": {
+        "zenich": ["Cyril Kosec (1×, shodně s převzatým přepisem)", "Josef Tejšer (1×)", "[?] (ostatní čtení)"],
+        "nevesta": ["Anežka Tesařová? (1×)", "Janelib? Franciska? (1×)", "Marie Pospíšilová? (1×)", "Alžběta Trpělková – ve žádném přímém čtení NEPOTVRZENA"],
+        "rodiče": ["ženich: Jan Kosec + Anna Škaroupková? (1×)", "nevěsta: Josef Tesař + Marie Holubová? (1×)", "ostatní nečitelná"]
+      },
+      "vyznam_pro_rodokmen": "Sken knihy 3443 má nízké rozlišení (1123×1766 px na stranu); glm-5v-turbo dává zásadně rozporná jména i při nativním rozlišení a zoomování přes prohlížeč. Přepis rodičů z převzatého kontextu tudíž NELZE potvrdit ani vyvrátit dostupnými nástroji. Vazba sňatku na Emilii (narozena 10. 5. 1924 v Kosticích) tak zůstává HYPOTÉZOU; klíčovým dokladem by byl Emiliin vlastní rodný zápis (narození Tvrdonice 1924), který by rodice jmenoval přímo.",
+      "stav": "zablokováno rozlišením skenu – vyžaduje lidské čtení nebo lepší sken/zdroj; neredukovat na žádnou z variant"
+    }
+  ],
+  "poznamka_metodicka": "U všech sporných míst bylo postupováno podle pravidel: neutrální dotazy bez hledaných jmen, kontrola neprázdnosti výřezů (průměrný jas > 180 u všech), po 3+ zásadně rozporných čteních zastaveno. Kurent 30.–40. let 19. století je pro glm-5v-turbo na hranici čitelnosti; křestní jména a struktura čtena spolehlivěji než příjmení."
+}

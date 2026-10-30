@@ -1,0 +1,243 @@
+[
+  {
+    "id": "ZA-1",
+    "typ_udalosti": "narození a křest",
+    "datum": {
+      "narozeni": {
+        "datum": "1895-01-03",
+        "presnost": "přesné (den/měsíc/rok přečteny přímo)",
+        "zdroj_cteni": "sloupce Rok/Měsíc/Den narození, 3 nezávislá konzistentní čtení"
+      },
+      "krest": {
+        "datum": "1895-01-06",
+        "presnost": "nejisté (den kolísal: 6/12/16/26)",
+        "zdroj_cteni": "sloupce data křtu; zadání uvádí 6. 1. 1895; VLM četl '1./1895' + den nejednoznačně"
+      }
+    },
+    "misto": "Klobouky u Brna (obec narození přímo přečtena)",
+    "archiv": "Moravský zemský archiv v Brně (MZA), Acta Publica",
+    "puvodce": "Římskokatolická farnost Klobouky u Brna",
+    "cislo_knihy": "2736 (matrika narozených 1883–1925)",
+    "strana_nebo_folio": null,
+    "snimek": 63,
+    "cislo_zapisu": {
+      "hodnota": "1",
+      "poznamka": "první zápis roku 1895; čteno 2× z úzkého výřezu; širší výřezy dávaly chybná '38/138/185'"
+    },
+    "poloha_na_snimku": "vpravo nahoře, první řádek zápisů roku 1895 pod ručně psaným nadpisem 'Anno Domine 1895' (orientačně x ~5000–7300, y ~1350–1750 plného rozlišení snímku 7455×5846)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/14893?image=216000010-00253-00000002736-000-000000000-000002736-00630.jp2",
+    "soubory": [
+      "dukazy/A_prehled_L11.jpg",
+      "dukazy/A_klobouky_2736_sn63_zapis38_full.jpg",
+      "dukazy/ZA-1_cislo_zapisu.png",
+      "dukazy/ZA-1_datum_narozeni.png",
+      "dukazy/ZA-1_sloupec_otec.png",
+      "dukazy/ZA-1_poznamka_o_snatku.png",
+      "dukazy/A_browser_topright.png",
+      "dukazy/A_browser_zaznam.png"
+    ],
+    "prepis_originalu": {
+      "zdroj": "čtení VLM (glm-5v-turbo přes z-ai vision, často s --thinking) z výřezů plného rozlišení",
+      "nadpis": "Anno Domine 1895",
+      "radek_zapisu": "[č. 1] | 1895 | 1 | 3 | Klobouky | [křest: 1895 | 1 | ?] | [kněz: …] | [č. domu: ?] | Bohuslav | männlich | [ehelich – sloupec legitimace nepřečten] | otec: Karel Forejtník, domkář v Kloboukách, manž. syn Josefa Forejtníka … a Veroniky … | matka: Rozálie, dcera Veselého | kmotři: …",
+      "okrajova_poznamka": "oženil(?)/oddán … 1921 … s Annou Dobrovolnou (přepis částečný, datum dne/měsíce nečitelné)"
+    },
+    "cesky_vyklad": "Bohuslav Forejtník, narozen 3. ledna 1895 v Kloboukách u Brna, pokřtěn v lednu 1895 (pravděpodobně 6. 1.), zákonný syn Karla Forejtníka, domkáře v Kloboukách, a Rozálie Veselé. Dodatečná poznámka odkazuje na jeho sňatek s Annou Dobrovolnou v roce 1921 (podle zadání 26. 4. 1921).",
+    "osoby": [
+      {
+        "puvodni_jmeno": "Bohuslav",
+        "normalizovane_jmeno": "Bohuslav Forejtník",
+        "role": "narozené dítě",
+        "id_odkaz": "P3"
+      },
+      {
+        "puvodni_jmeno": "Karel Forejtník, domkář v Kloboukách",
+        "normalizovane_jmeno": "Karel Forejtník",
+        "role": "otec",
+        "id_odkaz": "P1"
+      },
+      {
+        "puvodni_jmeno": "Rozálie, dcera Veselého",
+        "normalizovane_jmeno": "Rozálie Veselá (rozená Veselá)",
+        "role": "matka",
+        "id_odkaz": "P2"
+      },
+      {
+        "puvodni_jmeno": "Josef Forejtník (zlomek 'manž. syn Josefa Forejtníka')",
+        "normalizovane_jmeno": "Josef Forejtník",
+        "role": "děd z otcovy strany (uveden v záznamu)",
+        "id_odkaz": "P4"
+      },
+      {
+        "puvodni_jmeno": "Veronika (zlomek 'a Veroniky …')",
+        "normalizovane_jmeno": "Veronika Forejtníková, rozená Vystoupilová (dle ZB-4)",
+        "role": "babička z otcovy strany (uvedena v záznamu)",
+        "id_odkaz": "P5"
+      },
+      {
+        "puvodni_jmeno": "Anna Dobrovolná (z okrajové poznámky)",
+        "normalizovane_jmeno": "Anna Dobrovolná",
+        "role": "pozdější manželka dítěte (okrajová poznámka)",
+        "id_odkaz": "P9"
+      }
+    ],
+    "dolozene_vztahy": [
+      {
+        "vztah": "Karel Forejtník (otec) → Bohuslav Forejtník (dítě)",
+        "dukaz": "sloupec Rodičové–Otec zápisu ZA-1: 'Karel Forejtník, domkář v Kloboukách'; 2 nezávislá konzistentní čtení"
+      },
+      {
+        "vztah": "Rozálie Veselá (matka) → Bohuslav Forejtník (dítě)",
+        "dukaz": "sloupec Rodičové–Matka zápisu ZA-1: 'Rozálie, dcera Veselého'; 2 nezávislá konzistentní čtení"
+      },
+      {
+        "vztah": "Bohuslav Forejtník ~ sňatek s Annou Dobrovolnou (1921)",
+        "dukaz": "okrajová poznámka u zápisu ZA-1: '… 1921 … s Annou Dobrovolnou' (rok a jméno přečteny 2×)"
+      }
+    ],
+    "nejistoty": [
+      "den křtu: čtení kolísala mezi 6/12/16/26 (leden 1895); zadání uvádí 6. 1.",
+      "datum sňatku v okrajové poznámce: rok 1921 a jméno Anna Dobrovolná potvrzeny opakovaně, den/měsíc nečitelný (zadání: 26. 4. 1921)",
+      "číslo domu a jméno kmotrů: nepřečteny",
+      "sloupec ehelich/unehelich: nepřečten (podle sňatku rodičů 1883 a formulace 'manž. syn' u otce jde patrně o legitimní dítě, ale přímo nepřečteno)",
+      "jméno kněze křtícího: nepřečteno"
+    ]
+  },
+  {
+    "id": "ZB-4",
+    "typ_udalosti": "sňatek",
+    "datum": {
+      "oddavka": {
+        "datum": "1883-02-05",
+        "presnost": "pravděpodobné, ne plně doložené",
+        "zdroj_cteni": "u podpisu faráře čitelné '5' + fragment '5/…'; zadání uvádí 5. 2. 1883; některá čtení dat kolísala"
+      },
+      "ohlasky": {
+        "datum": "1883-01 (přibližně, den/měsíc nejistý)",
+        "presnost": "nejisté",
+        "zdroj_cteni": "fragmentární čtení sloupců dat"
+      }
+    },
+    "misto": "Klobouky u Brna",
+    "archiv": "Moravský zemský archiv v Brně (MZA), Acta Publica",
+    "puvodce": "Římskokatolická farnost Klobouky u Brna",
+    "cislo_knihy": "2755 (matrika oddaných 1848–1882, oddavky z roku 1883 zapsány na konci)",
+    "strana_nebo_folio": "strana 6 (dle zadání)",
+    "snimek": 2,
+    "cislo_zapisu": {
+      "hodnota": "4",
+      "poznamka": "pořadové číslo sňatku v roce 1883; přečteno víckrát"
+    },
+    "poloha_na_snimku": "vlevo dole na levé straně dvojstrany (poslední zápis strany; oblast y ~4150–5460 plného rozlišení snímku 7196×5459)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/12400?image=216000010-000253-003370-000000-002755-000000-00-00020.jp2",
+    "soubory": [
+      "dukazy/B_prehled_L11.png",
+      "dukazy/B_klobouky_2755_sn2_dole_full.jpg",
+      "dukazy/ZB-4_cislo_a_daty.png",
+      "dukazy/ZB-4_zenich_sloupec.jpg",
+      "dukazy/ZB-4_rodice_zenicha.png",
+      "dukazy/ZB-4_zenich_vedlejsi_sloupce.png",
+      "dukazy/ZB-4_nevesta_sloupec.jpg",
+      "dukazy/ZB-4_nevesta_detail_rodice.jpg",
+      "dukazy/ZB-4_nevesta_vedlejsi_sloupce.png"
+    ],
+    "prepis_originalu": {
+      "zdroj": "čtení VLM (glm-5v-turbo přes z-ai vision, často s --thinking) z výřezů plného rozlišení",
+      "zenich": "Karel Forejtník, domkář a obufník [obuvník], v Kloboukách, [věk:] 29, [kath.]",
+      "rodice_zenicha": "manž. syn Josefa Forejtníka, čtvrtláníka v Kloboucích, a Veroniky roz. Václava Vystoupila [zkratkovitá formule; 3 nezávislá čtení 'a Veroniky roz: Václav Výstupil'] + 2 nejasné řádky […]",
+      "nevesta": "Rozálie Veselá, dělnice v Kloboukách, [věk:] 29, [kath.]",
+      "rodice_nevesty": "manž. dcera Jakuba Veselého, kožešníka v Kloboucích, a Antonie roz. Josefa Halma [zkratkovitá formule]",
+      "datum": "u podpisu faráře: '5' + '…' (oddávka); ohlášky: leden 1883 (?); farář: Jos. Klimeš (?)",
+      "svedci": "[…] (sloupec vpravo nepřečten)"
+    },
+    "cesky_vyklad": "Karel Forejtník, domkář a obuvník z Klobouk u Brna (29 let), syn Josefa Forejtníka, čtvrtláníka v Kloboukách, a Veroniky roz. Vystoupilové (dcery Václava Vystoupila), se oženil s Rozálií Veselou, dělnicí z Klobouk u Brna (29 let), dcerou Jakuba Veselého, kožešníka v Kloboukách, a Antonie roz. Halmové (dcery Josefa Halma). Sňatek uzavřen pravděpodobně 5. února 1883 v Kloboukách u Brna.",
+    "osoby": [
+      {
+        "puvodni_jmeno": "Karel Forejtník, domkář a obufník v Kloboucích",
+        "normalizovane_jmeno": "Karel Forejtník",
+        "role": "ženich",
+        "id_odkaz": "P1"
+      },
+      {
+        "puvodni_jmeno": "Rozalie Veselá, dělnice v Kloboucích",
+        "normalizovane_jmeno": "Rozálie Veselá",
+        "role": "nevěsta",
+        "id_odkaz": "P2"
+      },
+      {
+        "puvodni_jmeno": "Josef Forejtník, čtvrtláník v Kloboucích",
+        "normalizovane_jmeno": "Josef Forejtník",
+        "role": "otec ženicha",
+        "id_odkaz": "P4"
+      },
+      {
+        "puvodni_jmeno": "Veronika roz. Václava Vystoupila (zkratkovitá formule)",
+        "normalizovane_jmeno": "Veronika, rozená Vystoupilová (dcera Václava Vystoupila)",
+        "role": "matka ženicha",
+        "id_odkaz": "P5"
+      },
+      {
+        "puvodni_jmeno": "Václav Vystoupil (uváděn jako otec Veroniky)",
+        "normalizovane_jmeno": "Václav Vystoupil",
+        "role": "děd ženicha z matčiny strany (uveden v záznamu)",
+        "id_odkaz": "P6"
+      },
+      {
+        "puvodni_jmeno": "Jakub Veselý, kožešník v Kloboucích",
+        "normalizovane_jmeno": "Jakub Veselý",
+        "role": "otec nevěsty",
+        "id_odkaz": "P7"
+      },
+      {
+        "puvodni_jmeno": "Antonie roz. Josefa Halma (zkratkovitá formule)",
+        "normalizovane_jmeno": "Antonie, rozená Halmová (dcera Josefa Halma)",
+        "role": "matka nevěsty",
+        "id_odkaz": "P8"
+      },
+      {
+        "puvodni_jmeno": "Josef Halm (uváděn jako otec Antonie)",
+        "normalizovane_jmeno": "Josef Halm",
+        "role": "děd nevěsty z matčiny strany (uveden v záznamu)",
+        "id_odkaz": "P10"
+      }
+    ],
+    "dolozene_vztahy": [
+      {
+        "vztah": "Josef Forejtník (čtvrtláník) → Karel Forejtník (ženich)",
+        "dukaz": "sloupec rodičů ženicha: 'manž. syn Josefa Forejtníka, čtvrtláníka v Kloboucích'; konzistentně ve 2 čteních"
+      },
+      {
+        "vztah": "Veronika roz. Vystoupilová → Karel Forejtník (ženich)",
+        "dukaz": "tentýž sloupec: 'a Veroniky roz. …' (příjmení matky jen zkratkou přes otce, viz nejistoty)"
+      },
+      {
+        "vztah": "Václav Vystoupil → Veronika (matka ženicha)",
+        "dukaz": "zkratkovitá formule 'a Veroniky roz. Václava Vystoupila' – mužské příjmení v genitivu označuje OTCE Veroniky (ověřeno 3 nezávislými čteními formulace)"
+      },
+      {
+        "vztah": "Jakub Veselý (kožešník) → Rozálie Veselá (nevěsta)",
+        "dukaz": "sloupec rodičů nevěsty: 'manž. dcera Jakuba Veselého, kožešníka v Kloboucích'"
+      },
+      {
+        "vztah": "Antonie roz. Halmová → Rozálie Veselá (nevěsta)",
+        "dukaz": "tentýž sloupec: 'a Antonie roz. …'"
+      },
+      {
+        "vztah": "Josef Halm → Antonie (matka nevěsty)",
+        "dukaz": "zkratkovitá formule 'a Antonie roz. Josefa Halma' – mužské příjmení v genitivu označuje OTCE Antonie"
+      },
+      {
+        "vztah": "Karel Forejtník ~ Rozálie Veselá (sňatek)",
+        "dukaz": "celek oddacího zápisu č. 4/1883 (ženich + nevěsta + datum + farář)"
+      }
+    ],
+    "nejistoty": [
+      "datum oddávky: zadání 5. 2. 1883; u podpisu čitelné '5', jinak data kolísala mezi čteními (29. 1. a jiné); pravděpodobné 5. 2. 1883, nikoli plně doložené",
+      "rodné příjmení Veroniky: v zápisu uvedeno ZKRATKOVITĚ 'roz. Václava Vystoupila' (tj. rozená dcera Václava Vystoupila = Vystoupilová); formulace 'rozená Vystoupilová' v matrice přímo není",
+      "rodné příjmení Antonie: obdobně 'roz. Josefa Halma' (= Halmová, dcera Josefa Halma); přímý tvar 'Halmová' v matrice není",
+      "věk 29 let u obou: přečten z úzkých sloupečků konzistentně, ale jedná se o jediné čtení",
+      "2 nejasné řádky za formulací rodičů u obou snoubenců (možná povolání/bydliště dědů Václava Vystoupila a Josefa Halma nebo 'a jeho manželky…'): nepřečteny",
+      "svědci a jméno faráře: farář možná 'Jos. Klimeš' (?); svědci nepřečteni"
+    ]
+  }
+]

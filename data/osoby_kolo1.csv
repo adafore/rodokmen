@@ -1,0 +1,11 @@
+id,jmeno,narozeni,misto_narozeni,otec_id,matka_id,stav_ztotozneni,zdroje,poznamka
+P1,Karel Forejtník,odhad 1853/1854 (věk 29 let při sňatku 1883; NAROZENÍ NEDOLOŽENO),pravděpodobně Klobouky u Brna (nedoloženo),P4,P5,doloženo (osoba); narození nedoloženo,ZB-4; ZA-1,"domkář a obuvník v Kloboukách; v ZA-1 uveden jako otec Bohuslava; hledání matriky narození (kniha 2734, ~1853/54) neúspěšné (slabé negativní výsledky, viz DENIK.md)"
+P2,Rozálie Veselá,odhad 1853/1854 (věk 29 let při sňatku 1883; NAROZENÍ NEDOLOŽENO),pravděpodobně Klobouky u Brna (nedoloženo),P7,P8,doloženo (osoba); narození nedoloženo,ZB-4; ZA-1,"dělnice v Kloboukách; v ZA-1 'Rozálie, dcera Veselého'; OPRAVA oproti starším chybným přepisům: Veselá (nikoli 'Vada')"
+P3,Bohuslav Forejtník,3. 1. 1895 (doloženo),Klobouky u Brna (doloženo),P1,P2,doloženo,ZA-1,"křest leden 1895, den nejistý (6.?); okrajová poznámka: sňatek s Annou Dobrovolnou 1921"
+P4,Josef Forejtník,neznámo (kolem 1810–1830?),neznámo,,,doloženo (jako otec Karla ve ZB-4; zlomek i v ZA-1),ZB-4; ZA-1,čtvrtláník v Kloboukách; sňatek s Veronikou Vystoupilovou neprohledán (oddací kniha 2753/2754)
+P5,"Veronika Forejtníková, rozená Vystoupilová",neznámo,neznámo,P6,,doloženo (jako matka Karla ve ZB-4),ZB-4,v matrice zkratkovitě 'Veronika roz. [dcera] Václava Vystoupila'; OPRAVA: Vystoupilová (nikoli 'Vystrčilová')
+P6,Václav Vystoupil,neznámo,neznámo,,,doloženo (jako otec Veroniky ve ZB-4),ZB-4,uveden ve zkratkové formuli oddacího zápisu; povolání/bydliště nepřečteno
+P7,Jakub Veselý,neznámo (kolem 1810–1830?),neznámo,,,doloženo (jako otec Rozálie ve ZB-4),ZB-4,kožešník v Kloboukách; sňatek s Antonií Halmovou neprohledán (oddací kniha 2754/2755)
+P8,"Antonie Veselá, rozená Halmová",neznámo,neznámo,P10,,doloženo (jako matka Rozálie ve ZB-4),ZB-4,v matrice zkratkovitě 'Antonie roz. [dcera] Josefa Halma'
+P9,Anna Dobrovolná,neznámo,neznámo,,,doložena zmínkou (okrajová poznámka v ZA-1),ZA-1 (okrajová poznámka),"manželka Bohuslava, sňatek 1921 (dle zadání 26. 4. 1921); vlastní oddací zápis NEPROHLEDÁN (kniha 2755 by měla pokrývat do 1882, oddavky 1921 jinde)"
+P10,Josef Halm,neznámo,neznámo,,,doloženo (jako otec Antonie ve ZB-4),ZB-4,uveden ve zkratkové formuli oddacího zápisu; povolání/bydliště nepřečteno

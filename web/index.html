@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodokmen Forejtníkových – soukromý rodinný archiv</title>
+<meta name="description" content="Rodokmen Forejtníkových z Klobouk u Brna – matriční záznamy, přepisy a důkazy z Moravského zemského archivu v Brně.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+  <div class="hlavicka-vnitrek">
+    <a class="logo" href="#/uvod">
+      <span class="logo-znak" aria-hidden="true">F</span>
+      <span class="logo-text">
+        <span class="logo-nazev">Rodokmen Forejtníkových</span>
+        <span class="logo-podtitul">soukromý rodinný archiv</span>
+      </span>
+    </a>
+    <nav class="navigace" aria-label="Hlavní navigace">
+      <a href="#/uvod" data-nav="uvod">Úvod</a>
+      <a href="#/strom" data-nav="strom">Strom</a>
+      <a href="#/galerie" data-nav="galerie">Galerie důkazů</a>
+      <a href="#/osa" data-nav="osa">Časová osa</a>
+      <a href="#/denik" data-nav="denik">Co zatím hledáme</a>
+    </nav>
+    <div class="hledani" role="search">
+      <label class="hledani-label" for="hledani-input">Hledat osobu</label>
+      <input id="hledani-input" type="search" placeholder="Jméno (i bez diakritiky)…"
+             autocomplete="off" aria-describedby="hledani-napoveda">
+      <span id="hledani-napoveda" class="hledani-napoveda">Např. „forejtnik“ i „vesela“.</span>
+      <div id="hledani-vysledky" class="hledani-vysledky" hidden></div>
+    </div>
+  </div>
+</header>
+
+<main id="obsah" class="obsah" tabindex="-1">
+  <!-- Obsah generuje app.js -->
+</main>
+
+<footer class="paticka">
+  <div class="paticka-vnitrek">
+    <p>Rodokmen Forejtníkových · soukromý rodinný archiv pro studium a rodinné použití.</p>
+    <p>Přepisy matrik vznikly strojovým čtením rukopisů (Moravský zemský archiv v Brně, Acta Publica);
+       nejistá místa jsou u jednotlivých údajů vyznačena. Neznámé údaje jsou záměrně nevyplněné.</p>
+    <p class="paticka-verze" id="paticka-verze"></p>
+  </div>
+</footer>
+
+<!-- Lightbox důkazu -->
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-titulek">
+  <div class="lightbox-zaves">
+    <div class="lightbox-lista">
+      <h3 id="lightbox-titulek" class="lightbox-titulek"></h3>
+      <button id="lightbox-zavrit" class="lightbox-zavrit" type="button" aria-label="Zavřít důkaz (Esc)">✕ Zavřít</button>
+    </div>
+    <div class="lightbox-telo">
+      <div class="lightbox-obrazek">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-popis">
+        <p id="lightbox-popis" class="lightbox-odstavec"></p>
+        <div id="lightbox-prepis" class="lightbox-prepis" hidden>
+          <h4>Přepis originálu</h4>
+          <div id="lightbox-prepis-obsah" class="prepis-obsah"></div>
+        </div>
+        <div id="lightbox-nejistoty" class="lightbox-nejistoty" hidden>
+          <h4>Nejistá místa</h4>
+          <ul id="lightbox-nejistoty-seznam"></ul>
+        </div>
+        <a id="lightbox-odkaz" class="lightbox-odkaz" href="#" target="_blank" rel="noopener">Otevřít v archivu MZA (Acta Publica) ↗</a>
+        <p id="lightbox-pozn" class="lightbox-pozn"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
