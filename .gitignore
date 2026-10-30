@@ -7,3 +7,5 @@ __pycache__/
 *password*
 node_modules/
 .DS_Store
+tailscale-state/
+*.state
