@@ -8,9 +8,20 @@ services:
     volumes:
       - /volume1/docker/rodokmen/html:/usr/share/nginx/html:ro
       - /volume1/docker/rodokmen/default.conf:/etc/nginx/conf.d/default.conf:ro
+  rodokmen-public:
+    image: nginx:stable-alpine
+    container_name: rodokmen-public
+    restart: unless-stopped
+    volumes:
+      - /volume1/docker/rodokmen/html:/usr/share/nginx/html:ro
+      - /volume1/docker/rodokmen/public.conf:/etc/nginx/conf.d/default.conf:ro
+      - /volume1/docker/rodokmen/public.htpasswd:/etc/nginx/rodokmen.htpasswd:ro
   rodokmen-tailscale:
     image: tailscale/tailscale@sha256:ed6480b33c6eb67c9cbd203ed42b9fb57e361986725b6856def71b7a3d9e276c
     container_name: rodokmen-tailscale
+    network_mode: service:rodokmen-public
+    depends_on:
+      - rodokmen-public
     restart: unless-stopped
     entrypoint: /usr/local/bin/tailscaled
     command:
@@ -18,5 +29,4 @@ services:
       - --state=/var/lib/tailscale/tailscaled.state
       - --socket=/tmp/tailscaled.sock
     volumes:
-      - /volume1/docker/rodokmen/html:/site:ro
       - /volume1/docker/rodokmen/tailscale-state:/var/lib/tailscale

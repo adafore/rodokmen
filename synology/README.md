@@ -1,33 +1,51 @@
-# Synology: domácí síť a Tailscale
+# Synology: domácí síť a internetový přístup s rodinným heslem
 
-- NAS: Synology DS220+, DSM 7.1, 192.168.1.90.
-- Doma: http://192.168.1.90:8092/
-- Přes Tailscale: https://rodokmen.tail2d77c0.ts.net/
-- Vzdálený klient musí mít zapnutý Tailscale a povolený přístup v síti majitele.
-- Samostatné přihlášení k webu bylo na výslovné přání majitele 30. 10. 2026 odstraněno. Doma je web dostupný zařízením v rozsahu 192.168.1.0/24.
+Aktuální nastavení z 30. 10. 2026 nahrazuje předchozí režim pouze s Tailscale.
 
-Obsah je v `/volume1/docker/rodokmen/html`. Oba servery čtou stejnou složku, takže aktualizace webu platí pro obě adresy.
+- Z libovolného prohlížeče bez Tailscale: https://rodokmen.tail2d77c0.ts.net/
+- HTTPS adresa vyžaduje rodinné přihlášení. Kontrola platí pro HTML, data i všechny obrázky. Přihlašovací údaje nejsou v repozitáři.
+- Doma: http://192.168.1.90:8092/ zůstává přístupné síti 192.168.1.0/24 bez dalšího hesla.
+- Web běží na Synology DS220+, DSM 7.1. Počítač a Codex nemusí být zapnuté.
 
-Kontejner `rodokmen` používá nginx, síť host a `/volume1/docker/rodokmen/default.conf`. Nginx naslouchá jen na 192.168.1.90:8092 a kontroluje domácí rozsah adres. Síť host zachovává IP klienta; starší Docker v tomto DSM při mapování portů adresu nahrazoval branou.
+Obsah je v `/volume1/docker/rodokmen/html`. Místní a internetový server čtou stejnou složku pouze pro čtení. Pro aktualizaci se mění jen její obsah.
 
-Kontejner `rodokmen-tailscale` používá oficiální obraz Tailscale 1.104.4 v userspace režimu v samostatné síti Dockeru, bez publikovaných portů, host network, TUN a dodatečných capabilities. Tailscale Serve podává pouze `/site`, kam je složka HTML připojená jen pro čtení. Tímto připojením nejsou zpřístupněné DSM ani jiné aplikace NAS.
+## Kontejnery
 
-Oba kontejnery mají `restart: unless-stopped`. Stav Tailscale je pouze v `/volume1/docker/rodokmen/tailscale-state`, s právy 700 na adresáři. Obsahuje přihlašovací stav zařízení a nepatří do repozitáře ani předávacích ZIPů.
+`rodokmen` je místní nginx, host network, pouze 192.168.1.90:8092, konfigurace `default.conf` s omezením místní sítě.
 
-Konfiguraci zachycuje `docker-compose.yml`. Při prvním nasazení je po startu kontejneru potřeba jednorázové připojení do účtu:
+`rodokmen-public` je nginx pro internetový vstup. Používá vlastní síťový prostor Dockeru bez publikovaných hostitelských portů. Naslouchá na 127.0.0.1:18080 uvnitř tohoto prostoru a podle `public.conf` vyžaduje HTTP Basic autentizaci pro celý web. Otisk hesla je pouze na NAS v `/volume1/docker/rodokmen/public.htpasswd`, do kontejneru připojený pro čtení. Hlavičky zakazují indexování a omezují cachování na soukromou cache.
+
+`rodokmen-tailscale` používá userspace režim a síťový prostor kontejneru `rodokmen-public`. Nemá mount obsahu webu. Tailscale Funnel na HTTPS portu 443 přeposílá všechny požadavky pouze na `http://127.0.0.1:18080`, tedy na server s povinným heslem. Přes tento vstup nejsou zpřístupněné DSM, Immich ani jiné služby NAS.
+
+Všechny tři kontejnery mají `restart: unless-stopped`. Přihlašovací stav Tailscale zůstává v `/volume1/docker/rodokmen/tailscale-state`, adresář má práva 700 a nesmí se kopírovat do GitHubu ani předávacích ZIPů.
+
+## Obnovení a kontrola
+
+`docker-compose.yml` zachycuje aktuální topologii. Před startem musí existovat HTML, obě nginx konfigurace a soubor s otiskem rodinného hesla.
+
+Při prvním připojení zařízení do účtu:
 
 ```sh
 docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock up --hostname=rodokmen --accept-dns=false --accept-routes=false
-docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock serve --bg /site
 ```
 
-Přihlášení se dokončuje přes jednorázový odkaz Tailscale. Auth klíč do Compose nepatří. Serve s `--bg` se ukládá do trvalého stavu a obnovuje po restartu. Ověření:
+Po ověření, že autentizační server vrací bez hesla 401 a s heslem správné soubory:
 
 ```sh
-docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock status
+docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock funnel --bg --yes http://127.0.0.1:18080
 docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock serve status --json
 ```
 
-Funnel není povolený. Nebylo nastavené přesměrování portů do internetu, sdílení domácí sítě ani exit node. Přístup zajišťuje Tailscale a služba zůstává soukromá. Existující Immich a ovládání zapnutí PC nejsou součástí tohoto nasazení.
+V konfiguraci musí být pro `/` jen `Proxy` na uvedený server s heslem. Nepřepínejte Funnel na přímé podávání složky s HTML: tím by se vynechala autentizace.
 
-Změna v GitHubu se nenasazuje automaticky. Pro aktualizaci nahraďte obsah `html` novým obsahem `web`; pracovní data, skripty, stav Tailscale a badatelské archivy do ní nepatří.
+Při restartu nebo novém vytvoření kontejneru `rodokmen-public` následně restartujte `rodokmen-tailscale`, aby znovu připojil jeho síťový prostor. Běžná aktualizace souborů webu restart nevyžaduje. Restart samotného Tailscale zachovává Funnel i heslem chráněný vstup.
+
+Pro návrat pouze k soukromému Tailscale přístupu s toutéž ochranou heslem:
+
+```sh
+docker exec rodokmen-tailscale tailscale --socket=/tmp/tailscaled.sock serve --bg --yes http://127.0.0.1:18080
+```
+
+Přesměrování portů na routeru, exit node ani sdílení celé domácí sítě nejsou nastavené. GitHub zůstává soukromý, změny se z něj nenasazují automaticky.
+
+GLM nyní pracuje se starším předávacím balíčkem. Při přebírání jeho výstupu zachovejte tuto konfiguraci hostingu a nepřepisujte ji jeho starými soubory `synology/`. Nasazujte nový obsah `web/` do složky HTML.
