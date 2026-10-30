@@ -2,9 +2,9 @@
   "meta": {
     "nazev": "Rodokmen Forejtníkových",
     "podtitul": "Soukromý rodinný archiv z matrik Moravského zemského archivu v Brně",
-    "vychozi_osoba": "P11",
+    "vychozi_osoba": "P17",
     "verze": "kolo 2 – první funkční verze",
-    "aktualizace": "2026-10-29",
+    "aktualizace": "2026-10-30",
     "poznamka": "Přepisy matrik vznikly strojovým čtením obrazu (VLM); u každého údaje je uvedena provenience. Neznámé údaje jsou prázdné – nic se nedoplňuje odhadem."
   },
   "provenience": {
@@ -37,13 +37,88 @@
       "label": "rozpor",
       "popis": "Nevyřešený rozpor mezi prameny nebo čteními.",
       "trida": "prov-rozpor"
+    },
+    "sdeleni": {
+      "label": "rodinné sdělení",
+      "popis": "Jméno nebo příbuzenská vazba sdělená a potvrzená rodinou; zatím bez ověření rodným listem nebo matrikou.",
+      "trida": "prov-dokument"
     }
   },
   "osoby": [
     {
+      "id": "P17",
+      "jmeno": "Miroslav Forejtník mladší",
+      "narozeni": null,
+      "umrti": null,
+      "misto_narozeni": null,
+      "povolani": [],
+      "otec": "P11",
+      "matka": null,
+      "partneri": [
+        "P18"
+      ],
+      "zdroje": [
+        "PR-RODINA-2026"
+      ],
+      "poznamka": "Syn Miroslava Forejtníka narozeného 26. 4. 1954. Označení mladší rozlišuje otce a syna stejného jména. Datum narození ani matka zatím nebyly sděleny.",
+      "nejistoty": [],
+      "role": "výchozí osoba rodokmenu; otec Adama a Ondřeje"
+    },
+    {
+      "id": "P18",
+      "jmeno": "Hana Forejtníková, rozená Cvanová",
+      "narozeni": null,
+      "umrti": null,
+      "misto_narozeni": null,
+      "povolani": [],
+      "otec": null,
+      "matka": null,
+      "partneri": [
+        "P17"
+      ],
+      "zdroje": [
+        "PR-RODINA-2026"
+      ],
+      "poznamka": "Matka Adama a Ondřeje Forejtníkových. Rodné příjmení Cvanová podle rodinného sdělení; datum narození a rodiče zatím nebyli sděleni.",
+      "nejistoty": [],
+      "rodne_prijmeni": "Cvanová"
+    },
+    {
+      "id": "P19",
+      "jmeno": "Adam Forejtník",
+      "narozeni": null,
+      "umrti": null,
+      "misto_narozeni": null,
+      "povolani": [],
+      "otec": "P17",
+      "matka": "P18",
+      "partneri": [],
+      "zdroje": [
+        "PR-RODINA-2026"
+      ],
+      "poznamka": "Syn Miroslava Forejtníka mladšího a Hany Forejtníkové, rozené Cvanové, podle rodinného sdělení.",
+      "nejistoty": []
+    },
+    {
+      "id": "P20",
+      "jmeno": "Ondřej Forejtník",
+      "narozeni": null,
+      "umrti": null,
+      "misto_narozeni": null,
+      "povolani": [],
+      "otec": "P17",
+      "matka": "P18",
+      "partneri": [],
+      "zdroje": [
+        "PR-RODINA-2026"
+      ],
+      "poznamka": "Syn Miroslava Forejtníka mladšího a Hany Forejtníkové, rozené Cvanové, podle rodinného sdělení.",
+      "nejistoty": []
+    },
+    {
       "id": "P11",
       "jmeno": "Miroslav Forejtník",
-      "role": "výchozí osoba rodokmenu",
+      "role": "otec Miroslava Forejtníka mladšího",
       "narozeni": {
         "datum": "1954-04-26",
         "presnost": "den",
@@ -763,6 +838,62 @@
       "providence": null,
       "provenience": "hypoteza",
       "dukaz": "nalezený oddací zápis 25. 6. 1919 v Kosticích; vazba na Emiliina rodiče je pravděpodobná, nikoli doložená"
+    },
+    {
+      "od": "P11",
+      "k": "P17",
+      "typ": "otec",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Adam potvrdil, že otcem Miroslava mladšího je Miroslav narozený 26. 4. 1954."
+    },
+    {
+      "od": "P17",
+      "k": "P19",
+      "typ": "otec",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Adam potvrdil, že je synem Miroslava mladšího a Hany."
+    },
+    {
+      "od": "P18",
+      "k": "P19",
+      "typ": "matka",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Adam potvrdil, že jeho matkou je Hana, rozená Cvanová."
+    },
+    {
+      "od": "P17",
+      "k": "P20",
+      "typ": "otec",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Adam potvrdil, že Ondřej je synem Miroslava mladšího a Hany."
+    },
+    {
+      "od": "P18",
+      "k": "P20",
+      "typ": "matka",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Adam potvrdil, že matkou Ondřeje je Hana, rozená Cvanová."
+    },
+    {
+      "od": "P17",
+      "k": "P18",
+      "typ": "partnerství",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Rodiče Adama a Ondřeje podle rodinného sdělení; datum sňatku nebylo sděleno."
+    },
+    {
+      "od": "P18",
+      "k": "P17",
+      "typ": "partnerství",
+      "pramen": "PR-RODINA-2026",
+      "provenience": "sdeleni",
+      "dukaz": "Rodiče Adama a Ondřeje podle rodinného sdělení; datum sňatku nebylo sděleno."
     }
   ],
   "prameny": [
@@ -948,6 +1079,17 @@
         "druhý řádek rejstříku: „1884, 26. [měsíc], Foretník Josef a [Barbora Kudriovská?]“ – jiný Josef Forejtník (náš Josef zemřel před 2/1883), pravděpodobný příbuzný; do stromu nezařazován"
       ],
       "provenience": "matrika"
+    },
+    {
+      "id": "PR-RODINA-2026",
+      "typ": "rodinné sdělení",
+      "nazev": "Rodinné sdělení Adama Forejtníka (30. 10. 2026)",
+      "popis": "Adam potvrdil, že on a Ondřej jsou synové Miroslava Forejtníka mladšího a Hany Forejtníkové, rozené Cvanové. Otcem Miroslava mladšího je Miroslav Forejtník narozený 26. 4. 1954. Miroslav mladší byl na přání rodiny nastaven jako výchozí osoba. Data narození nových osob nebyla sdělena.",
+      "archiv": "soukromé sdělení rodiny",
+      "url": null,
+      "soubory": [],
+      "provenience": "sdeleni",
+      "pozn": "Vazby jsou potvrzené rodinou. Nejde o ověření matričním zápisem a nebyla odvozována žádná data narození."
     }
   ],
   "galerie": [

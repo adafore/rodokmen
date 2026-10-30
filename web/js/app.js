@@ -103,12 +103,13 @@
         '<section class="uvod-text">' +
           '<p class="uvod-nadpis-ozdoba">Soukromý rodinný archiv</p>' +
           '<h1>Rodokmen Forejtníkových</h1>' +
-          '<p>Tento archiv sleduje předky Miroslava Forejtníka (narozeného 26. dubna 1954 ve Valticích) ' +
-          'do moravských matrik uložených v Moravském zemském archivu v Brně. Rodina se po staletí projevuje ' +
+          '<p>Výchozí osobou je Miroslav Forejtník mladší, otec Adama a Ondřeje; jejich matkou je Hana Forejtníková, rozená Cvanová. ' +
+          'Přes jeho otce Miroslava (narozeného 26. dubna 1954 ve Valticích) archiv navazuje na předky ' +
+          'v moravských matrikách uložených v Moravském zemském archivu v Brně. Rodina se po staletí projevuje ' +
           'v Kloboukách u Brna, kde byli domkář a obuvník Karel Forejtník, kožešník Jakub Veselý, zedník Josef ' +
           'Dobrovolný i čtvrtláník Josef Forejtník. Odtud větev pokračuje přes stolaře Bohuslava Forejtníka, ' +
           'který se oženil s Annou Dobrovolnou, dále přes Kostice (rodiče Emilie, rodené Koskové) až po Jaroslava, ' +
-          'otce Miroslava. Všechny údaje v tomto archivu mají vyznačený původ – matriční zápis, rodinný dokument, ' +
+          'otce Miroslava. Všechny údaje v tomto archivu mají vyznačený původ – rodinné sdělení, matriční zápis, rodinný dokument, ' +
           'pracovní přepis, odhad nebo hypotézu.</p>' +
           '<p>Archiv neobsahuje vybájené příběhy ani předpokládaná data: kde se rodný zápis dosud nepodařilo ' +
           'najít nebo přečíst, zůstává pole prázdné a hledání je popsáno v badatelském deníku. Hvězdičkou ani ' +
@@ -122,10 +123,10 @@
           '<p>Každý údaj i vztah v tomto archivu nese odznak svého původu. Kliknutím na odznak se v kartě osoby ' +
           'otevře odpovídající pramen v galerii důkazů.</p>' +
           '<div class="legenda" role="list">' +
-            provBadge('matrika') + provBadge('dokument') + provBadge('prepis') +
+            provBadge('sdeleni') + provBadge('matrika') + provBadge('dokument') + provBadge('prepis') +
             provBadge('odhad') + provBadge('hypoteza') + provBadge('rozpor') +
             '<p class="legenda-popis">' + esc(D.provenience.matrika.popis) + ' ' +
-            esc(D.provenience.prepis.popis) + ' Hypotézy nejsou rodinnou vazbou, dokud je doloží pramen.</p>' +
+            esc(D.provenience.prepis.popis) + ' ' + esc(D.provenience.sdeleni.popis) + ' Hypotézy nejsou rodinnou vazbou, dokud je doloží pramen.</p>' +
           '</div>' +
         '</section>' +
         '<aside class="statistiky" aria-label="Statistiky archivu">' +
@@ -134,7 +135,7 @@
           '<div class="statistika"><div class="statistika-cislo">' + pocetDukazu + '</div><div class="statistika-popis">snímků a výřezů v galerii</div></div>' +
           '<div class="statistika"><div class="statistika-cislo">' + pocetMatrika + '</div><div class="statistika-popis">osob s přímo přečteným matričním zápisem narození</div></div>' +
           '<div class="statistika"><div class="statistika-cislo">' + nejhlubsi + '</div><div class="statistika-popis">generací v nejhlubší větvi</div></div>' +
-          '<p class="statistika-poznamka">Nejhlubší větev vede od Miroslava přes Jaroslava, Bohuslava, Karla a Veroniku až k Václavu Vystoupilovi. ' +
+          '<p class="statistika-poznamka">Nejhlubší větev vede od Adama a Ondřeje přes Miroslava mladšího, Miroslava (1954), Jaroslava, Bohuslava, Karla a Veroniku až k Václavu Vystoupilovi. ' +
           'Hloubka znamená délku této jedné linie, nikoli úplné pokrytí všech předků – část větví je dosud neznámá a je uvedena ve stromu zvlášť.</p>' +
         '</aside>' +
       '</div>';
@@ -214,6 +215,20 @@
       ? '<div class="strom-obal"><div class="strom">' + stromRekurzivne(stromKoren, true) + '</div></div>'
       : '<ul class="strom-seznam">' + stromSeznamRekurzivne(stromKoren, null) + '</ul>';
 
+    var vybrana = osobaById[stromKoren];
+    var rodina = '';
+    if (vybrana) {
+      var partneri = (vybrana.partneri || []).map(function (id) { return osobaLink(id); });
+      var deti = detiOsoby(stromKoren).map(function (v) { return osobaLink(v.k); });
+      if (partneri.length || deti.length) {
+        rodina = '<section class="panel" aria-label="Nejbližší rodina"><h2>Nejbližší rodina</h2>' +
+          '<p><strong>Vybraná osoba:</strong> ' + osobaLink(stromKoren) + '</p>' +
+          (partneri.length ? '<p><strong>Partner / partnerka:</strong> ' + partneri.join(', ') + '</p>' : '') +
+          (deti.length ? '<p><strong>Děti:</strong> ' + deti.join(', ') + '</p>' : '') +
+          '</section>';
+      }
+    }
+
     return '' +
       '<h1>Strom předků</h1>' +
       '<p>Každá karta vede na kartu osoby; tečkovaná a šrafovaná mí označují dosud neznámé rodiče – ' +
@@ -227,8 +242,8 @@
           '<button type="button" id="strom-seznam" aria-pressed="' + (stromRezim === 'seznam') + '">Seznam (klávesnice/čtečky)</button>' +
         '</span>' +
       '</div>' +
-      obsah +
-      '<p class="strom-poznamka">Strom ukazuje jen předky (rodiče, prarodiče…). Na mobilním telefonu graf posouvejte ' +
+      rodina + obsah +
+      '<p class="strom-poznamka">Graf ukazuje předky (rodiče, prarodiče…). Partner a děti jsou v přehledu nejbližší rodiny nad grafem. Na mobilním telefonu graf posouvejte ' +
       'do stran; seznam nabízí rovnocennou textovou podobu.</p>';
   }
 
@@ -384,6 +399,12 @@
       'nejistými místy a odkazem do archivu. Oddíl „pracovní podklady“ obsahuje hledání výřezy, které dosud ' +
       'nevedla k novému doloženému záznamu; nejsou proto počítána jako nové události.</p>' +
       (filtr ? '<p class="role-rodice">Filtr: ' + esc((pramenById[filtr] || {}).nazev || filtr) + '</p>' : '');
+    var pramen = filtr ? pramenById[filtr] : null;
+    if (pramen && pramen.provenience === 'sdeleni') {
+      html += '<section class="panel"><h2>' + esc(pramen.nazev) + '</h2>' +
+        '<p>' + provBadge('sdeleni') + '</p><p>' + esc(pramen.popis) + '</p>' +
+        (pramen.pozn ? '<p>' + esc(pramen.pozn) + '</p>' : '') + '</section>';
+    }
     galerieSkupiny().forEach(function (sk) {
       var polozky = sk.polozky.filter(function (g) {
         return !filtr || g.pramen === filtr ||
