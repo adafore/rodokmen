@@ -480,7 +480,9 @@ var RODOKMEN_DATA = {
    "nazev": "Narození Miroslava Forejtníka",
    "popis": "Miroslav Forejtník se narodil 26. dubna 1954 ve valtické nemocnici; rodný list vystaven 28. 4. 1954.",
    "pramen": "PR-A",
-   "dukazy": []
+   "dukazy": [
+    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+   ]
   },
   {
    "id": "E2",
@@ -593,7 +595,9 @@ var RODOKMEN_DATA = {
    "nazev": "Narození Emilie Forejtníkové",
    "popis": "Emilie Forejtníková (provdaná Kosek) se narodila 10. května 1924 v Kosticích; údaj z rodného listu syna Miroslava.",
    "pramen": "PR-A",
-   "dukazy": []
+   "dukazy": [
+    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+   ]
   },
   {
    "id": "E7",
@@ -770,7 +774,9 @@ var RODOKMEN_DATA = {
    "popis": "Vystaven 28. 4. 1954, MNV Valtice, okres Mikulov. Kniha narození svazek 4, rok 1954, strana 216, pořadové číslo 358. Uvádí narození Miroslava 26. 4. 1954 ve Valticích a rodiče Jaroslava Forejtníka a Emilii, rozenou Koskovou (v přepisu kontextu jako Forejtníkovou, roz. Kosek), s údaji o jejím narození 10. 5. 1924 v Kosticích a rodičích Cyrilu Koskovi a Alžbětě Trpělkové.",
    "archiv": "rodinný archiv (dodaný dokument)",
    "url": null,
-   "soubory": [],
+   "soubory": [
+    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+   ],
    "provenience": "dokument"
   },
   {
@@ -946,6 +952,15 @@ var RODOKMEN_DATA = {
   }
  ],
  "galerie": [
+  {
+   "id": "G-RODNY-LIST-1954",
+   "soubor": "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg",
+   "titulek": "Rodný list Miroslava Forejtníka (1954)",
+   "popis": "Sken rodinného dokumentu dodaný uživatelem. Vystaven 28. dubna 1954 ve Valticích; obsahuje údaje o narození, rodičích a prarodičích.",
+   "pramen": "PR-A",
+   "skupina": "Rodinné dokumenty",
+   "typ": "dokument"
+  },
   {
    "id": "G1",
    "soubor": "img/dukazy/A_prehled_L11.jpg",
