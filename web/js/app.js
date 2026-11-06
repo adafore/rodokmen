@@ -214,7 +214,7 @@
 
   function rozdelJmeno(o) {
     if (!o) return { hlavni: '', rodne: '' };
-    var j = o.jmeno || '';
+    var j = (o.jmeno || '').replace(/\s*\(rodné příjmení nejasné\)/i, '').trim();
     var m = /^(.*?),\s*rozená\s+(.*)$/i.exec(j);
     if (m) {
       return { hlavni: m[1].trim(), rodne: 'roz. ' + m[2].trim() };
@@ -443,8 +443,7 @@
           '<div class="cta-radek">' +
             '<a class="cta" href="#/strom">Otevřít interaktivní mapu rodu</a>' +
             '<a class="cta vedlejsi" href="#/rejstrik">Rejstřík osob (' + pocetOsob + ')</a>' +
-            '<a class="cta vedlejsi" href="#/galerie">Snímky matrik (' + pocetDukazu + ')</a>' +
-            '<a class="cta vedlejsi" href="#/denik">Otevřené otázky</a>' +
+            '<a class="cta vedlejsi" href="#/galerie">Archivní důkazy (' + pocetDukazu + ')</a>' +
           '</div>' +
 
           '<h2>Geografický přehled farností a rodů</h2>' +
@@ -522,7 +521,7 @@
           '</div>' +
 
           '<div class="arch-panel">' +
-            '<span class="arch-panel-stitek">Pokrytí vývodu předků (od Adama · P19)</span>' +
+            '<span class="arch-panel-stitek">Pokrytí vývodu předků (od Adama)</span>' +
             pokrHtml +
             '<p style="font-size:0.78rem;color:var(--inkoust-slaby);margin-top:0.7rem;">' +
               'Rodiče (2/2) i všichni čtyři prarodiče (4/4: Forejtník, Kameníková, Cvan, Stávková) jsou plně obsazeni.' +
@@ -536,8 +535,9 @@
      02 INTERAKTIVNÍ PLÁTNO RODU (ORGPAD / MIND-MAP)
      ========================================================================== */
   var stromKoren = 'P19'; // Výchozí pohled od nejmladší generace nebo P17
-  var stromRezim = 'komplet'; // 'komplet' | 'vyvod' | 'seznam'
+  var stromRezim = 'komplet'; // 'komplet' | 'vyvod'
   var vybranyUzelId = null;
+  var pohybKaretPovolen = false;
 
   // Stav kamery plátna (pan & zoom)
   var platnoKamera = {
@@ -554,7 +554,7 @@
   /* Spočítá kompletní rozvržení všech 32 osob v 8 generacích bez křížení čar */
   function spocitejKompletniRozvrzeni() {
     var CARD_W = 236;
-    var CARD_H = 104;
+    var CARD_H = 84;
     var GEN_GAP_Y = 166;
 
     // Pevné a přehledné uspořádání všech větví podle generací (0 = nejmladší dole, 7 = nejstarší nahoře)
@@ -653,7 +653,7 @@
       { gen: 3, y: (MAX_GEN - 3) * GEN_GAP_Y - 34, label: 'IV. GENERACE · PRAPRARODIČE (*1921 KLOBOUKY, *1924 KOSTICE)' },
       { gen: 2, y: (MAX_GEN - 2) * GEN_GAP_Y - 34, label: 'III. GENERACE · PRARODIČE (VALTICE & NĚMČIČKY – FOREJTNÍK, KAMENÍK, CVAN, STÁVEK)' },
       { gen: 1, y: (MAX_GEN - 1) * GEN_GAP_Y - 34, label: 'II. GENERACE · RODIČE (HUSTOPEČE / NĚMČIČKY)' },
-      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 34, label: 'I. GENERACE · VÝCHOZÍ GENERACE (ADAM & ONDŘEJ FOREJTNÍKOVI)' }
+      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 34, label: 'I. GENERACE · VÝCHOZÍ GENERACE (ADAM & ONDŘEJ FOREJTNÍKŮ)' }
     ];
 
     // Manželské dvojice
@@ -686,7 +686,7 @@
   /* Spočítá klasický strom vývodu předků pro vybranou osobu (stromKoren) */
   function spocitejVyvodRozvrzeni(korenId) {
     var CARD_W = 236;
-    var CARD_H = 104;
+    var CARD_H = 84;
     var LEVEL_H = 178;
     var LEAF_GAP = 258;
 
@@ -812,18 +812,12 @@
       '</div>';
     }
 
-    var rukopisHtml = '';
-    if (o.vyrez_rukopisu) {
-      rukopisHtml = '<div class="uzel-rukopis-prouzek" style="background-image:url(\'' + esc(o.vyrez_rukopisu) + '\')"></div>';
-    }
-
     return '' +
       '<div class="mapa-uzel' + (vybranyUzelId === o.id ? ' vybrany' : '') + '" ' +
            'data-id="' + esc(o.id) + '" data-prov="' + esc(prov) + '" ' +
            'style="left:' + u.x + 'px;top:' + u.y + 'px;" tabindex="0" role="button" ' +
            'aria-label="' + esc(o.jmeno) + '">' +
         '<div class="uzel-horni-lista">' +
-          '<span class="uzel-id-kod">' + esc(o.id) + '</span>' +
           '<span class="uzel-obec-stitek">' + esc(obec || D.provenience[prov].label) + '</span>' +
         '</div>' +
         '<div class="uzel-obsah">' +
@@ -835,7 +829,6 @@
             (remeslo ? '<span class="uzel-remeslo">' + esc(remeslo) + '</span>' : '') +
           '</div>' +
         '</div>' +
-        rukopisHtml +
       '</div>';
   }
 
@@ -848,46 +841,30 @@
     });
     var options = sorted.map(function (o) {
       return '<option value="' + o.id + '"' + (o.id === stromKoren ? ' selected' : '') + '>' +
-        esc(o.jmeno) + ' (' + o.id + ')</option>';
+        esc(o.jmeno) + '</option>';
     }).join('');
 
-    if (stromRezim === 'seznam') {
-      return '' +
-        '<div style="max-width:1100px;margin:0 auto;padding:1.5rem;">' +
-          '<div class="strom-ToolBar" style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:1.5rem;">' +
-            '<button type="button" class="platno-tlacitko" id="rezim-komplet">Interaktivní mapa (všechny větve)</button>' +
-            '<button type="button" class="platno-tlacitko" id="rezim-vyvod">Vývod předků</button>' +
-            '<button type="button" class="platno-tlacitko aktivni" id="rezim-seznam">Textový seznam</button>' +
-            '<label for="strom-koren" style="font-family:var(--mono);font-size:0.78rem;margin-left:auto;">Kořen výpisu:</label>' +
-            '<select id="strom-koren" class="platno-select">' + options + '</select>' +
-          '</div>' +
-          '<h1>Strukturovaný výpis předků</h1>' +
-          '<ul class="strom-seznam">' + stromSeznamRekurzivne(stromKoren, null) + '</ul>' +
-        '</div>';
-    }
-
     return '' +
-      '<div class="platno-kontejner" id="platno-kontejner">' +
+      '<div class="platno-kontejner' + (pohybKaretPovolen ? ' pohyb-karet-povolen' : '') + '" id="platno-kontejner">' +
         '<!-- Horní plovoucí ovládací panel -->' +
         '<div class="platno-hud-nahore">' +
-          '<div class="platno-hud-skupina" role="group" aria-label="Režim zobrazení mapy">' +
+          '<div class="platno-hud-skupina" role="group" aria-label="Režim zobrazení mapy a výběr osoby">' +
             '<span class="platno-hud-stitek">Režim:</span>' +
-            '<button type="button" class="platno-tlacitko' + (stromRezim === 'komplet' ? ' aktivni' : '') + '" id="rezim-komplet" title="Zobrazit všech 32 osob a všechny rodové větve najednou">' +
+            '<button type="button" class="platno-tlacitko' + (stromRezim === 'komplet' ? ' aktivni' : '') + '" id="rezim-komplet" title="Zobrazit všech ' + D.osoby.length + ' osob a všechny rodové větve najednou">' +
               'Celá rodová síť (' + D.osoby.length + ')' +
             '</button>' +
             '<button type="button" class="platno-tlacitko' + (stromRezim === 'vyvod' ? ' aktivni' : '') + '" id="rezim-vyvod" title="Klasický strom předků od vybrané osoby">' +
               'Vývod předků' +
             '</button>' +
-            '<button type="button" class="platno-tlacitko" id="rezim-seznam" title="Přepnout na textový seznam pro čtečky a klávesnici">' +
-              'Seznam' +
-            '</button>' +
+            '<span class="platno-hud-oddelovac" aria-hidden="true"></span>' +
+            '<label for="strom-koren" class="platno-hud-stitek">Zaměřit osobu:</label>' +
+            '<select id="strom-koren" class="platno-select">' + options + '</select>' +
           '</div>' +
 
           '<div class="platno-hud-skupina">' +
-            '<label for="strom-koren" class="platno-hud-stitek">Zaměřit osobu:</label>' +
-            '<select id="strom-koren" class="platno-select">' + options + '</select>' +
-            '<button type="button" class="platno-tlacitko" id="platno-jadro" title="Zaměřit detailně na 5 nejmladších generací (Forejtník, Cvan, Stávek, Kameník, Kosek)">Jádro rodu</button>' +
-            '<button type="button" class="platno-tlacitko" id="platno-fit" title="Vycentrovat všech 8 generací do okna">Celý strom</button>' +
+            '<button type="button" class="platno-tlacitko' + (pohybKaretPovolen ? ' aktivni' : '') + '" id="platno-toggle-pohyb" aria-pressed="' + (pohybKaretPovolen ? 'true' : 'false') + '" title="Povolit nebo zakázat ruční přesouvání karet osob">' +
+              (pohybKaretPovolen ? 'Pohyb osob: povolen' : 'Povolit pohyb osob') +
+            '</button>' +
             '<button type="button" class="platno-tlacitko" id="platno-reset-karty" title="Vrátit ručně posunuté karty na výchozí pozice">Srovnat karty</button>' +
             '<button type="button" class="platno-tlacitko" id="platno-fullscreen" title="Přepnout na celou obrazovku">Celá obrazovka</button>' +
           '</div>' +
@@ -899,7 +876,7 @@
         '<!-- Dolní plovoucí lišta -->' +
         '<div class="platno-hud-dole">' +
           '<div class="platno-info-panel">' +
-            '<span><strong>OVLÁDÁNÍ PLÁTNA:</strong> Tažením myší posouváte mapu · Kolečkem přibližujete · Karty osob lze chytit a přesouvat · Kliknutím otevřete spis a fotku</span>' +
+            '<span><strong>OVLÁDÁNÍ PLÁTNA:</strong> Tažením myší posouváte mapu · Kolečkem přibližujete · Kliknutím na osobu otevřete spis a rukopis</span>' +
           '</div>' +
           '<div class="platno-zoom-panel">' +
             '<button type="button" class="platno-tlacitko" id="zoom-out" aria-label="Oddálit">−</button>' +
@@ -997,6 +974,11 @@
 
     var cesty = [];
     var uzelMap = aktualniRozvrzeni.uzelMap;
+    var hMap = {};
+    document.querySelectorAll('.mapa-uzel').forEach(function (el) {
+      var id = el.getAttribute('data-id');
+      if (id && el.offsetHeight) hMap[id] = el.offsetHeight;
+    });
 
     // A) Spojnice mezi manželi + aktualizace pozice štítku sňatku
     var snatekDom = document.querySelectorAll('.snatek-uzel');
@@ -1004,10 +986,12 @@
       var u1 = uzelMap[s.m];
       var u2 = uzelMap[s.z];
       if (!u1 || !u2) return;
+      var h1 = hMap[s.m] || u1.h;
+      var h2 = hMap[s.z] || u2.h;
       var x1 = u1.x + u1.w;
-      var y1 = u1.y + u1.h / 2;
+      var y1 = u1.y + h1 / 2;
       var x2 = u2.x;
-      var y2 = u2.y + u2.h / 2;
+      var y2 = u2.y + h2 / 2;
       cesty.push('<path class="spojnice-partneri" data-od="' + s.m + '" data-k="' + s.z + '" d="M' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y2 + '"/>');
       if (snatekDom[idx]) {
         snatekDom[idx].style.left = Math.round((x1 + x2) / 2) + 'px';
@@ -1026,7 +1010,7 @@
         if (!rodicId || !uzelMap[rodicId]) return;
         var rodicUzel = uzelMap[rodicId];
         var rx = rodicUzel.x + rodicUzel.w / 2;
-        var ry = rodicUzel.y + rodicUzel.h;
+        var ry = rodicUzel.y + (hMap[rodicId] || rodicUzel.h);
 
         // Křivka od spodní hrany rodiče k horní hraně dítěte
         var ctrlY1 = ry + (dy - ry) * 0.48;
@@ -1093,7 +1077,7 @@
     });
   }
 
-  /* Aplikuje posun a měřítko kamery na scénu i podkladovou mřížku */
+  /* Aplikuje posun a měřítko kamery na scénu */
   function aplikujTransformaciKamery() {
     var scena = document.getElementById('platno-scena');
     var kontejner = document.getElementById('platno-kontejner');
@@ -1101,17 +1085,6 @@
     if (!scena || !kontejner) return;
 
     scena.style.transform = 'translate3d(' + platnoKamera.x.toFixed(1) + 'px, ' + platnoKamera.y.toFixed(1) + 'px, 0) scale(' + platnoKamera.scale.toFixed(4) + ')';
-
-    var gridStep = 24 * platnoKamera.scale;
-    var bigStep = 120 * platnoKamera.scale;
-    kontejner.style.backgroundSize =
-      gridStep.toFixed(1) + 'px ' + gridStep.toFixed(1) + 'px, ' +
-      bigStep.toFixed(1) + 'px ' + bigStep.toFixed(1) + 'px, ' +
-      bigStep.toFixed(1) + 'px ' + bigStep.toFixed(1) + 'px';
-    kontejner.style.backgroundPosition =
-      platnoKamera.x.toFixed(1) + 'px ' + platnoKamera.y.toFixed(1) + 'px, ' +
-      platnoKamera.x.toFixed(1) + 'px ' + platnoKamera.y.toFixed(1) + 'px, ' +
-      platnoKamera.x.toFixed(1) + 'px ' + platnoKamera.y.toFixed(1) + 'px';
 
     if (zoomLabel) {
       zoomLabel.textContent = Math.round(platnoKamera.scale * 100) + ' %';
@@ -1219,7 +1192,7 @@
     vybranyUzelId = osobaId;
     aplikujZvyrazneniLinie(osobaId);
 
-    if (kodEl) kodEl.textContent = 'OSOBNÍ ARCH · ' + o.id;
+    if (kodEl) kodEl.textContent = 'OSOBNÍ KARTA';
 
     var fotoUrl = ziskejPortretUrl(o);
     var maVlastni = maVlastniPortret(o.id);
@@ -1285,6 +1258,7 @@
         '<div class="inspektor-portret-ram">' + portretHtml + '</div>' +
         '<div class="inspektor-titul-blok">' +
           '<h2>' + esc(o.jmeno) + '</h2>' +
+          (o.rodne_prijmeni ? '<div class="uzel-rodne" style="font-size:0.95rem;margin-bottom:0.25rem;">roz. ' + esc(o.rodne_prijmeni) + '</div>' : '') +
           (o.role ? '<span class="inspektor-role">' + esc(o.role) + '</span>' : '') +
           provBadge(prov) +
           '<div class="inspektor-foto-akce">' +
@@ -1306,7 +1280,7 @@
 
       '<div style="display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1.1rem;">' +
         '<a class="cta" href="#/osoba/' + o.id + '" style="flex:1;justify-content:center;">Otevřít plný osobní spis ↗</a>' +
-        '<button type="button" class="platno-tlacitko" id="btn-inspektor-vyvod" title="Zobrazit vývod předků pouze pro tuto osobu">Vývod od ' + esc(o.id) + '</button>' +
+        '<button type="button" class="platno-tlacitko" id="btn-inspektor-vyvod" title="Zobrazit vývod předků pouze pro tuto osobu">Vývod předků</button>' +
       '</div>';
 
     zasuvka.classList.add('otevrena');
@@ -1360,7 +1334,6 @@
   function bindStrom() {
     var btnKomplet = document.getElementById('rezim-komplet');
     var btnVyvod = document.getElementById('rezim-vyvod');
-    var btnSeznam = document.getElementById('rezim-seznam');
     var selectKoren = document.getElementById('strom-koren');
 
     if (btnKomplet) {
@@ -1377,18 +1350,10 @@
         vycentrujCelyStrom();
       });
     }
-    if (btnSeznam) {
-      btnSeznam.addEventListener('click', function () {
-        stromRezim = 'seznam';
-        render();
-      });
-    }
     if (selectKoren) {
       selectKoren.addEventListener('change', function () {
         stromKoren = selectKoren.value;
-        if (stromRezim === 'seznam') {
-          render();
-        } else if (stromRezim === 'vyvod') {
+        if (stromRezim === 'vyvod') {
           vykresliScenuPlatna();
           vycentrujCelyStrom();
           otevriInspektor(stromKoren);
@@ -1398,8 +1363,6 @@
         }
       });
     }
-
-    if (stromRezim === 'seznam') return;
 
     var kontejner = document.getElementById('platno-kontejner');
     var scena = document.getElementById('platno-scena');
@@ -1413,11 +1376,16 @@
     }
 
     // Ovládací tlačítka HUD
-    var btnJadro = document.getElementById('platno-jadro');
-    if (btnJadro) btnJadro.addEventListener('click', vycentrujJadroRodu);
-
-    var btnFit = document.getElementById('platno-fit');
-    if (btnFit) btnFit.addEventListener('click', vycentrujCelyStrom);
+    var btnTogglePohyb = document.getElementById('platno-toggle-pohyb');
+    if (btnTogglePohyb) {
+      btnTogglePohyb.addEventListener('click', function () {
+        pohybKaretPovolen = !pohybKaretPovolen;
+        btnTogglePohyb.classList.toggle('aktivni', pohybKaretPovolen);
+        btnTogglePohyb.setAttribute('aria-pressed', pohybKaretPovolen ? 'true' : 'false');
+        btnTogglePohyb.textContent = pohybKaretPovolen ? 'Pohyb osob: povolen' : 'Povolit pohyb osob';
+        kontejner.classList.toggle('pohyb-karet-povolen', pohybKaretPovolen);
+      });
+    }
 
     var btnResetKarty = document.getElementById('platno-reset-karty');
     if (btnResetKarty) {
@@ -1487,19 +1455,34 @@
         var uzelId = uzelEl.getAttribute('data-id');
         var uzelObj = aktualniRozvrzeni && aktualniRozvrzeni.uzelMap[uzelId];
         if (!uzelObj) return;
+        if (pohybKaretPovolen) {
+          dragState = {
+            mode: 'node',
+            pointerId: e.pointerId,
+            uzelEl: uzelEl,
+            uzelObj: uzelObj,
+            startX: e.clientX,
+            startY: e.clientY,
+            origNodeX: uzelObj.x,
+            origNodeY: uzelObj.y,
+            moved: false
+          };
+          uzelEl.setPointerCapture(e.pointerId);
+          e.stopPropagation();
+          return;
+        }
         dragState = {
-          mode: 'node',
+          mode: 'pan',
           pointerId: e.pointerId,
-          uzelEl: uzelEl,
-          uzelObj: uzelObj,
           startX: e.clientX,
           startY: e.clientY,
-          origNodeX: uzelObj.x,
-          origNodeY: uzelObj.y,
+          origCamX: platnoKamera.x,
+          origCamY: platnoKamera.y,
+          kliknutyUzelId: uzelId,
           moved: false
         };
-        uzelEl.setPointerCapture(e.pointerId);
-        e.stopPropagation();
+        kontejner.classList.add('tazeni');
+        kontejner.setPointerCapture(e.pointerId);
         return;
       }
 
@@ -1547,8 +1530,12 @@
         // Kliknutí na kartu -> otevřít boční inspektor a zvýraznit rodovou větev
         otevriInspektor(dragState.uzelObj.id);
       } else if (dragState.mode === 'pan' && !dragState.moved) {
-        // Kliknutí do prázdného plátna -> zavřít inspektor
-        zavriInspektor();
+        if (dragState.kliknutyUzelId) {
+          otevriInspektor(dragState.kliknutyUzelId);
+        } else {
+          // Kliknutí do prázdného plátna -> zavřít inspektor
+          zavriInspektor();
+        }
       }
       dragState = null;
     }
@@ -1619,11 +1606,11 @@
       return '<a class="rejstrik-karta" href="#/osoba/' + o.id + '">' +
         avatar +
         '<div style="flex:1;min-width:0;">' +
-          '<div style="display:flex;justify-content:space-between;align-items:baseline;gap:0.4rem;">' +
-            '<span style="font-family:var(--mono);font-size:0.7rem;color:var(--pecet);font-weight:600;">' + esc(o.id) + '</span>' +
+          '<div style="display:flex;justify-content:flex-end;align-items:baseline;gap:0.4rem;">' +
             provBadge(prov) +
           '</div>' +
           '<div style="font-family:var(--serif);font-weight:700;font-size:1.1rem;margin-top:0.15rem;">' + esc(o.jmeno) + '</div>' +
+          (o.rodne_prijmeni ? '<div class="uzel-rodne" style="font-size:0.86rem;">roz. ' + esc(o.rodne_prijmeni) + '</div>' : '') +
           (roky ? '<div style="font-family:var(--mono);font-size:0.74rem;color:var(--inkoust-slaby);margin-top:0.15rem;">' + esc(roky) + '</div>' : '') +
           (obec ? '<div style="font-size:0.82rem;color:var(--inkoust-stredni);margin-top:0.15rem;">Obec: ' + esc(obec) + '</div>' : '') +
           (remeslo ? '<div class="uzel-remeslo" style="margin-top:0.3rem;">' + esc(remeslo) + '</div>' : '') +
@@ -1785,8 +1772,9 @@
         '<div class="osoba-hlavicka-spis">' +
           '<div class="osoba-velky-portret">' + portretObsah + '</div>' +
           '<div>' +
-            '<div style="font-family:var(--mono);font-size:0.75rem;color:var(--pecet);font-weight:600;">OSOBNÍ SPIS · ' + esc(o.id) + '</div>' +
-            '<h1 style="margin:0.15rem 0 0.3rem;">' + esc(o.jmeno) + '</h1>' +
+            '<div style="font-family:var(--mono);font-size:0.75rem;color:var(--pecet);font-weight:600;">OSOBNÍ SPIS</div>' +
+            '<h1 style="margin:0.15rem 0 0.25rem;">' + esc(o.jmeno) + '</h1>' +
+            (o.rodne_prijmeni ? '<div class="uzel-rodne" style="font-size:1.02rem;margin-bottom:0.25rem;">roz. ' + esc(o.rodne_prijmeni) + '</div>' : '') +
             (o.role ? '<div class="role-rodice" style="font-size:0.85rem;">' + esc(o.role) + '</div>' : '') +
             '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.75rem;">' +
               '<button type="button" class="platno-tlacitko" id="spis-nahrat-portret">' + (fotoUrl ? 'Změnit portrétní fotografii' : 'Nahrát portrétní fotografii') + '</button>' +
@@ -1882,6 +1870,75 @@
       });
       html += '</div></section>';
     });
+
+    if (!filtr) {
+      var ud = D.udalosti.slice().sort(function (a, b) { return (a.datum || '').localeCompare(b.datum || ''); });
+      var base = 'badani/2026-11-02/';
+      var fileLink = function (name, label) {
+        return '<li><a download href="' + base + name + '">' + esc(label) + '</a></li>';
+      };
+
+      html += '<section class="galerie-skupina" style="margin-top:3rem;">' +
+        '<h2>Soupis pramenů a pracovní balíky</h2>' +
+        '<div class="karta-osoby" style="margin-top:1rem;">' +
+          '<section class="panel">' +
+            '<h3>Primární prameny (' + D.prameny.length + ')</h3>' +
+            '<ul class="seznam-odkazu">' +
+              D.prameny.map(function (p) {
+                return '<li>' +
+                  '<a href="#/galerie?f=' + p.id + '">' + esc(p.nazev) + '</a> ' + provBadge(p.provenience) +
+                  '<span class="vztah-duvod">' + esc(p.archiv) + '</span>' +
+                '</li>';
+              }).join('') +
+            '</ul>' +
+          '</section>' +
+          '<section class="panel">' +
+            '<h3>Pracovní archivy ke stažení (ZIP)</h3>' +
+            '<ul class="seznam-odkazu">' +
+              fileLink('03_A_DOBROVOLNI_A3_final.zip', 'Dobrovolní – finální balík s obrazy (35 MB)') +
+              fileLink('D_KOSEK_TRPELKA_VYSLEDKY.zip', 'Koskové / Trpělkovi – přepis a podklady (7,9 MB)') +
+              fileLink('F_MAPA_CHYBEJICICH_VETVI_FINAL_v1.zip', 'Mapa větví a doporučené rodinné doklady (40 kB)') +
+              fileLink('KONTROLA_INTEGRACE.json', 'Přehled kontroly a nepřevzatých tvrzení') +
+              fileLink('PREVZETI.md', 'Přehled převzetí všech šesti chatů') +
+            '</ul>' +
+          '</section>' +
+        '</div>' +
+      '</section>';
+
+      html += '<section class="galerie-skupina">' +
+        '<h2>Stručná časová osa matričních událostí</h2>' +
+        '<div class="osa">' +
+          ud.map(function (e) {
+            var jeOdhad = (e.typ || '').indexOf('hypotéza') >= 0 || /pravděpodobn/.test(e.presnost || '') || e.provenience === 'hypoteza';
+            var osoby = e.osoby.map(function (pid) { return osobaLink(pid); }).join(' · ');
+            return '<div class="osa-udalost' + (jeOdhad ? ' odhad' : '') + '">' +
+              '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;">' +
+                '<span class="osa-datum' + (jeOdhad ? ' odhad' : '') + '">' + fmtDatum(e.datum) +
+                (e.presnost && /pravděpodobn/.test(e.presnost) ? ' (pravděpodobné)' : '') + '</span>' +
+                provBadge(e.provenience) +
+              '</div>' +
+              '<div class="osa-nazev">' + esc(e.nazev) + '</div>' +
+              '<div class="osa-popis">' + esc(e.popis) + (e.misto ? ' · <strong>' + esc(e.misto) + '</strong>' : '') + '</div>' +
+              (osoby ? '<div class="osa-osoby">Osoby: ' + osoby + '</div>' : '') +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</section>';
+
+      html += '<section class="galerie-skupina">' +
+        '<h2>Badatelský přehled a otevřené otázky</h2>' +
+        '<div class="rejstrik-mrizka">' +
+          D.otazky.map(function (q) {
+            return '<div class="otazka" data-stav="' + esc(q.stav) + '" style="margin:0;">' +
+              '<span class="otazka-stav">' + esc(q.stav) + '</span>' +
+              '<h3 style="margin:0.25rem 0 0.35rem;font-size:1.05rem;">' + esc(q.otazka) + '</h3>' +
+              '<p class="otazka-detail" style="font-size:0.86rem;margin:0;">' + esc(q.detail) + '</p>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</section>';
+    }
+
     html += '</div>';
     return html;
   }
@@ -2081,7 +2138,7 @@
     var segmenty = cesta.split('/');
 
     // Režim celoobrazovkového plátna pouze pro grafický strom
-    var jePlatno = (cesta === 'strom' && stromRezim !== 'seznam');
+    var jePlatno = (cesta === 'strom');
     document.body.classList.toggle('rezim-platno', jePlatno);
 
     if (segmenty[0] === 'osoba' && segmenty[1]) {
@@ -2095,14 +2152,9 @@
       html = viewStrom();
     } else if (cesta === 'rejstrik') {
       html = viewRejstrik();
-    } else if (cesta === 'galerie') {
+    } else if (cesta === 'galerie' || cesta === 'osa' || cesta === 'denik' || cesta === 'nalezy') {
       html = viewGalerie(parametry.f || null);
-    } else if (cesta === 'osa') {
-      html = viewOsa();
-    } else if (cesta === 'denik') {
-      html = viewDenik();
-    } else if (cesta === 'nalezy') {
-      html = viewNalezy();
+      navAktivni = 'galerie';
     } else {
       html = viewUvod();
       navAktivni = 'uvod';
@@ -2115,13 +2167,13 @@
 
     if (cesta === 'strom') {
       bindStrom();
-      if (vybranyUzelId && stromRezim !== 'seznam') {
+      if (vybranyUzelId) {
         otevriInspektor(vybranyUzelId);
         zamerKameruNaOsobu(vybranyUzelId);
       }
     } else if (cesta === 'rejstrik') {
       bindRejstrik();
-    } else if (cesta === 'galerie') {
+    } else if (cesta === 'galerie' || cesta === 'osa' || cesta === 'denik' || cesta === 'nalezy') {
       bindGalerie();
     } else if (segmenty[0] === 'osoba' && segmenty[1]) {
       bindOsoba(decodeURIComponent(segmenty[1]));
@@ -2143,7 +2195,7 @@
     var nq = norm(q).trim();
     if (!nq) return [];
     return D.osoby.filter(function (o) {
-      var seno = norm(o.id + ' ' + o.jmeno + ' ' + mistoOsobyPlne(o) + ' ' + (o.povolani || []).map(function (p) { return p.nazev; }).join(' '));
+      var seno = norm(o.jmeno + ' ' + (o.rodne_prijmeni || '') + ' ' + mistoOsobyPlne(o) + ' ' + (o.povolani || []).map(function (p) { return p.nazev; }).join(' '));
       return seno.indexOf(nq) >= 0;
     }).slice(0, 10);
   }
@@ -2159,9 +2211,9 @@
     }
     hledVysl.innerHTML = vysledky.map(function (o, i) {
       var misto = mistoOsobyKratke(o);
-      var meta = [rokyOsoby(o), misto].filter(Boolean).join(' · ') || 'data narození dosud nedoložena';
+      var rodne = o.rodne_prijmeni ? ('roz. ' + o.rodne_prijmeni) : '';
+      var meta = [rodne, rokyOsoby(o), misto].filter(Boolean).join(' · ') || 'data narození dosud nedoložena';
       return '<a href="#/osoba/' + o.id + '" data-osoba-id="' + o.id + '" data-i="' + i + '">' +
-        '<span class="vysledek-id">' + esc(o.id) + '</span>' +
         '<span class="vysledek-info">' +
           '<span class="vysledek-jmeno">' + esc(o.jmeno) + '</span>' +
           '<span class="vysledek-meta">' + esc(meta) + '</span>' +

@@ -67,7 +67,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P18",
-   "jmeno": "Hana Forejtníková, rozená Cvanová",
+   "jmeno": "Hana Forejtníková",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": null,
@@ -206,7 +206,8 @@ var RODOKMEN_DATA = {
    ],
    "poznamka": "Údaje o narození a rodičích (Cyril Kosek, Alžběta Trpělková) uvedeny v rodném listu syna Miroslava z roku 1954.",
    "nejistoty": [],
-   "vyrez_rukopisu": "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+   "vyrez_rukopisu": "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg",
+   "rodne_prijmeni": "Kosková"
   },
   {
    "id": "P3",
@@ -455,7 +456,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P5",
-   "jmeno": "Veronika Forejtníková, rozená Vystoupilová",
+   "jmeno": "Veronika Forejtníková",
    "narozeni": null,
    "umrti": {
     "obdobi": "před 2/1883",
@@ -477,7 +478,8 @@ var RODOKMEN_DATA = {
    "nejistoty": [
     "Rodiště i údaje o narození neznámé."
    ],
-   "vyrez_rukopisu": "img/dukazy/ZB-4_rodice_zenicha.jpg"
+   "vyrez_rukopisu": "img/dukazy/ZB-4_rodice_zenicha.jpg",
+   "rodne_prijmeni": "Vystoupilová"
   },
   {
    "id": "P6",
@@ -532,7 +534,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P8",
-   "jmeno": "Antonie Veselá, rozená Halmová",
+   "jmeno": "Antonie Veselá",
    "narozeni": null,
    "umrti": {
     "obdobi": "před 2/1883",
@@ -553,7 +555,8 @@ var RODOKMEN_DATA = {
    "nejistoty": [
     "Rodiště i údaje o narození neznámé."
    ],
-   "vyrez_rukopisu": "img/dukazy/ZB-4_nevesta_detail_rodice.jpg"
+   "vyrez_rukopisu": "img/dukazy/ZB-4_nevesta_detail_rodice.jpg",
+   "rodne_prijmeni": "Halmová"
   },
   {
    "id": "P10",
@@ -578,7 +581,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P21",
-   "jmeno": "Genovéfa Dobrovolná, rozená Tihlaříková",
+   "jmeno": "Genovéfa Dobrovolná",
    "narozeni": {
     "datum": "1877-09-17",
     "presnost": "den, podpořený dvěma zápisy",
@@ -601,7 +604,8 @@ var RODOKMEN_DATA = {
    "nejistoty": [
     "Pravopis příjmení v rukopisech kolísá; používáme Tihlaříková. Přesný katalogový detail rodného zápisu potřebuje doplnit."
    ],
-   "vyrez_rukopisu": "img/dukazy/20261102_sn142_genovefa_L13b.jpg"
+   "vyrez_rukopisu": "img/dukazy/20261102_sn142_genovefa_L13b.jpg",
+   "rodne_prijmeni": "Tihlaříková"
   },
   {
    "id": "P22",
@@ -625,7 +629,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P23",
-   "jmeno": "Mariana (rodné příjmení nejasné)",
+   "jmeno": "Mariana",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": null,
@@ -667,7 +671,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P25",
-   "jmeno": "Eva Tihlaříková, rozená Forejtníková",
+   "jmeno": "Eva Tihlaříková",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": null,
@@ -686,7 +690,8 @@ var RODOKMEN_DATA = {
    "nejistoty": [
     "Jde o samostatně doloženou rodinu. Spojení s větví Karla a Josefa Forejtníků není doložené."
    ],
-   "vyrez_rukopisu": "img/dukazy/20261102_sn142_genovefa_L13c.jpg"
+   "vyrez_rukopisu": "img/dukazy/20261102_sn142_genovefa_L13c.jpg",
+   "rodne_prijmeni": "Forejtníková"
   },
   {
    "id": "P26",
@@ -711,7 +716,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P27",
-   "jmeno": "Genovéfa (rodné příjmení nejasné)",
+   "jmeno": "Genovéfa",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": null,
@@ -754,7 +759,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P29",
-   "jmeno": "Eva (rodné příjmení nejasné)",
+   "jmeno": "Eva",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": null,
@@ -775,7 +780,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "P30",
-   "jmeno": "Marie Forejtníková, rozená Kameníková",
+   "jmeno": "Marie Forejtníková",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": {
@@ -791,7 +796,7 @@ var RODOKMEN_DATA = {
    "zdroje": [
     "PR-RODINA-2026"
    ],
-   "poznamka": "Babička Adama Forejtníka ze strany otce, manželka Miroslava Forejtníka staršího (P11), matka Miroslava Forejtníka (P17). Rozená Kameníková (pravděpodobně z Němčiček) podle rodinného sdělení.",
+   "poznamka": "Babička Adama Forejtníka ze strany otce, manželka Miroslava Forejtníka staršího, matka Miroslava Forejtníka. Rozená Kameníková (pravděpodobně z Němčiček) podle rodinného sdělení.",
    "nejistoty": [],
    "role": "babička Adama ze strany otce; matka Miroslava",
    "rodne_prijmeni": "Kameníková"
@@ -814,13 +819,13 @@ var RODOKMEN_DATA = {
    "zdroje": [
     "PR-RODINA-2026"
    ],
-   "poznamka": "Děda Adama Forejtníka ze strany matky, manžel Marie Cvanové rozené Stávkové (P32), otec Hany Forejtníkové rozené Cvanové (P18). Původem z Němčiček podle rodinného sdělení.",
+   "poznamka": "Děda Adama Forejtníka ze strany matky, manžel Marie Cvanové rozené Stávkové, otec Hany Forejtníkové rozené Cvanové. Původem z Němčiček podle rodinného sdělení.",
    "nejistoty": [],
    "role": "děda Adama ze strany matky; otec Hany"
   },
   {
    "id": "P32",
-   "jmeno": "Marie Cvanová, rozená Stávková",
+   "jmeno": "Marie Cvanová",
    "narozeni": null,
    "umrti": null,
    "misto_narozeni": {
@@ -836,7 +841,7 @@ var RODOKMEN_DATA = {
    "zdroje": [
     "PR-RODINA-2026"
    ],
-   "poznamka": "Babička Adama Forejtníka ze strany matky, manželka Milana Cvana (P31), matka Hany Forejtníkové rozené Cvanové (P18). Rozená Stávková z Němčiček podle rodinného sdělení.",
+   "poznamka": "Babička Adama Forejtníka ze strany matky, manželka Milana Cvana, matka Hany Forejtníkové rozené Cvanové. Rozená Stávková z Němčiček podle rodinného sdělení.",
    "nejistoty": [],
    "role": "babička Adama ze strany matky; matka Hany",
    "rodne_prijmeni": "Stávková"
@@ -857,7 +862,7 @@ var RODOKMEN_DATA = {
    "popis": "Miroslav Forejtník se narodil 26. dubna 1954 ve valtické nemocnici; rodný list vystaven 28. 4. 1954.",
    "pramen": "PR-A",
    "dukazy": [
-    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+    "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
    ]
   },
   {
@@ -874,15 +879,15 @@ var RODOKMEN_DATA = {
    "popis": "Jaroslav Josef Forejtník se narodil 29. listopadu 1921 v Kloboukách u Brna jako legitimní syn stolaře Bohuslava Forejtníka a Anny Dobrovolné. Den 29 ověřen znak po znaku.",
    "pramen": "PR-B",
    "dukazy": [
-    "img/dukazy/B2736_sn207L_radka.jpg",
-    "img/dukazy/B2736_radka_leva.jpg",
-    "img/dukazy/B2736_radka_prava.jpg",
-    "img/dukazy/B2736_radka_datum.jpg",
-    "img/dukazy/B2736_radka_jmeno.jpg",
-    "img/dukazy/B2736_radka_otec_col.jpg",
-    "img/dukazy/B2736_radka_matka_col.jpg",
-    "img/dukazy/B2736_sn207L_dole.jpg",
-    "img/dukazy/B2736_sn207L_dole2.jpg"
+    "B2736_sn207L_radka.jpg",
+    "B2736_radka_leva.jpg",
+    "B2736_radka_prava.jpg",
+    "B2736_radka_datum.jpg",
+    "B2736_radka_jmeno.jpg",
+    "B2736_radka_otec_col.jpg",
+    "B2736_radka_matka_col.jpg",
+    "B2736_sn207L_dole.jpg",
+    "B2736_sn207L_dole2.jpg"
    ],
    "pozn": "Poznámka zápisu odkazuje na sňatek rodičů 26. 4. 1921 (přečteno 2×: „oddáni v Kloboukách, dne 26. dubna 1921“). Pořadové číslo zápisu při čteních kolísalo 34/35."
   },
@@ -901,13 +906,13 @@ var RODOKMEN_DATA = {
    "popis": "Bohuslav Forejtník, stolař v Břeclavi, zákonný syn Karla Forejtníka, domkáře v Kloboukách, a Rozálie rozené Veselé, se oženil s Annou Dobrovolnou (20 let), dcerou Josefa Dobrovolného, zedníka v Kloboukách. Sňatek uzavřen 26. dubna 1921 v Kloboukách u Brna.",
    "pramen": "PR-C",
    "dukazy": [
-    "img/dukazy/C_klobouky_2755_sn85_prehled.jpg",
-    "img/dukazy/C_sn85_stred.jpg",
-    "img/dukazy/C_stred_zenich.jpg",
-    "img/dukazy/C_stred_nevesta.jpg",
-    "img/dukazy/C_sn85_dole_A.jpg",
-    "img/dukazy/C_sn85_dole_B.jpg",
-    "img/dukazy/ZA-1_poznamka_o_snatku.jpg"
+    "C_klobouky_2755_sn85_prehled.jpg",
+    "C_sn85_stred.jpg",
+    "C_stred_zenich.jpg",
+    "C_stred_nevesta.jpg",
+    "C_sn85_dole_A.jpg",
+    "C_sn85_dole_B.jpg",
+    "ZA-1_poznamka_o_snatku.png"
    ],
    "pozn": "Rok 1921 a jméno Anny potvrzují i okrajová poznámka rodného zápisu Bohuslava (PR-D, přímo) a poznámka u rodného zápisu syna Jaroslava (PR-B: „oddáni … dne 26. dubna 1921“). Svědci: Rudolf Forejtník + Josef Dobrovolný (domkář č. 205) – přečteno s nejistotami; Rudolf je pravděpodobný příbuzný Bohuslava, vztah nedoložen."
   },
@@ -925,12 +930,12 @@ var RODOKMEN_DATA = {
    "popis": "Bohuslav Forejtník, zákonný syn Karla Forejtníka, domkáře v Kloboukách, a Rozálie Veselé, se narodil 3. ledna 1895 v Kloboukách; křest v lednu 1895 (pravděpodobně 6. 1.).",
    "pramen": "PR-D",
    "dukazy": [
-    "img/dukazy/A_prehled_L11.jpg",
-    "img/dukazy/A_klobouky_2736_sn63_zapis38_full.jpg",
-    "img/dukazy/ZA-1_datum_narozeni.jpg",
-    "img/dukazy/ZA-1_sloupec_otec.jpg",
-    "img/dukazy/ZA-1_cislo_zapisu.jpg",
-    "img/dukazy/ZA-1_poznamka_o_snatku.jpg"
+    "A_prehled_L11.jpg",
+    "A_klobouky_2736_sn63_zapis38_full.jpg",
+    "ZA-1_datum_narozeni.png",
+    "ZA-1_sloupec_otec.png",
+    "ZA-1_cislo_zapisu.png",
+    "ZA-1_poznamka_o_snatku.png"
    ]
   },
   {
@@ -948,13 +953,13 @@ var RODOKMEN_DATA = {
    "popis": "Karel Forejtník, domkář a obuvník v Kloboukách (29 let), syn Josefa Forejtníka, čtvrtláníka, a Veroniky rozené Vystoupilové, se oženil s Rozálií Veselou, dělnicí v Kloboukách (29 let), dcerou Jakuba Veselého, kožešníka, a Antonie rozené Halmové. Ohlášky zřejmě v lednu 1883.",
    "pramen": "PR-E",
    "dukazy": [
-    "img/dukazy/B_prehled_L11.jpg",
-    "img/dukazy/B_klobouky_2755_sn2_dole_full.jpg",
-    "img/dukazy/ZB-4_cislo_a_daty.jpg",
-    "img/dukazy/ZB-4_zenich_sloupec.jpg",
-    "img/dukazy/ZB-4_rodice_zenicha.jpg",
-    "img/dukazy/ZB-4_nevesta_sloupec.jpg",
-    "img/dukazy/ZB-4_nevesta_detail_rodice.jpg"
+    "B_prehled_L11.png",
+    "B_klobouky_2755_sn2_dole_full.jpg",
+    "ZB-4_cislo_a_daty.png",
+    "ZB-4_zenich_sloupec.jpg",
+    "ZB-4_rodice_zenicha.png",
+    "ZB-4_nevesta_sloupec.jpg",
+    "ZB-4_nevesta_detail_rodice.jpg"
    ],
    "pozn": "Datum 5. 2. 1883: u podpisu faráře přečteno „5“, zbývající data kolísala; rejstřík sňatků (PR-G, převzatý přepis) uvádí „5. února 1883, str. 6“, což datum podporuje, ale rukopis datumu v zápise sám dosud nebyl přečten jednoznačně."
   },
@@ -972,7 +977,7 @@ var RODOKMEN_DATA = {
    "popis": "Emilie Forejtníková (provdaná Kosek) se narodila 10. května 1924 v Kosticích; údaj z rodného listu syna Miroslava.",
    "pramen": "PR-A",
    "dukazy": [
-    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+    "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
    ]
   },
   {
@@ -1007,9 +1012,9 @@ var RODOKMEN_DATA = {
    "popis": "Sňatek rodičů Anny: vlastní oddací zápis a odpovídající poznámka v narození Anny.",
    "pramen": "PR-K",
    "dukazy": [
-    "img/dukazy/20261102_kniha2755_sn034_full12.jpg",
-    "img/dukazy/20261102_sn34_zapis_a.jpg",
-    "img/dukazy/20261102_sn34_zapis_b.jpg"
+    "dukazy/20261102_kniha2755_sn034_full12.jpg",
+    "dukazy/20261102_sn34_zapis_a.jpg",
+    "dukazy/20261102_sn34_zapis_b.jpg"
    ]
   },
   {
@@ -1026,9 +1031,9 @@ var RODOKMEN_DATA = {
    "popis": "Zářijový rodný zápis; rodiče František a Eva. Převzatý archivní obraz s nejistou katalogovou citací.",
    "pramen": "PR-L",
    "dukazy": [
-    "img/dukazy/20261102_A3_1877_sn142.jpg",
-    "img/dukazy/20261102_sn142_genovefa_L13b.jpg",
-    "img/dukazy/20261102_sn142_genovefa_L13c.jpg"
+    "dukazy/20261102_A3_1877_sn142.jpg",
+    "dukazy/20261102_sn142_genovefa_L13b.jpg",
+    "dukazy/20261102_sn142_genovefa_L13c.jpg"
    ]
   }
  ],
@@ -1406,7 +1411,7 @@ var RODOKMEN_DATA = {
    "archiv": "rodinný archiv (dodaný dokument)",
    "url": null,
    "soubory": [
-    "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+    "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
    ],
    "provenience": "dokument"
   },
@@ -1418,17 +1423,17 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, RC farnost Klobouky u Brna",
    "url": "https://www.mza.cz/actapublica/matrika/detail/14893?image=216000010-00253-00000002736-000-000000000-000002736-02070.jp2",
    "soubory": [
-    "img/dukazy/B2736_sn207_leva.jpg",
-    "img/dukazy/B2736_sn207L_radka.jpg",
-    "img/dukazy/B2736_radka_leva.jpg",
-    "img/dukazy/B2736_radka_prava.jpg",
-    "img/dukazy/B2736_radka_datum.jpg",
-    "img/dukazy/B2736_radka_jmeno.jpg",
-    "img/dukazy/B2736_radka_otec_col.jpg",
-    "img/dukazy/B2736_radka_matka_col.jpg",
-    "img/dukazy/B2736_sn207L_dole.jpg",
-    "img/dukazy/B2736_sn207L_dole2.jpg",
-    "img/dukazy/B2736_sn207L_full.jpg"
+    "B2736_sn207_leva.png",
+    "B2736_sn207L_radka.jpg",
+    "B2736_radka_leva.jpg",
+    "B2736_radka_prava.jpg",
+    "B2736_radka_datum.jpg",
+    "B2736_radka_jmeno.jpg",
+    "B2736_radka_otec_col.jpg",
+    "B2736_radka_matka_col.jpg",
+    "B2736_sn207L_dole.jpg",
+    "B2736_sn207L_dole2.jpg",
+    "B2736_sn207L_full.png"
    ],
    "prepis": {
     "datum": "narozen 29. 11. 1921 v Kloboukách (den „29“ ověřen znak po znaku), legitimní",
@@ -1452,13 +1457,13 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, RC farnost Klobouky u Brna",
    "url": "https://www.mza.cz/actapublica/matrika/detail/12400?image=216000010-000253-003370-000000-002755-000000-00-00850.jp2",
    "soubory": [
-    "img/dukazy/C_klobouky_2755_sn85_prehled.jpg",
-    "img/dukazy/C_sn85_stred.jpg",
-    "img/dukazy/C_stred_zenich.jpg",
-    "img/dukazy/C_stred_nevesta.jpg",
-    "img/dukazy/C_sn85_dole_A.jpg",
-    "img/dukazy/C_sn85_dole_B.jpg",
-    "img/dukazy/C_2755_sn85_full.jpg"
+    "C_klobouky_2755_sn85_prehled.jpg",
+    "C_sn85_stred.jpg",
+    "C_stred_zenich.jpg",
+    "C_stred_nevesta.jpg",
+    "C_sn85_dole_A.jpg",
+    "C_sn85_dole_B.jpg",
+    "C_2755_sn85_full.png"
    ],
    "prepis": {
     "datum": "26. dubna 1921, Klobouky",
@@ -1483,14 +1488,14 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, RC farnost Klobouky u Brna",
    "url": "https://www.mza.cz/actapublica/matrika/detail/14893?image=216000010-00253-00000002736-000-000000000-000002736-00630.jp2",
    "soubory": [
-    "img/dukazy/A_prehled_L11.jpg",
-    "img/dukazy/A_klobouky_2736_sn63_zapis38_full.jpg",
-    "img/dukazy/ZA-1_cislo_zapisu.jpg",
-    "img/dukazy/ZA-1_datum_narozeni.jpg",
-    "img/dukazy/ZA-1_sloupec_otec.jpg",
-    "img/dukazy/ZA-1_poznamka_o_snatku.jpg",
-    "img/dukazy/A_browser_topright.jpg",
-    "img/dukazy/A_browser_zaznam.jpg"
+    "A_prehled_L11.jpg",
+    "A_klobouky_2736_sn63_zapis38_full.jpg",
+    "ZA-1_cislo_zapisu.png",
+    "ZA-1_datum_narozeni.png",
+    "ZA-1_sloupec_otec.png",
+    "ZA-1_poznamka_o_snatku.png",
+    "A_browser_topright.png",
+    "A_browser_zaznam.png"
    ],
    "prepis": {
     "nadpis": "Anno Domine 1895",
@@ -1513,15 +1518,15 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, RC farnost Klobouky u Brna",
    "url": "https://www.mza.cz/actapublica/matrika/detail/12400?image=216000010-000253-003370-000000-002755-000000-00-00020.jp2",
    "soubory": [
-    "img/dukazy/B_prehled_L11.jpg",
-    "img/dukazy/B_klobouky_2755_sn2_dole_full.jpg",
-    "img/dukazy/ZB-4_cislo_a_daty.jpg",
-    "img/dukazy/ZB-4_zenich_sloupec.jpg",
-    "img/dukazy/ZB-4_rodice_zenicha.jpg",
-    "img/dukazy/ZB-4_zenich_vedlejsi_sloupce.jpg",
-    "img/dukazy/ZB-4_nevesta_sloupec.jpg",
-    "img/dukazy/ZB-4_nevesta_detail_rodice.jpg",
-    "img/dukazy/ZB-4_nevesta_vedlejsi_sloupce.jpg"
+    "B_prehled_L11.png",
+    "B_klobouky_2755_sn2_dole_full.jpg",
+    "ZB-4_cislo_a_daty.png",
+    "ZB-4_zenich_sloupec.jpg",
+    "ZB-4_rodice_zenicha.png",
+    "ZB-4_zenich_vedlejsi_sloupce.png",
+    "ZB-4_nevesta_sloupec.jpg",
+    "ZB-4_nevesta_detail_rodice.jpg",
+    "ZB-4_nevesta_vedlejsi_sloupce.png"
    ],
    "prepis": {
     "zenich": "Karel Forejtník, domkář a obuvník v Kloboukách, 29 let, kath.; manž. syn Josefa Forejtníka, čtvrtláníka v Kloboucích, a Veroniky roz. Václava Vystoupila; rodiče katolíci a mrtvi.",
@@ -1544,14 +1549,14 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, farnost Tvrdonice (Kostice)",
    "url": "https://www.mza.cz/actapublica/matrika/detail/258?image=216000010-00253-003370-000000-003443-000000-FM-B09549-00490.jp2",
    "soubory": [
-    "img/dukazy/F_tvrdonice_3443_sn49_native.jpg",
-    "img/dukazy/F_tvrdonice_3443_sn49_celkem.jpg",
-    "img/dukazy/F_sn49_p1.jpg",
-    "img/dukazy/F_sn49_zapis_top.jpg",
-    "img/dukazy/F_sn49_zenich.jpg",
-    "img/dukazy/F_sn49_nevesta.jpg",
-    "img/dukazy/F_browser_sn49.jpg",
-    "img/dukazy/F_tvrdonice_3443_sn49_full2.jpg"
+    "F_tvrdonice_3443_sn49_native.jpg",
+    "F_tvrdonice_3443_sn49_celkem.png",
+    "F_sn49_p1.jpg",
+    "F_sn49_zapis_top.jpg",
+    "F_sn49_zenich.jpg",
+    "F_sn49_nevesta.jpg",
+    "F_browser_sn49.png",
+    "F_tvrdonice_3443_sn49_full2.png"
    ],
    "nejistoty": [
     "přímé čtení tohoto zápisu se v tomto kole nepovedlo: sken knihy má nízké rozlišení (1123×1766 px na stránku) a opakovaná strojová čtení dávala zásadně rozporná jména (Cyril Kosec + Anežka Tesařová? / Janelib Franciska?...) – viz sporna_cteni.json SP-4",
@@ -1569,13 +1574,13 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica, RC farnost Klobouky u Brna",
    "url": "https://www.mza.cz/actapublica/matrika/detail/15190?image=216000010-00253-00000002786-000-000000000-000002786-00090.jp2",
    "soubory": [
-    "img/dukazy/R2786_sn9_prehled.jpg",
-    "img/dukazy/R2786_sn9_radek1.jpg",
-    "img/dukazy/R2786_sn9_radek1_datum.jpg",
-    "img/dukazy/R2786_sn9_radek1_jmena.jpg",
-    "img/dukazy/R2786_sn9_prvni_radky.jpg",
-    "img/dukazy/R2786_sn9_r1a.jpg",
-    "img/dukazy/R2786_sn9_r1b.jpg"
+    "R2786_sn9_prehled.jpg",
+    "R2786_sn9_radek1.jpg",
+    "R2786_sn9_radek1_datum.jpg",
+    "R2786_sn9_radek1_jmena.jpg",
+    "R2786_sn9_prvni_radky.jpg",
+    "R2786_sn9_r1a.jpg",
+    "R2786_sn9_r1b.jpg"
    ],
    "nejistoty": [
     "příjmení ženicha psáno v rejstříku zkráceně/bez diakritiky (čteno „Foretník/Forejtník“) – jde o zápis rejstříkáře, nikoli rozpor s matrikou",
@@ -1602,11 +1607,11 @@ var RODOKMEN_DATA = {
    "archiv": "MZA Brno, Acta Publica",
    "url": null,
    "soubory": [
-    "img/dukazy/C_2755_sn85_full.jpg",
-    "img/dukazy/B2736_sn207L_full.jpg",
-    "img/dukazy/K2736_sn093_full.jpg",
-    "img/dukazy/K2753_sn055R_full.jpg",
-    "img/dukazy/R2785_sn012_full.jpg"
+    "C_2755_sn85_full.png",
+    "B2736_sn207L_full.png",
+    "K2736_sn093_full.png",
+    "K2753_sn055R_full.png",
+    "R2785_sn012_full.png"
    ],
    "nejistoty": [
     "strojové čtení některých snímků se v 3. kole nepodařilo dokončit kvůli dočasnému limitu API vizuálního modelu; snímky jsou uloženy a připraveny k přečtení"
@@ -1632,10 +1637,10 @@ var RODOKMEN_DATA = {
    ],
    "provenience": "matrika",
    "soubory": [
-    "img/dukazy/20261102_Anna_1900_sn96.jpg",
-    "img/dukazy/20261102_A1_r36_zapad.jpg",
-    "img/dukazy/20261102_A1_r36_vychod.jpg",
-    "img/dukazy/20261102_A1_hlavicky_kompozit.jpg"
+    "20261102_Anna_1900_sn96.jpg",
+    "20261102_A1_r36_zapad.jpg",
+    "20261102_A1_r36_vychod.jpg",
+    "20261102_A1_hlavicky_kompozit.jpg"
    ],
    "pozn": "Obraz zkontrolován při integraci 2. 11. 2026. Původní výstupy GLM zůstávají ke stažení odděleně od opravených údajů."
   },
@@ -1657,9 +1662,9 @@ var RODOKMEN_DATA = {
    ],
    "provenience": "matrika",
    "soubory": [
-    "img/dukazy/20261102_kniha2755_sn034_full12.jpg",
-    "img/dukazy/20261102_sn34_zapis_a.jpg",
-    "img/dukazy/20261102_sn34_zapis_b.jpg"
+    "20261102_kniha2755_sn034_full12.jpg",
+    "20261102_sn34_zapis_a.jpg",
+    "20261102_sn34_zapis_b.jpg"
    ],
    "pozn": "Obraz zkontrolován při integraci 2. 11. 2026. Původní výstupy GLM zůstávají ke stažení odděleně od opravených údajů."
   },
@@ -1682,9 +1687,9 @@ var RODOKMEN_DATA = {
    ],
    "provenience": "matrika",
    "soubory": [
-    "img/dukazy/20261102_A3_1877_sn142.jpg",
-    "img/dukazy/20261102_sn142_genovefa_L13b.jpg",
-    "img/dukazy/20261102_sn142_genovefa_L13c.jpg"
+    "20261102_A3_1877_sn142.jpg",
+    "20261102_sn142_genovefa_L13b.jpg",
+    "20261102_sn142_genovefa_L13c.jpg"
    ],
    "pozn": "Obraz zkontrolován při integraci 2. 11. 2026. Původní výstupy GLM zůstávají ke stažení odděleně od opravených údajů."
   }
@@ -1692,7 +1697,7 @@ var RODOKMEN_DATA = {
  "galerie": [
   {
    "id": "G-RODNY-LIST-1954",
-   "soubor": "img/dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg",
+   "soubor": "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg",
    "titulek": "Rodný list Miroslava Forejtníka (1954)",
    "popis": "Sken rodinného dokumentu dodaný uživatelem. Vystaven 28. dubna 1954 ve Valticích; obsahuje údaje o narození, rodičích a prarodičích.",
    "pramen": "PR-A",
@@ -1701,7 +1706,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G1",
-   "soubor": "img/dukazy/A_prehled_L11.jpg",
+   "soubor": "dukazy/A_prehled_L11.jpg",
    "titulek": "Přehled dvojstrany – narozených Klobouky, kniha 2736",
    "popis": "Přehled snímku 63 na úrovni skládání L11. Vpravo nahoře ručně psaný nadpis „Anno Domine 1895“ – první zápis roku je narození Bohuslava Forejtníka.",
    "pramen": "PR-D",
@@ -1710,7 +1715,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G2",
-   "soubor": "img/dukazy/A_klobouky_2736_sn63_zapis38_full.jpg",
+   "soubor": "dukazy/A_klobouky_2736_sn63_zapis38_full.jpg",
    "titulek": "Celá oblast zápisu A v plném rozlišení",
    "popis": "Oblast x 3700–7455, y 200–1800 plného rozlišení snímku 63; zápis č. 1/1895 vpravo nahoře.",
    "pramen": "PR-D",
@@ -1719,7 +1724,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G3",
-   "soubor": "img/dukazy/ZA-1_cislo_zapisu.jpg",
+   "soubor": "dukazy/ZA-1_cislo_zapisu.png",
    "titulek": "Číslo zápisu A: 1",
    "popis": "Úzký výřez sloupce čísel: jasně čitelné „1“ – první zápis roku 1895. Starší širší výřezy dávaly chybná čísla „38/138/185“.",
    "pramen": "PR-D",
@@ -1728,7 +1733,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G4",
-   "soubor": "img/dukazy/ZA-1_datum_narozeni.jpg",
+   "soubor": "dukazy/ZA-1_datum_narozeni.png",
    "titulek": "Datum narození Bohuslava: 3. 1. 1895",
    "popis": "Výřez sloupců Rok/Měsíc/Den narození: 1895 / 1 / 3. Tři nezávislá konzistentní čtení.",
    "pramen": "PR-D",
@@ -1737,7 +1742,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G5",
-   "soubor": "img/dukazy/ZA-1_sloupec_otec.jpg",
+   "soubor": "dukazy/ZA-1_sloupec_otec.png",
    "titulek": "Otec dítěte: Karel Forejtník, domkář",
    "popis": "Sloupec Rodičové–Otec: „Karel Forejtník, domkář v Kloboukách“ + zlomek „manž. syn Josefa Forejtníka … a Veroniky …“.",
    "pramen": "PR-D",
@@ -1746,7 +1751,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G6",
-   "soubor": "img/dukazy/ZA-1_poznamka_o_snatku.jpg",
+   "soubor": "dukazy/ZA-1_poznamka_o_snatku.png",
    "titulek": "Okrajová poznámka o sňatku Bohuslava (1921)",
    "popis": "Dodatečně psaná poznámka u zápisu: „… 1921 … s Annou Dobrovolnou“ – rok a jméno přečteny 2×, den a měsíc nečitelné. Dle oddacího zápisu (PR-C) jde o 26. 4. 1921.",
    "pramen": "PR-D",
@@ -1755,7 +1760,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G7",
-   "soubor": "img/dukazy/A_browser_zaznam.jpg",
+   "soubor": "dukazy/A_browser_zaznam.png",
    "titulek": "Oficiální prohlížeč MZA – zápis A",
    "popis": "Screenshot prohlížeče Acta Publica (kniha 2736, snímek 63) s označenou polohou zápisu A. Nižší rozlišení než složené výřezy.",
    "pramen": "PR-D",
@@ -1764,7 +1769,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G8",
-   "soubor": "img/dukazy/B_prehled_L11.jpg",
+   "soubor": "dukazy/B_prehled_L11.png",
    "titulek": "Přehled dvojstrany – oddací kniha 2755 (1883–1948)",
    "popis": "Přehled snímku 2. Levá strana = začátek roku 1883; hledaný zápis č. 4 (Karel Forejtník × Rozálie Veselá) vlevo dole.",
    "pramen": "PR-E",
@@ -1773,7 +1778,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G9",
-   "soubor": "img/dukazy/B_klobouky_2755_sn2_dole_full.jpg",
+   "soubor": "dukazy/B_klobouky_2755_sn2_dole_full.jpg",
    "titulek": "Celá oblast zápisu B v plném rozlišení",
    "popis": "Oblast x 0–3700, y 2700–5459 plného rozlišení snímku 2; zápis č. 4/1883 vlevo dole.",
    "pramen": "PR-E",
@@ -1782,7 +1787,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G10",
-   "soubor": "img/dukazy/ZB-4_cislo_a_daty.jpg",
+   "soubor": "dukazy/ZB-4_cislo_a_daty.png",
    "titulek": "Číslo zápisu B (4) a datové sloupce",
    "popis": "Číslo sňatku 4/1883 a sloupce dat; u podpisu faráře čitelné „5“ (oddávka 5. 2. 1883 pravděpodobně).",
    "pramen": "PR-E",
@@ -1791,7 +1796,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G11",
-   "soubor": "img/dukazy/ZB-4_zenich_sloupec.jpg",
+   "soubor": "dukazy/ZB-4_zenich_sloupec.jpg",
    "titulek": "Ženich: Karel Forejtník, domkář a obuvník",
    "popis": "Sloupec ženicha: jméno, povolání, stav, věk 29 let, náboženství katolické.",
    "pramen": "PR-E",
@@ -1800,7 +1805,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G12",
-   "soubor": "img/dukazy/ZB-4_rodice_zenicha.jpg",
+   "soubor": "dukazy/ZB-4_rodice_zenicha.png",
    "titulek": "Rodiče ženicha: Josef Forejtník a Veronika roz. Vystoupilová",
    "popis": "„Manž. syn Josefa Forejtníka, čtvrtláníka v Kloboucích, a Veroniky roz. Václava Vystoupila. Rodiče katolíci a mrtvi.“ Mužský tvar v genitivu (Václava Vystoupila) označuje otce Veroniky, nikoli manžela.",
    "pramen": "PR-E",
@@ -1809,7 +1814,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G13",
-   "soubor": "img/dukazy/ZB-4_nevesta_sloupec.jpg",
+   "soubor": "dukazy/ZB-4_nevesta_sloupec.jpg",
    "titulek": "Nevěsta: Rozálie Veselá, dělnice",
    "popis": "Sloupec nevěsty: jméno, povolání (dělnice v Kloboukách), věk 29 let, katolická.",
    "pramen": "PR-E",
@@ -1818,7 +1823,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G14",
-   "soubor": "img/dukazy/ZB-4_nevesta_detail_rodice.jpg",
+   "soubor": "dukazy/ZB-4_nevesta_detail_rodice.jpg",
    "titulek": "Rodiče nevěsty: Jakub Veselý a Antonie roz. Halmová",
    "popis": "„Manž. dcera Jakuba Veselého, kožešníka v Kloboucích, a Antonie roz. Josefa Halma. Rodiče katolíci a mrtvi.“ Josef Halm je otec Antonie.",
    "pramen": "PR-E",
@@ -1827,7 +1832,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G15",
-   "soubor": "img/dukazy/hledani_K2734_sn112_prehled.jpg",
+   "soubor": "dukazy/hledani_K2734_sn112_prehled.jpg",
    "titulek": "Pracovní podklad: hledání narození Karla a Rozálie (fol. 221/222)",
    "popis": "Přehled snímku 112 knihy narozených 2734 (1838–1858). Mapování ověřeno na hlavičkách: snímek N = folia [2N−4]/[2N−3]. Prohledány sloupce matek a dětí folií 221–225 (snímky 112–114) – narození Karla Forejtníka ani Rozálie Veselé nenalezena (slabý negativní výsledek, model vynechává záznamy).",
    "pramen": null,
@@ -1836,7 +1841,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G16",
-   "soubor": "img/dukazy/hledani_K2734_sn113_prehled.jpg",
+   "soubor": "dukazy/hledani_K2734_sn113_prehled.jpg",
    "titulek": "Pracovní podklad: hledání (fol. 222–223)",
    "popis": "Snímek 113 knihy 2734 = folia 222/223 (ověřeno z hlaviček „Klobouker Geburtsbuch fol. 222/223“). Fol. 222: leden–březen 1853/54; sloupec dětí přečten (20 jmen), Karl/Rosalia nenalezen.",
    "pramen": null,
@@ -1845,7 +1850,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G17",
-   "soubor": "img/dukazy/hledani_K2734_sn114_prehled.jpg",
+   "soubor": "dukazy/hledani_K2734_sn114_prehled.jpg",
    "titulek": "Pracovní podklad: hledání (fol. 224–225)",
    "popis": "Snímek 114 knihy 2734 = folia 224/225. Fol. 224 = rok 1854 (hlavička), fol. 225 = srpen–říjen 1854/55. Sloupce matek bez Veroniky/Antonie (slabý negativní výsledek).",
    "pramen": null,
@@ -1854,7 +1859,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G19",
-   "soubor": "img/dukazy/R2786_sn9_radek1.jpg",
+   "soubor": "dukazy/R2786_sn9_radek1.jpg",
    "titulek": "Rejstřík oddaných: řádek sňatku Karla a Rozálie (1883)",
    "popis": "Kniha 2786 (rejstřík oddaných 1883–1949), snímek 9, první řádek sekce: „1883, 5. února, Forejtník Karel a Veselá Rozalie, Klobouky, str. 6“. V tomto kole ověřeno přímo obrazem (2 nezávislá čtení buněk); datum i strana podporují zápis B.",
    "pramen": "PR-G",
@@ -1863,7 +1868,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G20",
-   "soubor": "img/dukazy/C_stred_zenich.jpg",
+   "soubor": "dukazy/C_stred_zenich.jpg",
    "titulek": "Sňatek Bohuslava a Anny 1921 – ženich",
    "popis": "Kniha 2755 (oddací 1883–1948), str. 172: „Bohuslav Forejtník, stolař v Břeclavi, zákonný syn Karla Forejtníka, domkáře v Kloboukách, a Rozálie rozené Veselé.“ Přímé čtení z tohoto kola.",
    "pramen": "PR-C",
@@ -1872,7 +1877,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G21",
-   "soubor": "img/dukazy/C_stred_nevesta.jpg",
+   "soubor": "dukazy/C_stred_nevesta.jpg",
    "titulek": "Sňatek Bohuslava a Anny 1921 – nevěsta a svědci",
    "popis": "Nevěsta: Anna Dobrovolná (…volná), 20 let, dcera Josefa Dobrovolného, zedníka v Kloboukách. Svědci: Rudolf Forejtník + Josef Dobrovolný (domkář č. 205). Detail roku narození nevěsty se čtl rozporně (1900 vs. 1901) – viz sporná čtení.",
    "pramen": "PR-C",
@@ -1881,7 +1886,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G22",
-   "soubor": "img/dukazy/B2736_radka_prava.jpg",
+   "soubor": "dukazy/B2736_radka_prava.jpg",
    "titulek": "Rodný zápis Jaroslava 1921 – sloupce rodičů",
    "popis": "Kniha 2736, snímek 207: otec Bohuslav Forejtník (manž. syn Karla domkáře a Rozálie rozené Veselé, nar. 3. 1. 1895, oddán v Kloboucích); matka Anna Dobrovolná (nar. 27/6. 1900, dcera Josefa Dobrovolného, zedníka). Poznámka: rodiče oddáni 26. 4. 1921.",
    "pramen": "PR-B",
@@ -1890,7 +1895,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G23",
-   "soubor": "img/dukazy/B2736_radka_datum.jpg",
+   "soubor": "dukazy/B2736_radka_datum.jpg",
    "titulek": "Rodný zápis Jaroslava – datum narození 29. 11. 1921",
    "popis": "Úzký výřez sloupců data: den „29“ ověřen znak po znaku (druhá číslice má tvar 9 s ocáskem, nikoliv 0). Měsíc listopad, rok 1921.",
    "pramen": "PR-B",
@@ -1899,7 +1904,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G24",
-   "soubor": "img/dukazy/R2785_sn012L_p300.jpg",
+   "soubor": "dukazy/R2785_sn012L_p300.jpg",
    "titulek": "Pracovní podklad: rejstřík oddaných 1819–1882, sekce F",
    "popis": "Kniha 2785, snímek 12 levá: sekce F (Forejtník) s řádky 1838–1881. První řádek: 1838, ~20.–26. 2., ženich Josef F[orejtník?], nevěsta NEČITELNÁ (čtení kolísala Josefa/Anna/[?]), str. 109 – sňatek rodičů Karla Forejtníka nebylo možné potvrdit ani vyloučit (viz sporna_cteni.json SP-1/SP-2).",
    "pramen": null,
@@ -1908,7 +1913,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G25",
-   "soubor": "img/dukazy/F_tvrdonice_3443_sn49_native.jpg",
+   "soubor": "dukazy/F_tvrdonice_3443_sn49_native.jpg",
    "titulek": "Pracovní podklad: sňatek Kosků 1919 – neúspěšné čtení",
    "popis": "Kniha 3443 (oddací Tvrdonice 1909–1925), snímek 49, zápis z 25. 6. 1919. Sken má nízké rozlišení; opakovaná strojová čtení dávala zásadně rozporná jména (jen datum a ženich Cyril Kose[c]k se čtli shodně s převzatým přepisem). Vazba na Emilii zůstává hypotézou.",
    "pramen": null,
@@ -1917,7 +1922,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G26",
-   "soubor": "img/dukazy/K2736_sn093_prava_full.jpg",
+   "soubor": "dukazy/K2736_sn093_prava_full.jpg",
    "titulek": "Pracovní podklad: hledání narození Anny Dobrovolné (červen 1900)",
    "popis": "Kniha 2736 (narození), str. 181, červen–červenec 1900: zápisy z 19./20./21. 6. a 1./4./5. 7. 1900 – zápis Anny Dobrovolné zde není (slabý negativní výsledek; rodiště Anny tedy dosud neověřeno).",
    "pramen": null,
@@ -1928,7 +1933,7 @@ var RODOKMEN_DATA = {
    "id": "G27-3kolo-1",
    "skupina": "3. kolo – originály snímků",
    "typ": "pracovni",
-   "soubor": "img/dukazy/C_2755_sn85_full.jpg",
+   "soubor": "dukazy/C_2755_sn85_full.png",
    "titulek": "Oddací kniha 2755, sn. 85 – celá dvoustrana (1921)",
    "popis": "Originální sken v plném rozlišení 7353×5434; svatební zápis Bohuslava Forejtníka a Anny Dobrovolné z 26. 4. 1921.",
    "pramen": "PR-H"
@@ -1937,7 +1942,7 @@ var RODOKMEN_DATA = {
    "id": "G27-3kolo-2",
    "skupina": "3. kolo – originály snímků",
    "typ": "pracovni",
-   "soubor": "img/dukazy/K2736_sn093_full.jpg",
+   "soubor": "dukazy/K2736_sn093_full.png",
    "titulek": "Narození 2736, sn. 93 – celá dvoustrana (VI.–VII. 1900)",
    "popis": "Hledání rodného zápisu Anny Dobrovolné (27. 6. 1900) v Kloboukách; originální sken 7455×5846.",
    "pramen": "PR-H"
@@ -1946,7 +1951,7 @@ var RODOKMEN_DATA = {
    "id": "G27-3kolo-3",
    "skupina": "3. kolo – originály snímků",
    "typ": "pracovni",
-   "soubor": "img/dukazy/B2736_sn207L_full.jpg",
+   "soubor": "dukazy/B2736_sn207L_full.png",
    "titulek": "Narození 2736, sn. 207 – levá strana (XI. 1921)",
    "popis": "Rodný zápis Jaroslava Josefa Forejtníka v originálním rozlišení 3750×5863.",
    "pramen": "PR-H"
@@ -1955,7 +1960,7 @@ var RODOKMEN_DATA = {
    "id": "G27-3kolo-4",
    "skupina": "3. kolo – originály snímků",
    "typ": "pracovni",
-   "soubor": "img/dukazy/K2753_sn055R_full.jpg",
+   "soubor": "dukazy/K2753_sn055R_full.png",
    "titulek": "Oddací 2753, sn. 55 – pravá strana (1838)",
    "popis": "Začátek roku 1838 včetně sporného zápisu č. 2 (kandidát sňatku Josefa Forejtníka a Veroniky Vystoupilové).",
    "pramen": "PR-H"
@@ -1964,14 +1969,14 @@ var RODOKMEN_DATA = {
    "id": "G27-3kolo-5",
    "skupina": "3. kolo – originály snímků",
    "typ": "pracovni",
-   "soubor": "img/dukazy/F_tvrdonice_3443_sn49_full2.jpg",
+   "soubor": "dukazy/F_tvrdonice_3443_sn49_full2.png",
    "titulek": "Oddací 3443 (Kostice), sn. 49 – celá dvoustrana (1919)",
    "popis": "Skutečné původní rozlišení 2147×1747 (předchozí kolo mělo zmenšeninu). Kandidátní sňatek Cyrila Koska a Alžběty Trpělkové z 25. 6. 1919, strojově ale nečitelné – viz SP-4.",
    "pramen": "PR-F"
   },
   {
    "id": "G-PR-J-1",
-   "soubor": "img/dukazy/20261102_Anna_1900_sn96.jpg",
+   "soubor": "dukazy/20261102_Anna_1900_sn96.jpg",
    "titulek": "Narození Anny Dobrovolné (1900) – celý obraz",
    "popis": "Klobouky u Brna, kniha 2736, snímek 96, fol. 187, zápis 36. Anna, dcera Josefa Dobrovolného a Genovéfy. Ve sloupci narození/křtu jsou 27. a 29. června; 29 není přijatá oprava narození na 29. června. Sňatek rodičů poznamenán 4. října 1899.",
    "pramen": "PR-J",
@@ -1980,7 +1985,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-J-2",
-   "soubor": "img/dukazy/20261102_A1_r36_zapad.jpg",
+   "soubor": "dukazy/20261102_A1_r36_zapad.jpg",
    "titulek": "Narození Anny Dobrovolné (1900) – detail 1",
    "popis": "Klobouky u Brna, kniha 2736, snímek 96, fol. 187, zápis 36. Anna, dcera Josefa Dobrovolného a Genovéfy. Ve sloupci narození/křtu jsou 27. a 29. června; 29 není přijatá oprava narození na 29. června. Sňatek rodičů poznamenán 4. října 1899.",
    "pramen": "PR-J",
@@ -1989,7 +1994,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-J-3",
-   "soubor": "img/dukazy/20261102_A1_r36_vychod.jpg",
+   "soubor": "dukazy/20261102_A1_r36_vychod.jpg",
    "titulek": "Narození Anny Dobrovolné (1900) – detail 2",
    "popis": "Klobouky u Brna, kniha 2736, snímek 96, fol. 187, zápis 36. Anna, dcera Josefa Dobrovolného a Genovéfy. Ve sloupci narození/křtu jsou 27. a 29. června; 29 není přijatá oprava narození na 29. června. Sňatek rodičů poznamenán 4. října 1899.",
    "pramen": "PR-J",
@@ -1998,7 +2003,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-J-4",
-   "soubor": "img/dukazy/20261102_A1_hlavicky_kompozit.jpg",
+   "soubor": "dukazy/20261102_A1_hlavicky_kompozit.jpg",
    "titulek": "Narození Anny Dobrovolné (1900) – detail 3",
    "popis": "Klobouky u Brna, kniha 2736, snímek 96, fol. 187, zápis 36. Anna, dcera Josefa Dobrovolného a Genovéfy. Ve sloupci narození/křtu jsou 27. a 29. června; 29 není přijatá oprava narození na 29. června. Sňatek rodičů poznamenán 4. října 1899.",
    "pramen": "PR-J",
@@ -2007,7 +2012,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-K-1",
-   "soubor": "img/dukazy/20261102_kniha2755_sn034_full12.jpg",
+   "soubor": "dukazy/20261102_kniha2755_sn034_full12.jpg",
    "titulek": "Sňatek Josefa Dobrovolného a Genovéfy (1899) – celý obraz",
    "popis": "Klobouky u Brna, kniha 2755, snímek 34, levá strana, horní zápis, 4. října 1899. Totožnost s rodiči Anny opíráme o rodiče obou snoubenců a stejnou poznámku o oddavkách u Anny.",
    "pramen": "PR-K",
@@ -2016,7 +2021,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-K-2",
-   "soubor": "img/dukazy/20261102_sn34_zapis_a.jpg",
+   "soubor": "dukazy/20261102_sn34_zapis_a.jpg",
    "titulek": "Sňatek Josefa Dobrovolného a Genovéfy (1899) – detail 1",
    "popis": "Klobouky u Brna, kniha 2755, snímek 34, levá strana, horní zápis, 4. října 1899. Totožnost s rodiči Anny opíráme o rodiče obou snoubenců a stejnou poznámku o oddavkách u Anny.",
    "pramen": "PR-K",
@@ -2025,7 +2030,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-K-3",
-   "soubor": "img/dukazy/20261102_sn34_zapis_b.jpg",
+   "soubor": "dukazy/20261102_sn34_zapis_b.jpg",
    "titulek": "Sňatek Josefa Dobrovolného a Genovéfy (1899) – detail 2",
    "popis": "Klobouky u Brna, kniha 2755, snímek 34, levá strana, horní zápis, 4. října 1899. Totožnost s rodiči Anny opíráme o rodiče obou snoubenců a stejnou poznámku o oddavkách u Anny.",
    "pramen": "PR-K",
@@ -2034,7 +2039,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-L-1",
-   "soubor": "img/dukazy/20261102_A3_1877_sn142.jpg",
+   "soubor": "dukazy/20261102_A3_1877_sn142.jpg",
    "titulek": "Narození Genovéfy Tihlaříkové (1877) – celý obraz",
    "popis": "Přijatý obraz zápisu Genovéfy: září 17/18, číslo domu 266, rodiče František Tihlařík a Eva, dcera Tomáše Forejtníka. GLM uvádí knihu 2745, snímek 142; katalogový identifikátor a stránkování se nepodařilo nezávisle potvrdit. Údaj 266 je číslo domu, nikoli bezpečně určené pořadové číslo zápisu.",
    "pramen": "PR-L",
@@ -2043,7 +2048,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-L-2",
-   "soubor": "img/dukazy/20261102_sn142_genovefa_L13b.jpg",
+   "soubor": "dukazy/20261102_sn142_genovefa_L13b.jpg",
    "titulek": "Narození Genovéfy Tihlaříkové (1877) – detail 1",
    "popis": "Přijatý obraz zápisu Genovéfy: září 17/18, číslo domu 266, rodiče František Tihlařík a Eva, dcera Tomáše Forejtníka. GLM uvádí knihu 2745, snímek 142; katalogový identifikátor a stránkování se nepodařilo nezávisle potvrdit. Údaj 266 je číslo domu, nikoli bezpečně určené pořadové číslo zápisu.",
    "pramen": "PR-L",
@@ -2052,7 +2057,7 @@ var RODOKMEN_DATA = {
   },
   {
    "id": "G-PR-L-3",
-   "soubor": "img/dukazy/20261102_sn142_genovefa_L13c.jpg",
+   "soubor": "dukazy/20261102_sn142_genovefa_L13c.jpg",
    "titulek": "Narození Genovéfy Tihlaříkové (1877) – detail 2",
    "popis": "Přijatý obraz zápisu Genovéfy: září 17/18, číslo domu 266, rodiče František Tihlařík a Eva, dcera Tomáše Forejtníka. GLM uvádí knihu 2745, snímek 142; katalogový identifikátor a stránkování se nepodařilo nezávisle potvrdit. Údaj 266 je číslo domu, nikoli bezpečně určené pořadové číslo zápisu.",
    "pramen": "PR-L",
