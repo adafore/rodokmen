@@ -55,12 +55,6 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--papir);
-  background-image:
-    radial-gradient(ellipse 80% 55% at 50% 0%, rgba(255, 252, 245, 0.88) 0%, transparent 70%),
-    radial-gradient(circle at 12% 85%, rgba(124, 31, 40, 0.055) 0%, transparent 45%),
-    radial-gradient(circle at 88% 20%, rgba(140, 90, 20, 0.06) 0%, transparent 50%);
-  background-attachment: fixed;
   color: var(--inkoust);
   font-family: var(--sans);
   font-size: 16px;
@@ -71,10 +65,20 @@ body {
   flex-direction: column;
 }
 
+body, #obsah, #platno-kontejner, #canvas-container, .tree-viewport {
+  background-color: #f6f3ea !important;
+  background-image:
+    radial-gradient(circle, rgba(140, 100, 60, 0.12) 1px, transparent 1px),
+    radial-gradient(circle, rgba(140, 100, 60, 0.08) 1px, #f6f3ea 1px) !important;
+  background-size: 20px 20px, 40px 40px !important;
+  background-position: 0 0, 10px 10px !important;
+}
+
 /* Režim interaktivního plátna přes celou obrazovku */
 body.rezim-platno {
   overflow: hidden;
   height: 100vh;
+  height: 100dvh;
 }
 body.rezim-platno .paticka {
   display: none;
@@ -83,6 +87,7 @@ body.rezim-platno .obsah {
   max-width: none;
   width: 100vw;
   height: calc(100vh - var(--vyska-hlavicky));
+  height: calc(100dvh - var(--vyska-hlavicky));
   padding: 0;
   margin: 0;
   overflow: hidden;
@@ -676,39 +681,10 @@ a:hover {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #f4efe4;
   overflow: hidden;
   user-select: none;
   cursor: grab;
   touch-action: none;
-}
-
-/* Vícevrstvý nekonečný archivní papír (Multi-scale Seamless Paper) */
-.platno-papir-vrstva {
-  position: absolute;
-  left: -12000px;
-  top: -12000px;
-  width: 24000px;
-  height: 24000px;
-  pointer-events: none;
-  z-index: 0;
-  background-color: #f4f0e6;
-  background-image:
-    /* 1. Mikro-vrstva: procedurální SVG šum vláken buničiny (180x180 px, opacity 0.035, 100% bezešvý) */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='pulp' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0.35 0 0 0 0.14  0.30 0 0 0 0.11  0.24 0 0 0 0.08  0 0 0 0.035 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23pulp)'/%3E%3C/svg%3E"),
-    /* 2. Makro-vrstva: velkoplošné bezešvé přechody tónů slonové kosti (#f8f5ee) a knižního papíru (#eee9dc) přes 1500 px */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1500' height='1500' viewBox='0 0 1500 1500'%3E%3Cfilter id='macro' x='0%25' y='0%25' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0018' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.933  0 0 0 0 0.914  0 0 0 0 0.863  0 0 0 0.42 0'/%3E%3C/filter%3E%3Crect width='1500' height='1500' fill='%23f8f5ee'/%3E%3Crect width='1500' height='1500' filter='url(%23macro)'/%3E%3C/svg%3E"),
-    linear-gradient(0deg, rgba(248, 245, 238, 0.45) 0%, rgba(238, 233, 220, 0.45) 50%, rgba(248, 245, 238, 0.45) 100%),
-    linear-gradient(90deg, rgba(248, 245, 238, 0.45) 0%, rgba(238, 233, 220, 0.45) 50%, rgba(248, 245, 238, 0.45) 100%);
-  background-size:
-    180px 180px,
-    1500px 1500px,
-    1500px 1500px,
-    1500px 1500px;
-  background-repeat: repeat;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
 }
 .platno-kontejner.tazeni {
   cursor: grabbing;
@@ -718,6 +694,13 @@ a:hover {
 }
 .platno-kontejner.pohyb-karet-povolen .mapa-uzel:active {
   cursor: grabbing;
+}
+
+/* Mobilní plovoucí tlačítko (FAB) a spodní list (bottom sheet) – na PC skryté */
+.platno-mobilni-fab,
+.platno-mobilni-backdrop,
+.platno-mobilni-sheet {
+  display: none;
 }
 
 /* Horní plovoucí lišta nástrojů plátna */
@@ -851,6 +834,7 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
+  background: transparent !important;
   transform-origin: 0 0;
   will-change: transform;
   backface-visibility: hidden;
@@ -872,23 +856,24 @@ a:hover {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 210px;
+  width: 235px;
   pointer-events: none;
   z-index: 15;
   overflow: hidden;
+  background: linear-gradient(90deg, rgba(246, 243, 234, 0.96) 0%, rgba(246, 243, 234, 0.88) 80%, rgba(246, 243, 234, 0) 100%);
 }
 
 .generace-popisek {
   position: absolute;
-  left: 16px;
+  left: 0;
   top: 0;
   margin-top: 5px;
   font-family: var(--sans);
   font-size: 11.5px;
   font-weight: 500;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.04em;
   color: #334155;
-  background: rgba(248, 245, 238, 0.92);
+  background: rgba(246, 243, 234, 0.96);
   padding: 2px 7px;
   border-radius: 3px;
   white-space: nowrap;
@@ -901,6 +886,7 @@ a:hover {
   position: absolute;
   left: 0;
   top: 0;
+  background: transparent !important;
   overflow: visible;
   pointer-events: none;
   z-index: 1;
@@ -1982,30 +1968,218 @@ body.zamceno .paticka {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   :root {
-    --vyska-hlavicky: 108px;
+    --vyska-hlavicky: 46px;
   }
+
+  .hlavicka {
+    height: 46px;
+    min-height: 46px;
+    overflow: hidden;
+  }
+
   .hlavicka-vnitrek {
-    padding: 0.4rem 0.8rem;
-    gap: 0.45rem;
+    height: 46px;
+    padding: 0 0.55rem;
+    gap: 0.35rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  .logo {
+    gap: 0.35rem;
+    padding-right: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .logo-znak {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1rem;
+    box-shadow: 1px 1px 0px var(--inkoust);
+  }
+
+  .logo-nazev {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 520px) {
+    .logo-text {
+      display: none;
+    }
+    .logo {
+      padding-right: 0.3rem;
+      border-right: none;
+    }
+  }
+
   .navigace {
-    order: 3;
-    width: 100%;
+    flex: 1 1 auto;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-bottom: 2px;
+    gap: 0.12rem;
+    scrollbar-width: none;
   }
+  .navigace::-webkit-scrollbar {
+    display: none;
+  }
+
   .navigace a {
     white-space: nowrap;
-    font-size: 0.78rem;
-    padding: 0.28rem 0.5rem;
+    font-size: 0.71rem;
+    padding: 0.22rem 0.38rem;
   }
-  .hledani {
-    flex-basis: 180px;
-  }
-  .platno-info-panel {
+
+  /* V režimu plátna na mobilu skryjeme vyhledávací pole v hlavičce, aby lišta měla 1 řádek (46 px) */
+  body.rezim-platno .hledani {
     display: none;
+  }
+
+  .tlacitko-zamek {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Skrytí velkých desktopových ovládacích panelů na mobilu */
+  .platno-hud-nahore,
+  .platno-info-panel,
+  #platno-toggle-pohyb,
+  #platno-reset-karty,
+  #platno-fullscreen {
+    display: none !important;
+  }
+
+  /* Kompaktní plovoucí tlačítko (FAB) v rohu plátna (max výška 40 px) */
+  .platno-mobilni-fab {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 35;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.38rem;
+    height: 38px;
+    max-height: 48px;
+    padding: 0 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--papir-svetly);
+    background: var(--inkoust);
+    border: 1.5px solid var(--inkoust);
+    box-shadow: 3px 3px 0px rgba(24, 20, 17, 0.22);
+    cursor: pointer;
+  }
+
+  /* Spodní list (Bottom Sheet) pro filtry a výběr osoby na mobilu */
+  .platno-mobilni-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 190;
+    background: rgba(24, 20, 17, 0.42);
+    display: block;
+  }
+  .platno-mobilni-backdrop[hidden] {
+    display: none !important;
+  }
+
+  .platno-mobilni-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 200;
+    background: #faf6ee;
+    border-top: 2px solid var(--inkoust);
+    box-shadow: 0 -8px 28px rgba(24, 20, 17, 0.26);
+    padding: 0.85rem 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .platno-mobilni-sheet[hidden] {
+    display: none !important;
+  }
+
+  .platno-mobilni-sheet-hlavicka {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--linka);
+    padding-bottom: 0.5rem;
+  }
+
+  .platno-mobilni-sheet-titul {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--inkoust);
+  }
+
+  .platno-mobilni-sheet-zavrit {
+    background: transparent;
+    border: 1px solid var(--inkoust);
+    color: var(--inkoust);
+    width: 28px;
+    height: 28px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .platno-mobilni-sheet-telo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .platno-mobilni-pole {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .platno-mobilni-pole .platno-select {
+    max-width: none;
+    width: 100%;
+    height: 38px;
+    font-size: 0.85rem;
+  }
+
+  .platno-mobilni-rezimy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .platno-mobilni-rezimy .platno-tlacitko {
+    justify-content: center;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.76rem;
+  }
+
+  .platno-hud-dole {
+    bottom: 10px;
+    right: 10px;
+    left: auto;
+  }
+
+  .platno-osa-sloupec {
+    width: 148px;
+  }
+
+  .generace-popisek {
+    max-width: 132px;
+    white-space: normal;
+    line-height: 1.22;
+    font-size: 9.8px;
+    padding: 2px 5px;
   }
 }

@@ -625,10 +625,13 @@
       }
     });
 
+    var TREE_OFFSET_X = 1400; // Zajišťuje, že všechny karty začínají napravo od časové osy generací (x >= 250 px)
+    var minXByGen = {};
+
     plan.forEach(function (item) {
       var o = osobaById[item.id];
       if (!o) return;
-      var defaultX = Math.round(item.xSlot * SLOT_WIDTH);
+      var defaultX = Math.round(item.xSlot * SLOT_WIDTH) + TREE_OFFSET_X;
       var defaultY = Math.round((MAX_GEN - item.gen) * GEN_GAP_Y);
       var custom = vlastniPoziceUzlu['komplet_' + o.id];
       var u = {
@@ -640,20 +643,23 @@
         w: CARD_W,
         h: CARD_H
       };
+      if (minXByGen[item.gen] === undefined || u.x < minXByGen[item.gen]) {
+        minXByGen[item.gen] = u.x;
+      }
       uzly.push(u);
       uzelMap[o.id] = u;
     });
 
-    // Pásy generací (čisté časové údaje bez výčtů obcí)
+    // Pásy generací (čisté časové údaje bez výčtů obcí + minX první karty v řadě proti překryvu)
     var pasy = [
-      { gen: 7, y: (MAX_GEN - 7) * GEN_GAP_Y - 18, label: 'VIII. GENERACE · přelom 18. a 19. stol.' },
-      { gen: 6, y: (MAX_GEN - 6) * GEN_GAP_Y - 18, label: 'VII. GENERACE · 1. pol. 19. stol.' },
-      { gen: 5, y: (MAX_GEN - 5) * GEN_GAP_Y - 18, label: 'VI. GENERACE · ~1853–1877' },
-      { gen: 4, y: (MAX_GEN - 4) * GEN_GAP_Y - 18, label: 'V. GENERACE · 1891–1906' },
-      { gen: 3, y: (MAX_GEN - 3) * GEN_GAP_Y - 18, label: 'IV. GENERACE · 1921–1924' },
-      { gen: 2, y: (MAX_GEN - 2) * GEN_GAP_Y - 18, label: 'III. GENERACE · pol. 20. stol.' },
-      { gen: 1, y: (MAX_GEN - 1) * GEN_GAP_Y - 18, label: 'II. GENERACE · rodiče' },
-      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 18, label: 'I. GENERACE · současnost' }
+      { gen: 7, y: (MAX_GEN - 7) * GEN_GAP_Y - 18, minX: minXByGen[7] || 250, label: 'VIII. GENERACE · přelom 18. a 19. stol.' },
+      { gen: 6, y: (MAX_GEN - 6) * GEN_GAP_Y - 18, minX: minXByGen[6] || 250, label: 'VII. GENERACE · 1. pol. 19. stol.' },
+      { gen: 5, y: (MAX_GEN - 5) * GEN_GAP_Y - 18, minX: minXByGen[5] || 250, label: 'VI. GENERACE · ~1853–1877' },
+      { gen: 4, y: (MAX_GEN - 4) * GEN_GAP_Y - 18, minX: minXByGen[4] || 250, label: 'V. GENERACE · 1891–1906' },
+      { gen: 3, y: (MAX_GEN - 3) * GEN_GAP_Y - 18, minX: minXByGen[3] || 250, label: 'IV. GENERACE · 1921–1924' },
+      { gen: 2, y: (MAX_GEN - 2) * GEN_GAP_Y - 18, minX: minXByGen[2] || 250, label: 'III. GENERACE · pol. 20. stol.' },
+      { gen: 1, y: (MAX_GEN - 1) * GEN_GAP_Y - 18, minX: minXByGen[1] || 250, label: 'II. GENERACE · rodiče' },
+      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 18, minX: minXByGen[0] || 250, label: 'I. GENERACE · současnost' }
     ];
 
     // Manželské dvojice
@@ -870,6 +876,37 @@
           '</div>' +
         '</div>' +
 
+        '<!-- Mobilní plovoucí tlačítko (FAB) a spodní list (bottom sheet) pro @media (max-width: 768px) -->' +
+        '<button type="button" class="platno-mobilni-fab" id="platno-mobilni-fab" aria-expanded="false" aria-controls="platno-mobilni-sheet">' +
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            '<line x1="4" y1="6" x2="20" y2="6"></line>' +
+            '<line x1="4" y1="12" x2="20" y2="12"></line>' +
+            '<line x1="4" y1="18" x2="20" y2="18"></line>' +
+          '</svg>' +
+          '<span>Filtr a osoba</span>' +
+        '</button>' +
+        '<div class="platno-mobilni-backdrop" id="platno-mobilni-backdrop" hidden></div>' +
+        '<div class="platno-mobilni-sheet" id="platno-mobilni-sheet" hidden role="dialog" aria-label="Ovládání stromu">' +
+          '<div class="platno-mobilni-sheet-hlavicka">' +
+            '<span class="platno-mobilni-sheet-titul">Zobrazení a výběr osoby</span>' +
+            '<button type="button" class="platno-mobilni-sheet-zavrit" id="platno-mobilni-zavrit" aria-label="Zavřít panel">✕</button>' +
+          '</div>' +
+          '<div class="platno-mobilni-sheet-telo">' +
+            '<div class="platno-mobilni-pole">' +
+              '<label for="strom-koren-mobil" class="platno-hud-stitek">Zaměřit osobu ve stromu:</label>' +
+              '<select id="strom-koren-mobil" class="platno-select">' + options + '</select>' +
+            '</div>' +
+            '<div class="platno-mobilni-rezimy">' +
+              '<button type="button" class="platno-tlacitko' + (stromRezim === 'komplet' ? ' aktivni' : '') + '" id="rezim-komplet-mobil">' +
+                'Celá rodová síť (' + D.osoby.length + ')' +
+              '</button>' +
+              '<button type="button" class="platno-tlacitko' + (stromRezim === 'vyvod' ? ' aktivni' : '') + '" id="rezim-vyvod-mobil">' +
+                'Vývod předků' +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
         '<!-- Fixní levý sloupec časové osy generací (sticky timeline column) -->' +
         '<div class="platno-osa-sloupec" id="platno-osa-sloupec" aria-hidden="true"></div>' +
 
@@ -928,7 +965,7 @@
       ? spocitejKompletniRozvrzeni()
       : spocitejVyvodRozvrzeni(stromKoren);
 
-    var html = '<div class="platno-papir-vrstva" aria-hidden="true"></div>';
+    var html = '';
 
     // 1. Vodicí horizontální linie generací napříč plátnem
     aktualniRozvrzeni.pasy.forEach(function (pas) {
@@ -939,7 +976,7 @@
     var osaSloupec = document.getElementById('platno-osa-sloupec');
     if (osaSloupec) {
       osaSloupec.innerHTML = aktualniRozvrzeni.pasy.map(function (pas) {
-        return '<div class="generace-popisek" data-pas-y="' + pas.y + '">' + esc(pas.label) + '</div>';
+        return '<div class="generace-popisek" data-pas-y="' + pas.y + '" data-pas-minx="' + pas.minX + '">' + esc(pas.label) + '</div>';
       }).join('');
     }
 
@@ -1097,11 +1134,12 @@
 
     var osaSloupec = document.getElementById('platno-osa-sloupec');
     if (osaSloupec) {
+      osaSloupec.style.display = (stromRezim === 'komplet') ? 'block' : 'none';
       var popisky = osaSloupec.querySelectorAll('.generace-popisek');
       for (var i = 0; i < popisky.length; i++) {
         var py = parseFloat(popisky[i].getAttribute('data-pas-y') || '0');
         var screenY = platnoKamera.y + py * platnoKamera.scale;
-        popisky[i].style.transform = 'translate3d(0, ' + screenY.toFixed(1) + 'px, 0)';
+        popisky[i].style.transform = 'translate3d(12px, ' + screenY.toFixed(1) + 'px, 0)';
       }
     }
 
@@ -1133,22 +1171,24 @@
     var treeH = Math.max(300, maxY - minY);
     var viewW = kontejner.clientWidth;
     var viewH = kontejner.clientHeight;
-    var leftColW = (stromRezim === 'komplet' && viewW > 960) ? 200 : 0;
+    var leftColW = (stromRezim === 'komplet') ? (viewW > 768 ? 250 : 160) : 0;
 
-    var padX = 70;
-    var padY = 130;
+    var padX = viewW > 768 ? 50 : 16;
+    var padY = viewW > 768 ? 105 : 52;
     var scaleX = (viewW - leftColW - padX * 2) / treeW;
     var scaleY = (viewH - padY * 2) / treeH;
-    var newScale = Math.max(0.28, Math.min(1.05, Math.min(scaleX, scaleY)));
+    var newScale = Math.max(0.26, Math.min(1.05, Math.min(scaleX, scaleY)));
 
+    var centeredX = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
+    var minAllowedX = leftColW + 16 - minX * newScale;
     platnoKamera.scale = newScale;
-    platnoKamera.x = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
+    platnoKamera.x = Math.max(minAllowedX, centeredX);
     platnoKamera.y = viewH / 2 - ((minY + maxY) / 2) * newScale + 12;
     platnoKamera.initialized = true;
     aplikujTransformaciKamery();
   }
 
-  /* Zaměří kameru čitelně na hlavní jádro rodu (generace 0 až 4) při zachování přehledu */
+  /* Zaměří kameru čitelně na hlavní jádro rodu (generace 0 až 5) při zachování přehledu */
   function vycentrujJadroRodu() {
     var kontejner = document.getElementById('platno-kontejner');
     if (!kontejner || !aktualniRozvrzeni || !aktualniRozvrzeni.uzly.length) return;
@@ -1157,10 +1197,14 @@
       return;
     }
 
-    var jadroUzly = aktualniRozvrzeni.uzly.filter(function (u) { return u.gen <= 4; });
+    var jadroUzly = aktualniRozvrzeni.uzly.filter(function (u) { return u.gen <= 5; });
     if (!jadroUzly.length) jadroUzly = aktualniRozvrzeni.uzly;
 
     var minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    var globalMinX = Infinity;
+    aktualniRozvrzeni.uzly.forEach(function (u) {
+      if (u.x < globalMinX) globalMinX = u.x;
+    });
     jadroUzly.forEach(function (u) {
       if (u.x < minX) minX = u.x;
       if (u.y < minY) minY = u.y;
@@ -1172,15 +1216,17 @@
     var boxH = Math.max(300, maxY - minY);
     var viewW = kontejner.clientWidth;
     var viewH = kontejner.clientHeight;
-    var leftColW = viewW > 960 ? 200 : 0;
+    var leftColW = viewW > 768 ? 245 : 155;
 
-    var scaleX = (viewW - leftColW - 80) / boxW;
-    var scaleY = (viewH - 150) / boxH;
-    var newScale = Math.max(0.54, Math.min(0.92, Math.min(scaleX, scaleY)));
+    var scaleX = (viewW - leftColW - (viewW > 768 ? 64 : 20)) / boxW;
+    var scaleY = (viewH - (viewW > 768 ? 140 : 64)) / boxH;
+    var newScale = Math.max(viewW > 768 ? 0.52 : 0.36, Math.min(0.90, Math.min(scaleX, scaleY)));
 
+    var centeredX = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
+    var minAllowedX = leftColW + 16 - globalMinX * newScale;
     platnoKamera.scale = newScale;
-    platnoKamera.x = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
-    platnoKamera.y = viewH / 2 - ((minY + maxY) / 2) * newScale + 16;
+    platnoKamera.x = Math.max(minAllowedX, centeredX);
+    platnoKamera.y = viewH / 2 - ((minY + maxY) / 2) * newScale + (viewW > 768 ? 24 : 12);
     platnoKamera.initialized = true;
     aplikujTransformaciKamery();
   }
@@ -1356,10 +1402,46 @@
     var btnKomplet = document.getElementById('rezim-komplet');
     var btnVyvod = document.getElementById('rezim-vyvod');
     var selectKoren = document.getElementById('strom-koren');
+    var btnKompletMobil = document.getElementById('rezim-komplet-mobil');
+    var btnVyvodMobil = document.getElementById('rezim-vyvod-mobil');
+    var selectKorenMobil = document.getElementById('strom-koren-mobil');
+    var fabMobil = document.getElementById('platno-mobilni-fab');
+    var sheetMobil = document.getElementById('platno-mobilni-sheet');
+    var backdropMobil = document.getElementById('platno-mobilni-backdrop');
+    var zavritMobil = document.getElementById('platno-mobilni-zavrit');
+
+    function zavriMobilniSheet() {
+      if (sheetMobil) sheetMobil.hidden = true;
+      if (backdropMobil) backdropMobil.hidden = true;
+      if (fabMobil) fabMobil.setAttribute('aria-expanded', 'false');
+    }
+
+    function otevriMobilniSheet() {
+      if (sheetMobil) sheetMobil.hidden = false;
+      if (backdropMobil) backdropMobil.hidden = false;
+      if (fabMobil) fabMobil.setAttribute('aria-expanded', 'true');
+    }
+
+    if (fabMobil) {
+      fabMobil.addEventListener('click', function () {
+        if (sheetMobil && !sheetMobil.hidden) zavriMobilniSheet();
+        else otevriMobilniSheet();
+      });
+    }
+    if (zavritMobil) zavritMobil.addEventListener('click', zavriMobilniSheet);
+    if (backdropMobil) backdropMobil.addEventListener('click', zavriMobilniSheet);
 
     if (btnKomplet) {
       btnKomplet.addEventListener('click', function () {
         stromRezim = 'komplet';
+        render();
+        vycentrujCelyStrom();
+      });
+    }
+    if (btnKompletMobil) {
+      btnKompletMobil.addEventListener('click', function () {
+        stromRezim = 'komplet';
+        zavriMobilniSheet();
         render();
         vycentrujCelyStrom();
       });
@@ -1371,9 +1453,33 @@
         vycentrujCelyStrom();
       });
     }
+    if (btnVyvodMobil) {
+      btnVyvodMobil.addEventListener('click', function () {
+        stromRezim = 'vyvod';
+        zavriMobilniSheet();
+        render();
+        vycentrujCelyStrom();
+      });
+    }
     if (selectKoren) {
       selectKoren.addEventListener('change', function () {
         stromKoren = selectKoren.value;
+        if (selectKorenMobil) selectKorenMobil.value = stromKoren;
+        if (stromRezim === 'vyvod') {
+          vykresliScenuPlatna();
+          vycentrujCelyStrom();
+          otevriInspektor(stromKoren);
+        } else {
+          otevriInspektor(stromKoren);
+          zamerKameruNaOsobu(stromKoren, 0.95);
+        }
+      });
+    }
+    if (selectKorenMobil) {
+      selectKorenMobil.addEventListener('change', function () {
+        stromKoren = selectKorenMobil.value;
+        if (selectKoren) selectKoren.value = stromKoren;
+        zavriMobilniSheet();
         if (stromRezim === 'vyvod') {
           vykresliScenuPlatna();
           vycentrujCelyStrom();
@@ -1469,7 +1575,7 @@
 
     kontejner.addEventListener('pointerdown', function (e) {
       if (e.button !== 0 && e.pointerType === 'mouse') return;
-      if (e.target.closest('.platno-hud-nahore, .platno-hud-dole, .inspektor-zasuvka')) return;
+      if (e.target.closest('.platno-hud-nahore, .platno-hud-dole, .platno-mobilni-fab, .platno-mobilni-sheet, .platno-mobilni-backdrop, .inspektor-zasuvka')) return;
 
       var uzelEl = e.target.closest('.mapa-uzel');
       if (uzelEl) {
