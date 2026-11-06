@@ -644,16 +644,16 @@
       uzelMap[o.id] = u;
     });
 
-    // Pásy generací
+    // Pásy generací (čisté časové údaje bez výčtů obcí)
     var pasy = [
-      { gen: 7, y: (MAX_GEN - 7) * GEN_GAP_Y - 34, label: 'VIII. GENERACE · PŘELOM 18. A 19. STOLETÍ (KLOBOUKY U BRNA)' },
-      { gen: 6, y: (MAX_GEN - 6) * GEN_GAP_Y - 34, label: 'VII. GENERACE · 1. POLOVINA 19. STOLETÍ' },
-      { gen: 5, y: (MAX_GEN - 5) * GEN_GAP_Y - 34, label: 'VI. GENERACE · NAROZENÍ ~1853–1877 (KLOBOUKY U BRNA)' },
-      { gen: 4, y: (MAX_GEN - 4) * GEN_GAP_Y - 34, label: 'V. GENERACE · NAROZENÍ 1891–1900 (KLOBOUKY, TVRDONICE, KOSTICE)' },
-      { gen: 3, y: (MAX_GEN - 3) * GEN_GAP_Y - 34, label: 'IV. GENERACE · PRAPRARODIČE (*1921 KLOBOUKY, *1924 KOSTICE)' },
-      { gen: 2, y: (MAX_GEN - 2) * GEN_GAP_Y - 34, label: 'III. GENERACE · PRARODIČE (VALTICE & NĚMČIČKY – FOREJTNÍK, KAMENÍK, CVAN, STÁVEK)' },
-      { gen: 1, y: (MAX_GEN - 1) * GEN_GAP_Y - 34, label: 'II. GENERACE · RODIČE (HUSTOPEČE / NĚMČIČKY)' },
-      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 34, label: 'I. GENERACE · VÝCHOZÍ GENERACE (ADAM & ONDŘEJ FOREJTNÍKŮ)' }
+      { gen: 7, y: (MAX_GEN - 7) * GEN_GAP_Y - 18, label: 'VIII. GENERACE · přelom 18. a 19. stol.' },
+      { gen: 6, y: (MAX_GEN - 6) * GEN_GAP_Y - 18, label: 'VII. GENERACE · 1. pol. 19. stol.' },
+      { gen: 5, y: (MAX_GEN - 5) * GEN_GAP_Y - 18, label: 'VI. GENERACE · ~1853–1877' },
+      { gen: 4, y: (MAX_GEN - 4) * GEN_GAP_Y - 18, label: 'V. GENERACE · 1891–1906' },
+      { gen: 3, y: (MAX_GEN - 3) * GEN_GAP_Y - 18, label: 'IV. GENERACE · 1921–1924' },
+      { gen: 2, y: (MAX_GEN - 2) * GEN_GAP_Y - 18, label: 'III. GENERACE · pol. 20. stol.' },
+      { gen: 1, y: (MAX_GEN - 1) * GEN_GAP_Y - 18, label: 'II. GENERACE · rodiče' },
+      { gen: 0, y: (MAX_GEN - 0) * GEN_GAP_Y - 18, label: 'I. GENERACE · současnost' }
     ];
 
     // Manželské dvojice
@@ -870,6 +870,9 @@
           '</div>' +
         '</div>' +
 
+        '<!-- Fixní levý sloupec časové osy generací (sticky timeline column) -->' +
+        '<div class="platno-osa-sloupec" id="platno-osa-sloupec" aria-hidden="true"></div>' +
+
         '<!-- Samotná posuvná a škálovatelná scéna (OrgPad styl) -->' +
         '<div class="platno-scena" id="platno-scena"></div>' +
 
@@ -925,14 +928,20 @@
       ? spocitejKompletniRozvrzeni()
       : spocitejVyvodRozvrzeni(stromKoren);
 
-    var html = '';
+    var html = '<div class="platno-papir-vrstva" aria-hidden="true"></div>';
 
-    // 1. Pásy generací
+    // 1. Vodicí horizontální linie generací napříč plátnem
     aktualniRozvrzeni.pasy.forEach(function (pas) {
-      html += '<div class="generace-pas" style="top:' + pas.y + 'px;">' +
-        '<span class="generace-popisek">' + esc(pas.label) + '</span>' +
-      '</div>';
+      html += '<div class="generace-pas" style="top:' + pas.y + 'px;"></div>';
     });
+
+    // Fixní levý sloupec časové osy generací mimo karty
+    var osaSloupec = document.getElementById('platno-osa-sloupec');
+    if (osaSloupec) {
+      osaSloupec.innerHTML = aktualniRozvrzeni.pasy.map(function (pas) {
+        return '<div class="generace-popisek" data-pas-y="' + pas.y + '">' + esc(pas.label) + '</div>';
+      }).join('');
+    }
 
     // 2. SVG vrstva pro Bézierovy křivky
     html += '<svg class="platno-svg" id="platno-svg" width="1" height="1"></svg>';
@@ -1077,7 +1086,7 @@
     });
   }
 
-  /* Aplikuje posun a měřítko kamery na scénu */
+  /* Aplikuje posun a měřítko kamery na scénu i fixní levý sloupec generací */
   function aplikujTransformaciKamery() {
     var scena = document.getElementById('platno-scena');
     var kontejner = document.getElementById('platno-kontejner');
@@ -1085,6 +1094,16 @@
     if (!scena || !kontejner) return;
 
     scena.style.transform = 'translate3d(' + platnoKamera.x.toFixed(1) + 'px, ' + platnoKamera.y.toFixed(1) + 'px, 0) scale(' + platnoKamera.scale.toFixed(4) + ')';
+
+    var osaSloupec = document.getElementById('platno-osa-sloupec');
+    if (osaSloupec) {
+      var popisky = osaSloupec.querySelectorAll('.generace-popisek');
+      for (var i = 0; i < popisky.length; i++) {
+        var py = parseFloat(popisky[i].getAttribute('data-pas-y') || '0');
+        var screenY = platnoKamera.y + py * platnoKamera.scale;
+        popisky[i].style.transform = 'translate3d(0, ' + screenY.toFixed(1) + 'px, 0)';
+      }
+    }
 
     if (zoomLabel) {
       zoomLabel.textContent = Math.round(platnoKamera.scale * 100) + ' %';
@@ -1114,15 +1133,16 @@
     var treeH = Math.max(300, maxY - minY);
     var viewW = kontejner.clientWidth;
     var viewH = kontejner.clientHeight;
+    var leftColW = (stromRezim === 'komplet' && viewW > 960) ? 200 : 0;
 
-    var padX = 90;
+    var padX = 70;
     var padY = 130;
-    var scaleX = (viewW - padX * 2) / treeW;
+    var scaleX = (viewW - leftColW - padX * 2) / treeW;
     var scaleY = (viewH - padY * 2) / treeH;
     var newScale = Math.max(0.28, Math.min(1.05, Math.min(scaleX, scaleY)));
 
     platnoKamera.scale = newScale;
-    platnoKamera.x = viewW / 2 - ((minX + maxX) / 2) * newScale;
+    platnoKamera.x = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
     platnoKamera.y = viewH / 2 - ((minY + maxY) / 2) * newScale + 12;
     platnoKamera.initialized = true;
     aplikujTransformaciKamery();
@@ -1152,13 +1172,14 @@
     var boxH = Math.max(300, maxY - minY);
     var viewW = kontejner.clientWidth;
     var viewH = kontejner.clientHeight;
+    var leftColW = viewW > 960 ? 200 : 0;
 
-    var scaleX = (viewW - 96) / boxW;
+    var scaleX = (viewW - leftColW - 80) / boxW;
     var scaleY = (viewH - 150) / boxH;
-    var newScale = Math.max(0.56, Math.min(0.92, Math.min(scaleX, scaleY)));
+    var newScale = Math.max(0.54, Math.min(0.92, Math.min(scaleX, scaleY)));
 
     platnoKamera.scale = newScale;
-    platnoKamera.x = viewW / 2 - ((minX + maxX) / 2) * newScale;
+    platnoKamera.x = leftColW + (viewW - leftColW) / 2 - ((minX + maxX) / 2) * newScale;
     platnoKamera.y = viewH / 2 - ((minY + maxY) / 2) * newScale + 16;
     platnoKamera.initialized = true;
     aplikujTransformaciKamery();
