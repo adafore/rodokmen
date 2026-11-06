@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-02",
+  "new_people": 9,
+  "people": 29,
+  "relations": 40,
+  "sources": 12,
+  "gallery": 41,
+  "review_basis": "Visual comparison of supplied images and their column headings. No new archive search or paid GLM call.",
+  "rejected_glm_claims": [
+    "Anna birth corrected to 29 June: birth/baptism conflated.",
+    "Josef František as double name: original first name crossed out.",
+    "Genovefa record 286: image shows house number 266, not a proven entry number.",
+    "Unverified catalogue /detail/2745: not presented as verified.",
+    "Automatic Kosek1919 to Emilie1924 parent linkage.",
+    "Source records treated as identical solely because they share a book URL."
+  ],
+  "remaining_uncertainties": [
+    "Mariana / Marie spelling and maiden surname",
+    "Two maiden surnames in Genovefa grandparent generation",
+    "Exact catalogue identity of Genovefa birth image"
+  ]
+}

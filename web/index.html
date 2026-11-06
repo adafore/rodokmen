@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rodokmen Forejtníkových – soukromý rodinný archiv</title>
-<meta name="description" content="Rodokmen Forejtníkových z Klobouk u Brna – matriční záznamy, přepisy a důkazy z Moravského zemského archivu v Brně.">
-<link rel="stylesheet" href="css/style.css">
+<title>Rodokmen Forejtníkových · Moravský rodinný archiv</title>
+<meta name="description" content="Rodokmen rodin Forejtník, Cvan, Stávek, Kameník, Dobrovolný, Kosek, Trpělka, Veselý a Tihlařík – matriční prameny z Moravského zemského archivu v Brně.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261105-r2">
 </head>
 <body>
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
@@ -16,68 +19,137 @@
       <span class="logo-znak" aria-hidden="true">F</span>
       <span class="logo-text">
         <span class="logo-nazev">Rodokmen Forejtníkových</span>
-        <span class="logo-podtitul">soukromý rodinný archiv</span>
+        <span class="logo-podtitul">katastrální a matriční archiv · jižní Morava</span>
       </span>
     </a>
+
     <nav class="navigace" aria-label="Hlavní navigace">
-      <a href="#/uvod" data-nav="uvod">Úvod</a>
-      <a href="#/strom" data-nav="strom">Strom</a>
-      <a href="#/galerie" data-nav="galerie">Galerie důkazů</a>
-      <a href="#/osa" data-nav="osa">Časová osa</a>
-      <a href="#/denik" data-nav="denik">Co zatím hledáme</a>
+      <a href="#/uvod" data-nav="uvod"><span class="nav-cislo">01</span>Úvod</a>
+      <a href="#/strom" data-nav="strom"><span class="nav-cislo">02</span>Mapa rodu</a>
+      <a href="#/rejstrik" data-nav="rejstrik"><span class="nav-cislo">03</span>Rejstřík osob</a>
+      <a href="#/galerie" data-nav="galerie"><span class="nav-cislo">04</span>Archivní důkazy</a>
+      <a href="#/osa" data-nav="osa"><span class="nav-cislo">05</span>Časová osa</a>
+      <a href="#/denik" data-nav="denik"><span class="nav-cislo">06</span>Badatelský deník</a>
+      <a href="#/nalezy" data-nav="nalezy"><span class="nav-cislo">07</span>Prameny</a>
     </nav>
+
     <div class="hledani" role="search">
       <label class="hledani-label" for="hledani-input">Hledat osobu</label>
-      <input id="hledani-input" type="search" placeholder="Jméno (i bez diakritiky)…"
-             autocomplete="off" aria-describedby="hledani-napoveda">
-      <span id="hledani-napoveda" class="hledani-napoveda">Např. „forejtnik“ i „vesela“.</span>
+      <div class="hledani-pole-obal">
+        <input id="hledani-input" type="search" placeholder="Hledat jméno, obec, řemeslo… [/]"
+               autocomplete="off" aria-describedby="hledani-napoveda">
+        <kbd class="hledani-klavesa" aria-hidden="true">/</kbd>
+      </div>
+      <span id="hledani-napoveda" class="hledani-napoveda">Např. „forejtnik“, „cvan“, „nemcicky“</span>
       <div id="hledani-vysledky" class="hledani-vysledky" hidden></div>
     </div>
+
+    <button type="button" class="tlacitko-zamek" id="btn-zamek" title="Zamknout archiv (odhlásit)" aria-label="Zamknout archiv">
+      <span aria-hidden="true">🔒</span><span class="tlacitko-zamek-text">Zamknout</span>
+    </button>
   </div>
 </header>
+
+<!-- Přístupová rodinná brána (ochrana heslem) -->
+<div id="zamek-brana" class="zamek-brana" hidden>
+  <div class="zamek-karta anim-sekce">
+    <div class="zamek-pecet">
+      <span class="zamek-znak">F</span>
+      <span class="zamek-kod">ARCHIVNÍ FOND · FOREJTNÍK</span>
+    </div>
+    <div class="zamek-nadpisy">
+      <div class="zamek-status"><span>🔒</span> SOUKROMÝ RODINNÝ ARCHIV</div>
+      <h1>Rodokmen Forejtníkových</h1>
+      <p class="zamek-perex">
+        Dokumentační archiv předků a matričních pramenů jižní Moravy. Přístup k osobním záznamům a fotografiím je vyhrazen rodině. Pro odemčení archivu zadejte rodinné heslo.
+      </p>
+    </div>
+
+    <form id="zamek-formular" class="zamek-formular" onsubmit="return false;">
+      <div class="zamek-vstup-skupina">
+        <label for="zamek-heslo" class="zamek-label">Přístupové heslo</label>
+        <div class="zamek-input-obal">
+          <input type="password" id="zamek-heslo" class="zamek-input" placeholder="Zadejte rodinné heslo…" autocomplete="current-password" required>
+          <button type="button" id="zamek-zobrazit-heslo" class="zamek-oko" title="Zobrazit / skrýt heslo" aria-label="Zobrazit heslo">👁</button>
+        </div>
+      </div>
+
+      <div class="zamek-volby">
+        <label class="zamek-checkbox-label">
+          <input type="checkbox" id="zamek-trvale" checked>
+          <span>Pamatovat si přihlášení na tomto zařízení</span>
+        </label>
+      </div>
+
+      <div id="zamek-chyba" class="zamek-chyba" hidden aria-live="polite">
+        Zadané heslo není správné. Zkontrolujte zadání nebo kontaktujte správce.
+      </div>
+
+      <button type="submit" id="zamek-odeslat" class="zamek-tlacitko">
+        Odemknout archiv ↵
+      </button>
+
+      <div class="zamek-napoveda">
+        <span>KATASTR: KLOBOUKY · NĚMČIČKY · KOSTICE · VALTICE</span>
+        <span>KRYPTO: SHA-256 OVĚŘENÍ</span>
+      </div>
+    </form>
+  </div>
+</div>
 
 <main id="obsah" class="obsah" tabindex="-1">
   <!-- Obsah generuje app.js -->
 </main>
 
-<footer class="paticka">
+<footer class="paticka" id="paticka">
   <div class="paticka-vnitrek">
-    <p>Rodokmen Forejtníkových · soukromý rodinný archiv pro studium a rodinné použití.</p>
-    <p>Přepisy matrik vznikly strojovým čtením rukopisů (Moravský zemský archiv v Brně, Acta Publica);
-       nejistá místa jsou u jednotlivých údajů vyznačena. Neznámé údaje jsou záměrně nevyplněné.</p>
-    <p class="paticka-verze" id="paticka-verze"></p>
+    <div class="paticka-sloupec">
+      <div class="paticka-titul">MORAVSKÝ RODINNÝ ARCHIV · FOND FOREJTNÍK &amp; SPŘÍZNĚNÉ RODY</div>
+      <p>Farnosti: Klobouky u Brna · Kostice · Tvrdonice · Němčičky · Valtice. Prameny uloženy v Moravském zemském archivu v Brně (Acta Publica) a v rodinném archivu.</p>
+    </div>
+    <div class="paticka-sloupec paticka-meta">
+      <p>Metodika: Přímá transkripce kurentu s vyznačenou proveniencí každého údaje. Neznámá data se neodhadují bez pramene.</p>
+      <p class="paticka-verze" id="paticka-verze"></p>
+    </div>
   </div>
 </footer>
+
+<!-- Skrytý input pro nahrání vlastního portrétu osoby -->
+<input type="file" id="portret-upload-input" accept="image/*" hidden>
 
 <!-- Lightbox důkazu -->
 <div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lightbox-titulek">
   <div class="lightbox-zaves">
     <div class="lightbox-lista">
-      <h3 id="lightbox-titulek" class="lightbox-titulek"></h3>
-      <button id="lightbox-zavrit" class="lightbox-zavrit" type="button" aria-label="Zavřít důkaz (Esc)">✕ Zavřít</button>
+      <div class="lightbox-lista-levo">
+        <span class="lightbox-signatura">ARCHIVNÍ SNÍMEK</span>
+        <h3 id="lightbox-titulek" class="lightbox-titulek"></h3>
+      </div>
+      <button id="lightbox-zavrit" class="lightbox-zavrit" type="button" aria-label="Zavřít důkaz (Esc)">✕ ZAVŘÍT [ESC]</button>
     </div>
     <div class="lightbox-telo">
       <div class="lightbox-obrazek">
         <img id="lightbox-img" src="" alt="">
       </div>
       <div class="lightbox-popis">
+        <div class="lightbox-sekce-nadpis">POPIS DOKUMENTU</div>
         <p id="lightbox-popis" class="lightbox-odstavec"></p>
         <div id="lightbox-prepis" class="lightbox-prepis" hidden>
-          <h4>Přepis originálu</h4>
+          <h4>DOSLOVNÝ PŘEPIS ORIGINÁLU</h4>
           <div id="lightbox-prepis-obsah" class="prepis-obsah"></div>
         </div>
         <div id="lightbox-nejistoty" class="lightbox-nejistoty" hidden>
-          <h4>Nejistá místa</h4>
+          <h4>PALEOGRAFICKÉ NEJISTOTY</h4>
           <ul id="lightbox-nejistoty-seznam"></ul>
         </div>
-        <a id="lightbox-odkaz" class="lightbox-odkaz" href="#" target="_blank" rel="noopener">Otevřít v archivu MZA (Acta Publica) ↗</a>
+        <a id="lightbox-odkaz" class="lightbox-odkaz" href="#" target="_blank" rel="noopener">Otevřít matriku v MZA Brno (Acta Publica) ↗</a>
         <p id="lightbox-pozn" class="lightbox-pozn"></p>
       </div>
     </div>
   </div>
 </div>
 
-<script src="js/data.js"></script>
-<script src="js/app.js"></script>
+<script src="js/data.js?v=20261105-r2"></script>
+<script src="js/app.js?v=20261105-r2"></script>
 </body>
 </html>

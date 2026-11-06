@@ -1,0 +1,121 @@
+{
+  "ukol": "F2",
+  "klasifikace_pramenu": {
+    "PR-RODINA-2026": {
+      "typ_podkladu": "rodinné sdělení (ústní/písemné, bez souboru)",
+      "nezavislost": "nulová — není archivní doklad",
+      "co_chybi": "jakýkoli hmotný podklad (soubor/odkaz); přesné údaje (všem 4 osobám chybí i datum narození)"
+    },
+    "PR-A": {
+      "typ_podkladu": "dodaný rodinný dokument (evidován 1 soubor, bez URL)",
+      "nezavislost": "primární rodinný dokument, ale obsah nezdokumentován v datech",
+      "co_chybi": "uvést, o jaký typ dokumentu jde (list? foto? přepis?), datum/zdroj zápisu; porovnat s archivním originálem"
+    },
+    "PR-B": {
+      "typ_podkladu": "značka „matrika“ + katalogová stopa (URL na detail knihy 14893, snímek …02070.jp2)",
+      "nezavislost": "stejná kniha jako PR-D (detail/14893) — nejsou vzájemně nezávislé",
+      "co_chybi": "ověřit katalogovou identitu knihy (neověřeno — katalog MZA dosažen jen na 302 (nginx); obsahové detaily knih 14893, 12400, 258, 15190 do 20–40 s neodpověděly; podle metodiky neopakováno v cyklu, neobcházeno přihlášení); potvrdit, že snímek odpovídá konkrétnímu zápisu; přepis údajů"
+    },
+    "PR-C": {
+      "typ_podkladu": "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00850.jp2)",
+      "nezavislost": "stejná kniha jako PR-E (detail/12400) — nejsou vzájemně nezávislé",
+      "co_chybi": "ověřit katalogovou identitu knihy (neověřeno — katalog MZA dosažen jen na 302 (nginx); obsahové detaily knih 14893, 12400, 258, 15190 do 20–40 s neodpověděly; podle metodiky neopakováno v cyklu, neobcházeno přihlášení); přepis; odlišit knihu od ID detailu"
+    },
+    "PR-D": {
+      "typ_podkladu": "značka „matrika“ + katalogová stopa (URL na detail knihy 14893, snímek …00630.jp2)",
+      "nezavislost": "stejná kniha jako PR-B — dvojice čísel knihy (14893) sdílena",
+      "co_chybi": "totéž co PR-B; katalog neověřeno — katalog MZA dosažen jen na 302 (nginx); obsahové detaily knih 14893, 12400, 258, 15190 do 20–40 s neodpověděly; podle metodiky neopakováno v cyklu, neobcházeno přihlášení"
+    },
+    "PR-E": {
+      "typ_podkladu": "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00020.jp2)",
+      "nezavislost": "stejná kniha jako PR-C — dvojice čísel knihy (12400) sdílena",
+      "co_chybi": "totéž co PR-C (neověřeno — katalog MZA dosažen jen na 302 (nginx); obsahové detaily knih 14893, 12400, 258, 15190 do 20–40 s neodpověděly; podle metodiky neopakováno v cyklu, neobcházeno přihlášení)"
+    },
+    "PR-F": {
+      "typ_podkladu": "přepis (typ „matriční zápis“, provenience „prepis“; 8 souborů; URL detail 258)",
+      "nezavislost": "sekundární — přepis není originál; je základem pouze HYPOTÉZY partnerství P14↔P15",
+      "co_chybi": "porovnat přepis s originálem zápisu; potvrdit/opravit hypotézu P14↔P15; označit, kdo a kdy přepsal"
+    },
+    "PR-G": {
+      "typ_podkladu": "rejstřík (katalogová stopa, URL detail 15190; 7 souborů) — NENÍ citován žádnou osobou/vazbou",
+      "nezavislost": "pomocný pramen; rejstřík nenahrazuje hlavní zápis",
+      "co_chybi": "zjistit, ke které knize/farnosti patří a proč je v projektu; teprve pak případná citace"
+    },
+    "PR-H": {
+      "typ_podkladu": "pouhá značka „archivní sada / matrika“ v datech (5 souborů, bez URL, bez citace) — NENÍ citována",
+      "nezavislost": "nevykazatelná — bez odkazu nejde ověřit vůbec nic",
+      "co_chybi": "identifikovat, co sada obsahuje (farnost, kniha, rozsah); doplnit citace nebo položku odstranit"
+    }
+  },
+  "katalogove_stopy": {
+    "PR-B": {
+      "detail_id": "14893",
+      "snimek": "216000010-00253-00000002736-000-000000000-000002736-02070.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    },
+    "PR-C": {
+      "detail_id": "12400",
+      "snimek": "216000010-000253-003370-000000-002755-000000-00-00850.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    },
+    "PR-D": {
+      "detail_id": "14893",
+      "snimek": "216000010-00253-00000002736-000-000000000-000002736-00630.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    },
+    "PR-E": {
+      "detail_id": "12400",
+      "snimek": "216000010-000253-003370-000000-002755-000000-00-00020.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    },
+    "PR-F": {
+      "detail_id": "258",
+      "snimek": "216000010-00253-003370-000000-003443-000000-FM-B09549-00490.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    },
+    "PR-G": {
+      "detail_id": "15190",
+      "snimek": "216000010-00253-00000002786-000-000000000-000002786-00090.jp2",
+      "stav": "neověřeno",
+      "poznamka": "katalogová stopa převzatá ze vstupu; NE doklad návštěvy"
+    }
+  },
+  "sdilene_knihy": {
+    "detail_14893": [
+      "PR-B",
+      "PR-D"
+    ],
+    "detail_12400": [
+      "PR-C",
+      "PR-E"
+    ],
+    "detail_258": [
+      "PR-F"
+    ],
+    "detail_15190": [
+      "PR-G"
+    ]
+  },
+  "statistika_podkladu_hran": {
+    "roditelovske_hrany": {
+      "dodaný rodinný dokument (evidován 1 soubor, bez URL)": 4,
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 14893, snímek …02070.jp2)": 2,
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 14893, snímek …00630.jp2)": 2,
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00850.jp2)": 1,
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00020.jp2)": 6,
+      "rodinné sdělení (ústní/písemné, bez souboru)": 5
+    },
+    "partnerske_hrany": {
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00020.jp2)": 1,
+      "značka „matrika“ + katalogová stopa (URL na detail knihy 12400, snímek …00850.jp2)": 1,
+      "přepis (typ „matriční zápis“, provenience „prepis“; 8 souborů; URL detail 258)": 1,
+      "rodinné sdělení (ústní/písemné, bez souboru)": 2,
+      "dodaný rodinný dokument (evidován 1 soubor, bez URL)": 1
+    }
+  }
+}

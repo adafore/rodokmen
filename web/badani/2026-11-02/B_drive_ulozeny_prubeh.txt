@@ -1,0 +1,68 @@
+Thought Process
+Ran 1 commands
+
+Vstupní ZIP je na místě. Rozbalím ho a ověřím skutečný obsah proti MANIFEST.json.
+
+Explored 2 files，Ran 1 commands
+
+ZIP obsahuje 10 obrázků + MANIFEST.json + ZADANI.txt. Ověřím SHA256 a rozměry proti manifestu.
+
+Wrote 2 files，Ran 2 commands
+
+Všech 10 souborů přesně odpovídá manifestu (velikost, SHA256, rozměry). Vytvořím plán a začnu pracovat.
+
+Nejprve si prohlédnu klíčové vstupní obrazy a současně ověřím dostupnost ActaPublica.
+
+Explored 1 files，Ran 1 commands
+
+ActaPublica funguje (HTTP 200). Sňatek 1883 je čitelný — vidím záznam č. 5/1883: Karel Foretník × Rozálie Veselých, oba 29 let, 5. února. Teď prohlédnu rejstřík R2782_sn22 a jeho pravý sloupec.
+
+Explored 1 files，Ran 1 commands
+
+R2782_sn22 je „Alphabetisches Repertorium über das Geburtshuch" — rejstřík narozených. Pravá strana je oddíl F (léta 1849–1858) — přesně tam by měl být Karel Foretník narozený 1853/54. Přečtu si přiložený výřez pravého sloupce.
+
+Explored 1 files
+
+Přiložený výřez pokrývá jen sloupce „Ort" a „Seite der Matr." (čísla 208–246). Sloupec JMÉEN chybí — musím si z originálního přehledu vytvořit vlastní výřezy v nativním rozlišení. Zároveň prozkoumám strukturu katalogu ActaPublica.
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+Výřez zachytil oddíl „F" s hlavičkou „Namen der Geborenen / Ort / Pag et folio …", ale uřízl jsem datumový sloupec. Vytvořím širší výřezy včetně datumů a přečtu oba pásy.
+
+Explored 1 files，Ran 1 commands
+
+Čtu druhý pás oddílu F a levou stranu, abych určil schéma rejstříku (křestní jména vs. příjmení).
+
+Explored 1 files
+
+Oddíl F je řazen podle křestních jmen dětí (Franz, Franziska, Friedrich, Fritz…). Karel tedy bude v oddíle K, nikoli F — stará stopa musela pocházet z oddílu K téhož rejstříku. Teď prozkoumám katalog ActaPublica: metadata knih 2782, 2734, 2753, 2755 a vyhledávání farnosti Klobouky.
+
+Ran 1 commands
+
+Formulář nabízí i vyhledání podle „čísla knihy" (interní ID) se stránkou. Otestuju přímý přístup ke knihám 2782, 2734, 2753, 2755.
+
+Ran 2 commands
+
+Kniha „2782" se přeložila na detail/2772 s JP2 snímkem. Prozkoumám strukturu detailní stránky a metadat.
+
+Ran 1 commands
+
+Kniha 2782 = Rejstřík narození farnosti Klobouky u Brna 1819–1869 (obce: Kašnice, Klobouky, Bohumilice, Velké Hostěrádky) — to odpovídá! Zobrazování snímků chrání ALTCHA (automatické ověření v prohlížeči, nekliká se). Metadatám to nepřekáží — rozeberu je přes curl, snímky pak budou muset jít skutečným prohlížečem.
+
+Ran 1 commands
+
+Klíčová metadata potvrzena:
+
+2734 = narození Klobouky 1838–1858 (cílová kniha pro B1)
+2753 = oddaní 1819–1847
+2755 = oddaní 1883–1948 (sňatek 1883 ✓)
+2782 = rejstřík narození 1819–1869 ✓
+
+Mezera 1847–1883 u oddanů bude nejspíš kniha 2754. Ověřím ji a zjistím endpoint snímků.
+
+Ran 1 commands
+
+Kniha 2754 = oddaní 1848–1882 — přesně okno pro sňatek Josefa a Veroniky. Snímky jsou za ALTCHA ověřením, které řeší prohlížeč sám — použiju skutečný headless prohlížeč (agent-browser skill), žádné obcházení.
+
+Ran 3 commands
+Opens book 2782 detail page in browser

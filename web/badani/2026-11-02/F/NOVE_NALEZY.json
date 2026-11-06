@@ -1,0 +1,156 @@
+{
+  "balik": "F_MAPA_CHYBEJICICH_VETVI",
+  "vygenerovano": "2026-11-03",
+  "poznamka": "Všechna tvrzení jsou strukturální a doložitelná přímo ze vstupních souborů. Nové osoby/hrany nejsou navrženy (kromě kandidátních MEZER, označených candidate=true). Žádná tvrzení nebyla integrována do pracovních dat. PID = pracovní identifikátory ze vstupu, nikoli veřejné identity.",
+  "vstupy_overene": [
+    {
+      "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+      "sha256": "c731bde69ad0f0d6328c571ec4cd584cb17d7f266c34bbfad17bafcc5d750c22",
+      "souhlasi_s_manifestem": true
+    },
+    {
+      "soubor": "PRAMENY_KATALOG_STOPY.json",
+      "sha256": "00d7b14365ee7d1af1db124adc3afbf12839286f38fc0fc3b0b443df890b32e5",
+      "souhlasi_s_manifestem": true
+    },
+    {
+      "soubor": "ZADANI.txt",
+      "sha256": "21faef5494b4c7bc97d3b8b5472c600393e36c0d0556e8a5584dd9d9a9f6e09a",
+      "souhlasi_s_manifestem": true
+    }
+  ],
+  "nalezy": [
+    {
+      "id": "N1",
+      "typ": "pokryti",
+      "tvrzeni": "Výchozí osoba P17 má do 6. generace přesně 16 unikátních známých předků (P11, P12, P13, P3, P9, P14, P15, P1, P2, P16, P4, P5, P7, P8, P6, P10) na 16 obsazených pozicích z 126 očekávaných = 12,7 % pozic vývodu; do hloubky 3 to je 7/14 (50,0 %), do hloubky 5 14/62 (22,6 %).",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.osoby[*] (pole otec/matka pro P17→P11→P12/P13→…)",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (pokryti_P17.kumulativne)"
+      },
+      "jistota": "vysoká (čistá strukturní deduction ze vstupu)"
+    },
+    {
+      "id": "N2",
+      "typ": "pokryti",
+      "tvrzeni": "Dítě P19 má do 6. generace 16 obsazených pozic z 126 (12,7 %), 16 unikátních osob; větev matky P18 je 0/63 pozic (otec i matka P18 = null), větev otce P17 nese všech 16 osob.",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.osoby[P18] (otec=null, matka=null); $.vztahy (P17→P19, P18→P19)",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (pokryti_P19)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N3",
+      "typ": "integrita",
+      "tvrzeni": "Struktura je formálně zdravá: 0 cyklů (nikdo není vlastním předkem), 0 referencí na neexistující PID, 0 kolizí typu otec==matka nebo rodič=partner dítěte, 0 duplicitních hran; rodičovské hrany jsou v osobách a ve vztazích v úplné shodě (20 : 20).",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.osoby[*], $.vztahy[*]",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (integrita)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N4",
+      "typ": "integrita",
+      "tvrzeni": "Pedigrée kolaps neexistuje: každý z 16 předků zaujímá právě jeden slot vývodu (ani u P17, ani u P19).",
+      "dukaz": {
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (pokryti_P17.pedigree_kolaps=[], pokryti_P19.pedigree_kolaps=[])"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N5",
+      "typ": "evidence",
+      "tvrzeni": "Partnerské páry P4↔P5 a P7↔P8 mají vzájemné odkazy v polích partneri, ale nemají partnerskou hranu ve vztahy; dále 4 partnerské hrany (P1→P2, P3→P9, P14→P15, P12→P13) jsou evidovány jen jedním směrem (obousměrně jen P17↔P18).",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.osoby[P4].partneri=[\"P5\"], $.osoby[P5].partneri=[\"P4\"] vs. $.vztahy (žádná hrana P4↔P5 typ partnerství); obdobně P7/P8",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (integrita.partnerstvi)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N6",
+      "typ": "prameny",
+      "tvrzeni": "PR-B a PR-D ukazují na tentýž katalogový detail knihy (matrika/detail/14893, liší se jen číslem snímku …02070 vs …00630), PR-C a PR-E na detail/12400 (…00850 vs …00020). Dvojice zdrojů tedy zcela jistě nejsou vzájemně nezávislé prameny; pracovní data je však vedou jako oddělené zdrojID.",
+      "dukaz": {
+        "soubor": "PRAMENY_KATALOG_STOPY.json",
+        "cesta": "$[*].url (PR-B vs PR-D: sdílená cesta matrika/detail/14893; PR-C vs PR-E: sdílená cesta matrika/detail/12400)",
+        "vypocet": "scripts/f2_vazby.py → PRAMENY_AUDIT.json (sdilene_knihy)"
+      },
+      "jistota": "vysoká co do sdíleného detail-ID v URL; samotná katalogová identita knih je „neověřeno“"
+    },
+    {
+      "id": "N7",
+      "typ": "prameny",
+      "tvrzeni": "PR-G (rejstřík, 7 souborů, URL detail/15190) a PR-H (archivní sada, 5 souborů, bez URL) nejsou citovány žádnou osobou ani žádným vztahem — jsou osamocené; nelze z nich nikterak dokládat.",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "sjednocení $.osoby[*].zdroje ∪ $.vztahy[*].pramen vs. $.prameny[*].id",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (integrita.osamocene_prameny=[\"PR-G\",\"PR-H\"])"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N8",
+      "typ": "prameny",
+      "tvrzeni": "Hypotéza partnerství P14↔P15 stojí výhradně na PR-F, jehož typ je sice „matriční zápis“, ale provenience je „prepis“ — tedy sekundární přepis, nikoli doložený originál; v datech je hrana navíc sama označena „partnerství (hypotéza)“.",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.prameny[PR-F] (typ=matriční zápis, provenience=prepis); $.vztahy (P14→P15, typ=partnerství (hypotéza), pramen=PR-F, provenience=hypoteza)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N9",
+      "typ": "prameny",
+      "tvrzeni": "Celé jádro P17–P20 (5 rodičovských hran, 2 partnerské hrany, 4 osobní údaje, včetně existence dětí P19/P20) stojí výhradně na PR-RODINA-2026 — rodinném sdělení s 0 evidovanými soubory a bez URL; žádný archivní ani dokumentní podklad neexistuje.",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.prameny[PR-RODINA-2026] (pocet_evidovanych_souboru=0, url_uvedena=false); $.vztahy (7 hran s pramenem PR-RODINA-2026)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N10",
+      "typ": "overeni_katalogu",
+      "tvrzeni": "Katalogová identita 4 knih MZA (detail 14893, 12400, 258, 15190) zůstává NEověřená: hlavní host www.mza.cz je živý (HTTP/2 302, nginx), ale obsahové stránky (hledání i 4 detaily) do 20–40 s neodpověděly; jednorázové pokusy bez opakování v cyklu, bez obcházení přihlášení.",
+      "dukaz": {
+        "soubor": "PROHLEDANO.md (přesné záznamy pokusů včetně kódů)",
+        "poznamka": "stav = „neověřeno“, nikoli „neexistuje“"
+      },
+      "jistota": "vysoká co do faktu neúspěchu přístupu; nízká co do důvodu (možná geografická/síťová omezení sandboxu)"
+    },
+    {
+      "id": "N11",
+      "typ": "vstup",
+      "tvrzeni": "Vstupní ZIP neodpovídá obecné šabloně zadání: neobsahuje žádné archivní obrazy (jen 3 JSON + ZADANI.txt) a MANIFEST.json uvádí jen bytes+SHA256 (bez rozměrů). SHA256 všech 3 souborů odpovídá manifestu 3/3.",
+      "dukaz": {
+        "soubor": "F_MAPA_CHYBEJICICH_VETVI_VSTUP.zip (6 231 B) → výpis unzip; MANIFEST.json",
+        "vypocet": "sha256sum vs. MANIFEST.json (3/3 souhlasí)"
+      },
+      "jistota": "vysoká"
+    },
+    {
+      "id": "N12",
+      "typ": "mezery",
+      "candidate": true,
+      "tvrzeni": "Vývod má 20 kandidátních chybějících rodičovských hran: nejbližší matka→P17, otec→P18, matka→P18; poloviční konce matka→P9, matka→P5, matka→P8; úplné konce u P14, P15, P16, P4, P6, P7, P10. Jde o SEZNAM MEZER (neznámý PID), nikoli o návrhy konkrétních nových osob — ty nejsou vysloveny.",
+      "dukaz": {
+        "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+        "cesta": "$.osoby[*] (otec/matka = null)",
+        "vypocet": "scripts/f1_pokryti.py → POKRYTI.json (mezery_hrany, vše candidate=true)"
+      },
+      "jistota": "vysoká co do existence mezery; obsah mezery zůstává zcela neznámý"
+    }
+  ],
+  "co_neni_nalez": [
+    "P18 není předek P17 — chybějící předci P18 ve vývodu P17 jsou správně, ne chyba.",
+    "Bool narozeni_zname=false u P17–P20 znamená jen neexistenci údaje v pracovních datech, ne ověřenou neexistenci narození.",
+    "Žádné negativní archivní tvrzení nebylo vysloveno — žádné matriční hledání v tomto balíku neproběhlo (mimo roli F)."
+  ]
+}

@@ -3,8 +3,8 @@
   "nazev": "Rodokmen Forejtníkových",
   "podtitul": "Soukromý rodinný archiv z matrik Moravského zemského archivu v Brně",
   "vychozi_osoba": null,
-  "verze": "kolo 2 – první funkční verze – VEŘEJNÝ EXPORT (omezené údaje žijících/potenciálně žijících osob)",
-  "aktualizace": "2026-10-29",
+  "verze": "kolo 3 – opravený graf stromu, nové originály snímků – VEŘEJNÝ EXPORT (omezené údaje žijících/potenciálně žijících osob)",
+  "aktualizace": "2026-11-01",
   "poznamka": "Zjednodušený veřejný export: osoby bez doloženého úmrtí narozené od roku 1900 (nebo s neznámým rokem) jsou vynechány. Privátní plná verze zůstává v rodokmen-projekt.zip."
  },
  "provenience": {
@@ -37,6 +37,11 @@
    "label": "rozpor",
    "popis": "Nevyřešený rozpor mezi prameny nebo čteními.",
    "trida": "prov-rozpor"
+  },
+  "sdeleni": {
+   "label": "rodinné sdělení",
+   "popis": "Jméno nebo příbuzenská vazba sdělená a potvrzená rodinou; zatím bez ověření rodným listem nebo matrikou.",
+   "trida": "prov-dokument"
   }
  },
  "osoby": [
@@ -426,7 +431,9 @@
    "popis": "Vystaven 28. 4. 1954, MNV Valtice, okres Mikulov. Kniha narození svazek 4, rok 1954, strana 216, pořadové číslo 358. Uvádí narození Miroslava 26. 4. 1954 ve Valticích a rodiče Jaroslava Forejtníka a Emilii, rozenou Koskovou (v přepisu kontextu jako Forejtníkovou, roz. Kosek), s údaji o jejím narození 10. 5. 1924 v Kosticích a rodičích Cyrilu Koskovi a Alžbětě Trpělkové.",
    "archiv": "rodinný archiv (dodaný dokument)",
    "url": null,
-   "soubory": [],
+   "soubory": [
+    "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg"
+   ],
    "provenience": "dokument"
   },
   {
@@ -446,7 +453,8 @@
     "B2736_radka_otec_col.jpg",
     "B2736_radka_matka_col.jpg",
     "B2736_sn207L_dole.jpg",
-    "B2736_sn207L_dole2.jpg"
+    "B2736_sn207L_dole2.jpg",
+    "B2736_sn207L_full.png"
    ],
    "prepis": {
     "datum": "narozen 29. 11. 1921 v Kloboukách (den „29“ ověřen znak po znaku), legitimní",
@@ -476,7 +484,8 @@
     "C_stred_zenich.jpg",
     "C_stred_nevesta.jpg",
     "C_sn85_dole_A.jpg",
-    "C_sn85_dole_B.jpg"
+    "C_sn85_dole_B.jpg",
+    "C_2755_sn85_full.png"
    ],
    "prepis": {
     "datum": "26. dubna 1921, Klobouky",
@@ -568,7 +577,8 @@
     "F_sn49_zapis_top.jpg",
     "F_sn49_zenich.jpg",
     "F_sn49_nevesta.jpg",
-    "F_browser_sn49.png"
+    "F_browser_sn49.png",
+    "F_tvrdonice_3443_sn49_full2.png"
    ],
    "nejistoty": [
     "přímé čtení tohoto zápisu se v tomto kole nepovedlo: sken knihy má nízké rozlišení (1123×1766 px na stránku) a opakovaná strojová čtení dávala zásadně rozporná jména (Cyril Kosec + Anežka Tesařová? / Janelib Franciska?...) – viz sporna_cteni.json SP-4",
@@ -599,9 +609,48 @@
     "druhý řádek rejstříku: „1884, 26. [měsíc], Foretník Josef a [Barbora Kudriovská?]“ – jiný Josef Forejtník (náš Josef zemřel před 2/1883), pravděpodobný příbuzný; do stromu nezařazován"
    ],
    "provenience": "matrika"
+  },
+  {
+   "id": "PR-RODINA-2026",
+   "typ": "rodinné sdělení",
+   "nazev": "Rodinné sdělení Adama Forejtníka (30. 10. 2026)",
+   "popis": "Adam potvrdil, že on a Ondřej jsou synové Miroslava Forejtníka mladšího a Hany Forejtníkové, rozené Cvanové. Otcem Miroslava mladšího je Miroslav Forejtník narozený 26. 4. 1954. Miroslav mladší byl na přání rodiny nastaven jako výchozí osoba. Data narození nových osob nebyla sdělena.",
+   "archiv": "soukromé sdělení rodiny",
+   "url": null,
+   "soubory": [],
+   "provenience": "sdeleni",
+   "pozn": "Vazby jsou potvrzené rodinou. Nejde o ověření matričním zápisem a nebyla odvozována žádná data narození."
+  },
+  {
+   "id": "PR-H",
+   "typ": "archivní sada",
+   "nazev": "Sada originálních snímků matrik (3. kolo)",
+   "popis": "V 3. kole byly z MZA staženy v plném rozlišení originální snímky: oddací kniha 2755 sn. 85 (sňatek Bohuslava a Anny 1921), narozená kniha 2736 sn. 207 levá (narození Jaroslava 1921) a sn. 93 (narození VI.–VII. 1900 – hledání rodného zápisu Anny Dobrovolné), oddací kniha 2753 sn. 55 pravá (sňatky 1838 včetně sporného zápisu č. 2), oddací kniha 3443 sn. 49 (sňatky 1919 Kostice) a rejstřík 2785 sn. 12 (sekce F). Čtení části z nich zůstává otevřené – viz sporna_cteni.json a DENIK_KOLO3.md.",
+   "archiv": "MZA Brno, Acta Publica",
+   "url": null,
+   "soubory": [
+    "C_2755_sn85_full.png",
+    "B2736_sn207L_full.png",
+    "K2736_sn093_full.png",
+    "K2753_sn055R_full.png",
+    "R2785_sn012_full.png"
+   ],
+   "nejistoty": [
+    "strojové čtení některých snímků se v 3. kole nepodařilo dokončit kvůli dočasnému limitu API vizuálního modelu; snímky jsou uloženy a připraveny k přečtení"
+   ],
+   "provenience": "matrika"
   }
  ],
  "galerie": [
+  {
+   "id": "G-RODNY-LIST-1954",
+   "soubor": "dukazy/rodny_list_Miroslav_Forejtnik_1954.jpg",
+   "titulek": "Rodný list Miroslava Forejtníka (1954)",
+   "popis": "Sken rodinného dokumentu dodaný uživatelem. Vystaven 28. dubna 1954 ve Valticích; obsahuje údaje o narození, rodičích a prarodičích.",
+   "pramen": "PR-A",
+   "skupina": "Rodinné dokumenty",
+   "typ": "dokument"
+  },
   {
    "id": "G1",
    "soubor": "dukazy/A_prehled_L11.jpg",
@@ -826,6 +875,51 @@
    "pramen": null,
    "skupina": "Pracovní podklady – hledání narození ~1853/54",
    "typ": "pracovni"
+  },
+  {
+   "id": "G27-3kolo-1",
+   "skupina": "3. kolo – originály snímků",
+   "typ": "pracovni",
+   "soubor": "dukazy/C_2755_sn85_full.png",
+   "titulek": "Oddací kniha 2755, sn. 85 – celá dvoustrana (1921)",
+   "popis": "Originální sken v plném rozlišení 7353×5434; svatební zápis Bohuslava Forejtníka a Anny Dobrovolné z 26. 4. 1921.",
+   "pramen": "PR-H"
+  },
+  {
+   "id": "G27-3kolo-2",
+   "skupina": "3. kolo – originály snímků",
+   "typ": "pracovni",
+   "soubor": "dukazy/K2736_sn093_full.png",
+   "titulek": "Narození 2736, sn. 93 – celá dvoustrana (VI.–VII. 1900)",
+   "popis": "Hledání rodného zápisu Anny Dobrovolné (27. 6. 1900) v Kloboukách; originální sken 7455×5846.",
+   "pramen": "PR-H"
+  },
+  {
+   "id": "G27-3kolo-3",
+   "skupina": "3. kolo – originály snímků",
+   "typ": "pracovni",
+   "soubor": "dukazy/B2736_sn207L_full.png",
+   "titulek": "Narození 2736, sn. 207 – levá strana (XI. 1921)",
+   "popis": "Rodný zápis Jaroslava Josefa Forejtníka v originálním rozlišení 3750×5863.",
+   "pramen": "PR-H"
+  },
+  {
+   "id": "G27-3kolo-4",
+   "skupina": "3. kolo – originály snímků",
+   "typ": "pracovni",
+   "soubor": "dukazy/K2753_sn055R_full.png",
+   "titulek": "Oddací 2753, sn. 55 – pravá strana (1838)",
+   "popis": "Začátek roku 1838 včetně sporného zápisu č. 2 (kandidát sňatku Josefa Forejtníka a Veroniky Vystoupilové).",
+   "pramen": "PR-H"
+  },
+  {
+   "id": "G27-3kolo-5",
+   "skupina": "3. kolo – originály snímků",
+   "typ": "pracovni",
+   "soubor": "dukazy/F_tvrdonice_3443_sn49_full2.png",
+   "titulek": "Oddací 3443 (Kostice), sn. 49 – celá dvoustrana (1919)",
+   "popis": "Skutečné původní rozlišení 2147×1747 (předchozí kolo mělo zmenšeninu). Kandidátní sňatek Cyrila Koska a Alžběty Trpělkové z 25. 6. 1919, strojově ale nečitelné – viz SP-4.",
+   "pramen": "PR-F"
   }
  ],
  "otazky": [

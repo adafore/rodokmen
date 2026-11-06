@@ -1,0 +1,209 @@
+Thought Process
+Explored 2 files
+
+Pracovní soubory existují. Ověřím jejich integritu vůči originální příloze (SHA256 ZIPu) a obsah.
+
+Ran 2 commands
+
+SHA256 vstupního ZIPu sedí na požadovanou hodnotu (1c6f92f6…a333f). Nyní porovnám obsah work/input/ s obsahem ZIPu a načtu předchozí popis a manifest.
+
+Explored 2 files，Ran 1 commands
+
+Všechny vstupní soubory jsou byte-identické s originální přílohou. Nyní si načtu původní zadání a skripty výřezů (pro provenienci souřadnic), a zkontroluji rozměry uložených výřezů.
+
+Explored 3 files，Ran 1 commands
+
+Zadání i skripty jsou čitelné. Stav je jasný: vstupy 100% zachovány, výřezy A/B zachovány, chybí jen dřívější výstupy v download/ (05_kosek_1919.* a checkpointy 0–2 — nejsou fyzicky přítomny). Hned ukládám checkpoint resume, než začnu cokoli dalšího.
+
+Wrote 2 files，Ran 2 commands
+
+Checkpoint resume je uložen a stažitelný. Přecházím k D1 — vlastní čtení zápisu č. 53. Nejdřív celostní pohled:
+
+Explored 1 files
+
+Celostní pohled potvrzuje: dvojlist „Knihа oddaných — Trauungsbuch“, Anno 1919, tomus V., pag. 94/95, vlevo nahoře ručně „Kostice“. Zápis č. 53 vlevo nahoře. Nyní cílené výřezy ženicha a nevěsty:
+
+Explored 2 files
+
+Zápis č. 53 už čtu jasněji. Teď bloky rodičů (B2, B3), věkové sloupce (B4) a svědky (A4):
+
+Explored 2 files
+
+Rodiče nevěsty čtou se jasněji („dcera Josefa Trpětky, chalupníka v Kosticích a Julany roz. Josef Prokop, chalupníka v Kosticích“ — formuli ještě označím [?]). Teď věkové sloupce (B4) a svědci (A4):
+
+Explored 2 files
+
+Věkové sloupce a svědky už čtu. Zůstávají dvě sporná místa — rotované údaje „Nar. …" v úzkých sloupcích u věku. Udělám jen dva cílené, skriptem doložené výřezy (přesně dle povolení „max. dva na sporné místo"):
+
+Explored 2 files，Wrote 1 files，Ran 1 commands
+
+Dvě cílené výřezy hotové (a to vyčerpává povolené opakování pro tato sporná místa — rotované údaje „Nar. …“ zůstávají s [?]). Nyní ověřím katalog MZA vlastním přístupem v tomto běhu:
+
+Explored 2 files
+
+Katalogová metadata obou knih jsem ověřil v tomto běhu — sedí na stopu z popisu 05. Nyní zjistím adresu snímku 49 knihy 3443 a prohledám katalog na další knihy farnosti Tvrdonice/obce Kostice (nutné pro D2 a D3):
+
+Ran 2 commands
+
+curl timeoutuje; WebFetch fungoval — použiju ho:
+
+Explored 2 files
+
+Formulář neposkytne parametry přes WebFetch. Než čokoli hádat, použiju webové vyhledávání na oficiální katalogové odkazy dalších knih Kostice/Tvrdonice:
+
+1 searches
+
+Zkusím oficiální vyhledávání podle obce — curl s delším timeoutem, jinak WebFetch (jen doložené varianty, žádné cyklení):
+
+Ran 1 commands
+
+curl na hledani timeoutuje (2. pokus) — překážku zdokumentuji a přejdu na WebFetch. Jedna doložená varianta GET pro hledání obce:
+
+Explored 1 files
+
+GET parametry nevyvolají vyhledání (formulář je POST/JS) — další překážka k dokumentaci. Zkusím navigaci přímo na stránce detailu knihy:
+
+Explored 1 files
+
+Výborně — objevil jsem oficiální cestu: obec Kostice má v katalogu ID 15 (matrika/obec/15). To je legitimní seznam všech knih obce:
+
+Explored 2 files
+
+Obě varianty 404 — překážku zdokumentuji, necyklim dál. Zkusím oficiální archivní databázi MZA (pomůcka farnosti Tvrdonice):
+
+Explored 1 files，1 searches
+
+D1 čtení mám hotové. Hned ukládám dílčí výstupy (první smysluplný výstup má prioritu), pak pokračuji katalogem:
+
+Ran 1 commands
+
+SHA256 vstupního obrazu sedí na MANIFEST.json. Píšu neutrální přepis D1:
+
+Wrote 5 files，Ran 1 commands
+
+D1 hotový a zabaleny. Jdu na D2 — oficiální cesta „Vyhledávání podle původce":
+
+Explored 1 files
+
+Stránka puvodce 404 (JS). Zkusím najít indexované katalogové stránky ostatních knih Kostice/Tvrdonice:
+
+1 searches
+
+Zkusím domovskou stránku MZA — potřebuji přesné odkazy na „Archiv online“ a „Archivní fondy“:
+
+Explored 1 files
+
+Překážky katalogu jsou jasné (POST/JS + 404). D2/D3 doplním dalším oficiálním zdrojem — kde jsou dnes matriky farnosti Kostice/Tvrdonice a co je o 1924 dostupné:
+
+1 searches
+
+Diecézní archiv Biskupství brněnského má inventáře farních úřadů — zkusím přímo Tvrdonice:
+
+1 searches
+
+Web kvóta v této zprávě vyčerpána — pokračuji lokální prací na D2, pak ještě dva doložené pokusy o inventář diecézního archivu. Píšu D2 výstupy:
+
+Wrote 2 files
+
+Teď dva doložené pokusy (vzor URL ověřen z výsledků vyhledávání inventar-fu-…) pro diecézní archiv:
+
+Explored 2 files
+
+Web kvóta stále hlásí limit — vrátím se k ní až v dalším bloku. Teď D3 výstupy z doložených dat:
+
+Explored 1 files，Wrote 4 files，Ran 1 commands
+
+Web nástroje zůstávají v kvótě blokovány — zdokumentuji a dokončím finální výstupy. Aktualizuji checkpoint:
+
+Wrote 7 files
+
+Nyní MANIFEST.json (programově, se skutečnými SHA256) a finální ZIP:
+
+Wrote 1 files，Ran 1 commands
+
+Finální komplexní verifikace všeho:
+
+Ran 1 commands
+
+Vše ověřeno. Jediný zásah — z obav z výskytu slova „TODO“ v nadpisu D2 (rétorický odkaz na zadání) jej upravím, aby v deliverablech žádný takový token nebyl:
+
+Wrote 1 files，Ran 2 commands
+
+Hotovo — běh D_KOSEK_TRPELKA dokončen v dostupné části a vše je skutečně stažitelné.
+
+Co se potvrdilo po obnově: vstupní ZIP (SHA256 1c6f92f6…a333f) i obraz 2147×1747 zachovány byte-identicky; výřezy A/B zachovány; ztraceny jen dřívější 05_* v download/ — neobnovitelné 1:1, ale přepis je znovu vytvořen ze vstupu.
+
+D1: vlastní čtení zápisu č. 53 (pag. 94, Anno 1919, tomus V.): ženich Cyrill Kosek (zřetelné), syn Josefa Koseka chalupníka (Tvrdonice) × Františky roz. „Štrukáni…[?]“; nevěsta Alžběta Trpět/ětková[?] (bez „l“), dělnice z Kostic, dcera Josefa Trpětky chalupníka × Julany roz. (Josefa) Prokopa[?]; věky „2[8|9] 1/2[?]“ × „2[2|3] 1/2[?]“; rotované „Nar. 24. …“ zůstávají [?] (2 cílené výřezy C1/C2 — limit vyčerpán). Katalog ověřen vlastně: 3443=detail/258 (oddaní 1909–1925, Kostice) ✓; 3454=detail/12042 — sn. 49 = index zemřelých, ne rejstřík oddaných ✓.
+
+D2/D3: plány + varianty jmen + kriteria totožnosti; dostupnost narození 1924 nepotvrzena ani nevyloučena (záznam je přes 100 let, rozhoduje zveřejnění/uložení); 6 dokladů pro spojení s Emilií; nic automaticky nepropojeno, vše candidate.
+
+Překážky (bez obcházení): raster MZA za ALTCHA; katalog POST/JS (curl 2× timeout, obec/15 i puvodce 404); web-kvóta zablokovala diecézní archiv.
+
+Stažitelné v download/: D_checkpoint_resume.md/.json, D1_PREPIS_zapis53_1919.md/.json, D2_KROKY_narozeni_a_rodice.md/.json, D3_NAVAZANOST_EMILIE_1924.md/.json, D1_obrazy/ (A1–A4, C1–C2, kopie vstupu), PRAMENY.csv, CHECKPOINT.md, D1_DENIK.md, D23_DENIK.md, finální soubory (PREHLED, NOVE_NALEZY, PREPISY, NEJISTOTY, PROHLEDANO, POKRACOVAT, MANIFEST.json) a ZIPy D1/D2/D3_VYSLEDKY + finální D_KOSEK_TRPELKA_VYSLEDKY.zip (7,86 MB; SHA256 83144d97…400f415). Vše ověřeno: JSON, obrazy (obsah 8–15 % tmavých pixelů), ZIP-integrita, SHA256.
+
+Další krok (POKRACOVAT.md): v katalogu ručně zjistit signaturu narozené matriky farnosti pro 1913+ — ta rozhodne o spojení s Emilií i o rozporu Trpětka/Trpělková.
+
+All files in task
+30
+Save to Cloud
+D_KOSEK_TRPELKA_VYSLEDKY
+· zip
+D2_KROKY_narozeni_a_rodice
+· md
+D_KOSEK_TRPELKA_D2_VYSLEDKY
+· zip
+MANIFEST
+· json
+POKRACOVAT
+· md
+PROHLEDANO
+· md
+NEJISTOTY
+· md
+PREPISY
+· md
+NOVE_NALEZY
+· json
+PREHLED
+· md
+CHECKPOINT
+· md
+D23_DENIK
+· md
+D_KOSEK_TRPELKA_D3_VYSLEDKY
+· zip
+PRAMENY
+· csv
+D3_NAVAZANOST_EMILIE_1924
+· json
+D3_NAVAZANOST_EMILIE_1924
+· md
+D2_KROKY_narozeni_a_rodice
+· json
+D_KOSEK_TRPELKA_D1_VYSLEDKY
+· zip
+D1_DENIK
+· md
+D1_PREPIS_zapis53_1919
+· json
+D1_PREPIS_zapis53_1919
+· md
+D1_sn49_A1_zapis53_cele_levo
+· png
+D1_sn49_A2_zenich
+· png
+D1_sn49_A3_nevesta
+· png
+D1_sn49_A4_svedci
+· png
+D1_sn49_C1_margin_zenich
+· png
+D1_sn49_C2_margin_nevesty
+· png
+D1_sn49_full2_kopie_vstupu
+· png
+D_checkpoint_resume
+· json
+D_checkpoint_resume
+· md
+Expand files

@@ -1,0 +1,35 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "uloha": "D3",
+  "cas": "2026-11-02T19:10:00+01:00",
+  "osoba_cil": {"jmeno": "Emilia Kosková", "narozeni": "1924-05-10", "misto": "Kostice", "zdroj_udaje": "rodinný výchozí pramen (zadání) — NENÍ matriční doklad", "rodice_podle_rodinneho_udaje": "Cyril Kosek × Alžběta roz. Trpělková — jen výchozí bod"},
+  "katalog_overeno": {
+    "kniha_3443": "oddaní 1909-1925 (detail/258) — pro narozené 1924 nerelevantní",
+    "kniha_3454": "svazek rejstříků, index narozených 1784-1912 (sn. 104-172) — konec rozsahu indexu NEVDOKAZUJE nedostupnost 1924"
+  },
+  "stav_dostupnosti_1924": {
+    "potvrzeno": false,
+    "vylouceno": false,
+    "zduvodneni": "signatura/rozsah narozené matriky farnosti pro roky 1913+ v tomto běhu neověřeny (katalogové hledání blokováno: POST/JS, obec/15 a puvodce 404, curl timeout)",
+    "ochranna_lhuta": "záznam 1924 je v r. 2026 starší 100 let — stáří překážkou není; rozhoduje digitalizace/zveřejnění svazku a jeho uložení (MZA / farnost / diecézní archiv)"
+  },
+  "seznam_dokladu_pro_spojeni": [
+    {"poradi": 1, "doklad": "narozený záznam Emilie Koskové 10.5.1924 Kostice (narozená farnosti Kostice/Tvrdonice, ročník 1924)", "sila": "primární — obsahuje jména rodičů, věk, bydliště, dům"},
+    {"poradi": 2, "doklad": "rejstřík narozených 1924, heslo Kosková (K)", "sila": "nezávislá kontrola, lokalizace strany"},
+    {"poradi": 3, "doklad": "oddací záznam 1919 (kniha 3443, zápis č. 53, pag. 94; obraz přiložen)", "sila": "druhý pól — po ověření rejstříkem K/T (3454 sn. 64-103)"},
+    {"poradi": 4, "doklad": "křížová kontrola: věky (jen intervaly!), obce, domy, povolání 1919 vs 1924", "sila": "podpůrná"},
+    {"poradi": 5, "doklad": "další děti páru (narozená 1920-1935, heslo Kosková/Kosek)", "sila": "volitelné posílení, nenahrazuje č. 1"},
+    {"poradi": 6, "doklad": "úmrtní záznamy rodičů", "sila": "volitelné — uzavření osob, ne spojení"}
+  ],
+  "varovani": [
+    "NEZAMĚŇOVAT s pozdějším sňatkem Jaroslava Forejtníka (nar. 1921) × Emílie (nar. 1924) — jiný pár, jiné svazky (oddaní ~1945+)",
+    "žádné automatické spojení kandidátního páru 1919 s Emilii; nic do rodokmenu; vše candidate",
+    "nesbírat údaje žijících osob; nic nikam nepis/nepodávej"
+  ],
+  "instituce_pro_hledani": [
+    "MZA Brno — Acta Publica (narozená farnosti Tvrdonice s roky 1913+ — signatura dosud nezjištěna)",
+    "Farní úřad Kostice/Tvrdonice (biskupství brněnské, děk. Podivín)",
+    "Diecézní archiv Biskupství brněnského (inventáře FÚ)",
+    "Matriční úřad obce Kostice / okres Břeclav — jen civilní režim po 1950, pro 1924 NENÍ primární cesta"
+  ]
+}

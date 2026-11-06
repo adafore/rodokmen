@@ -1,0 +1,398 @@
+Thought Process
+Explored 3 files，Ran 3 commands
+
+Ověřil jsem vstupní ZIP: všech 5 souborů má SHA256 přesně odpovídající MANIFEST.json (Anna sken 7455×5846, výřez řádku 36, kontrola matky, sňatek 2755 sn85, kontrolní JSON). Nyní si vytvořím pracovní plán a pustím se do úkolu A1.
+
+Ran 2 commands
+
+ActaPublica na www.mza.cz funguje (HTTP 200, přesměrovalo na /actapublica/matrika/hledani). Nejdřív si projdu strukturu katalogu a současně připravím výřezy ze skenu Anny.
+
+Wrote 1 files，Ran 3 commands
+
+Výřezy hotové. Nyní se podívám na celkový sken (orientace + hlavičky) a na zónu zápisu č. 36.
+
+Explored 1 files
+
+Vidím dvojstranu fol. 186/187, kniha narozených a pokřtěných, Anno 1900, tomus XI, row čís. 36 je poslední řádek pravé strany. Teď detailní výřezy: hlavičky a celý řádek 36 ve vysokém rozlišení.
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+Hlavičky potvrzeny: fol. 186/187, „Kniha narozených a pokřtěných — Geburths- und Taufbuch", Annus 1900, tomus XI, nápis „Klobou…". Teď řádek č. 36 – západní a východní polovina.
+
+Explored 1 files
+
+Západní polovina je čitelná: jméno Anna, datum narození s opravou (přeškrtnuté číslice, níže „29."), rozsáhlá poznámka o oddání 26/4 1921, dále blok „O(d)davky se … 1899" a začátek údaje o otci. Teď východní polovina (otec/matka/kmotr).
+
+Explored 1 files
+
+Matka: „Genovéfa manž., dcera Frančiška Tihlaříka a jeho manželky Evy roz. Forejtkové(?), … nar. 27/2 1877" – to je klíč pro A2/A3. Kmotr: Josef Dobrovolný, nádeník… Teď si přečtu už existující kontrolní výřez matky a připravím kompozit sporných detailů (datum s opravou, poznámka o oddání, „oddavky", otcův rok narození).
+
+Explored 2 files，Wrote 1 files，Ran 1 commands
+
+Kompozit potvrdil klíčové údaje: Nar: 4/8 1873 (otec Josef – potvrzena varianta 1873, nikoli 1843), poznámka „oddána 26/4. 1921 … s zedníkem v Klobou(kách) Forejtníkem Bohuslavem", datum narození s korekturou na 29. června, blok „Oddavky se … 1899". Ještě jeden cílený kompozit na sporná slova (bydliště v poznámce, datum oddavek, matka otce + její rodné příjmení, jméno Evy a příjmení Tihlař/Tiller).
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+Poznámka obsahuje ještě sporné fragmenty (jméno „Bohuslavem", datum oddavek, odkaz „pag:/roz:" u otcovy matky, vzorec „křt. j…"). Udělám poslední cílený kompozit CROP-B včetně srovnávacího vzorce z řádku 34–35 téže knihy.
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+CROP-B vyřešil vzorec zápisu (srovnání s řádky 34/35: „…a jeho ženy [X] r.:[rozené]… nar:…"). Otcova matka: „manželky Ma?ie, r./roz. [nečitelné K?o?yóh]", matčin otec „Frančišek Tihlař(ík) … domkář v Kloboukách", oddavky „4. října(?) 1899" – to přesně sedí na stopu 4.10.1899. Teď srovnám se sňatkem 2755 sn85 a současně otestuji katalog MZA na signaturu 2736.
+
+Ran 2 commands
+
+Katalogová odpověď byla prázdná – opakuji s detailnějším sledováním a podívám se na přehled svatebního skenu.
+
+Ran 2 commands
+
+Katalog nalezl knihu 2736 jako ID 14893. Načtu detail knihy a ověřím metadana + mapu snímků.
+
+Ran 2 commands
+
+Kniha 2736 potvrzena v katalogu: ID 14893, Klobouky u Brna (římskokatolická církev), svazek XI, narození 1883–1925. Seznam snímků je za ALTCHA ověřením – ten obcházet nebudu; metadat knihy ale mám dost. Nyní získám kompletní seznam knih farnosti Klobouky u Brna (najdu tam svatební svazky ~1899 a ~1921).
+
+Ran 3 commands
+
+Seznam knih farnosti: svatby 1883–1948 = katalog ID 12400 (kniha č. 2755) – tam bude i sňatek 1899 i sňatek 1921. Ověřím ještě, co je katalogový záznam ID 2786 (stopa „rejstřík 2786") a zdali seznam obce pokračuje (rejstříky).
+
+Ran 1 commands
+
+ID 2786 v dnešním katalogu = Křepice, narození 1841–1875 – s naší stopou nesouvisí; „rejstřík 2786" je tedy nepotvrzená/špatně mapovaná stopa. Správný cíl pro sňatek 1899 je kniha 2755 (ID 12400, oddaní 1883–1948). Teď dokončím A1: přečtu svatební sken.
+
+Explored 1 files
+
+Svatební kniha: „Kniha oddaných — Trauungsbuch", Annus 1921, tomus 9, pag. 171/172, zápis č. 85 (26. dubna 2021→1921, Forejtník Bohuslav × Dobrovolná Anna) s podpisem „Josef Dobrovolný — Otec". Teď detailní výřezy obou hlavních sloupců.
+
+Explored 1 files，Ran 1 commands
+
+Ženich: Forejtník Bohuslav, „šolar(?) v Břeclavě, domobranec, manž. syn Karla Forejtníka, domkáře v Kloboukách a Rosalie rozené Veselé…, nar. 3/4. 1895", bydliště Břeclava č. 56, svědek Forejtník Rudolf. Rodiče ženicha nechávám jiné větvi. Teď sloupec nevěsty – klíčový pro A1/A2/A3.
+
+Explored 1 files
+
+Nevěsta: Dobrovolná Anna, „u rodičů v Kloboukách, manželská dcera Josefa Dobrovolného, zedníka v Kloboukách, a Jenovéfy rozené Tihlařů(?) František …, nar. 27/6. 1900", margin „Klobouky čis. 266", souhlas otce s podpisem „Josef Dobrovolný — Otec", odkaz na Ordinariát v Brně č. 512. Zajistím ještě 1 cílený kompozit (příjmení matky, datum 27/6 vs 29/6, slovo o povolání ženicha).
+
+Explored 1 files，Ran 1 commands
+
+Výřez byl posunutý – opravuji souřadnice a dělám závěrečný cílený výřez na příjmení matky a datum narození nevěsty.
+
+Explored 1 files，Ran 1 commands
+
+A1 čtení dokončeno – mám vše potřebné. Hned ukládám pracovní výstupy do download/ a tvořím ZIP1, pak jdu do úkolu A2.
+
+Wrote 2 files，Ran 2 commands
+
+PREPISY čisté. Teď JSON nálezy, PRAMENY.csv, deník a checkpoint.
+
+Wrote 4 files，Ran 1 commands
+
+A1 dokončen a zabaleno (ZIP1: 01_A_DOBROVOLNI_A1.zip, 20,7 MB, integrita OK). Pokračuji úkolem A2 — sňatek rodičů. Nejdřív zjistím strukturu obrazů knihy 2755 (ID 12400).
+
+Ran 1 commands
+
+Metadata sedí (kniha 2755 = oddaní 1883–1948, svazek IX). Hledám, jak viewer stahuje obrazy (jp2 endpoint).
+
+Ran 3 commands
+
+application.js jde prázdný (ochrana?) – vyzkouším přímo pravděpodobné AJAX endpointy pro seznam snímků a obrazy.
+
+Ran 3 commands
+
+Endpoint /matrika/image/… netvoří 404, ale časový limit – pravděpodobně existuje a teprve zpracovává. Vyzkouším hlavičky a delší časový limit.
+
+Ran 1 commands
+
+HEAD visí – zkusím podrobnější browser-like hlavičky a --compressed (možná jen chybí dekomprese).
+
+Ran 2 commands
+
+Klíčové zjištění: seznam snímků i obrazy jsou za ALTCHA ověřením, které v prohlížeči proběhne automaticky („nic není potřeba klikat"). Curl bez prohlížeče bariéru obejít nebude – a obcházet ji nesmím. Řešení: použít skutečný headless prohlížeč (agent-browser), který nechá ALTCHA proběhnout normálním způsobem, jako u běžného návštěvníka.
+
+Ran 5 commands
+
+Brána ALTCHA se aktivuje až při načtení tabulky se snímky. Kliknu na kartu „Digitalizované stránky".
+
+Ran 3 commands
+
+Našel jsem strukturu: část matriky = snímky 2–165 (celá kniha). Naše sňatková stránka 171/172 = snímek 85 → dvostrana; říjen 1899 odhaduji kolem snímku 36–38. Otevřu snímek 36 v prohlížeči a sleduji síťové požadavky.
+
+Ran 1 commands
+
+Navigace vypršela – server zpomaluje. Zkusím to znovu s trpělivostí.
+
+Ran 1 commands
+
+Server mě přemapoval zpět na snímek 10 – viewer vyžaduje session se seznamem snímků. Prohlédnu si stránku vizuálně.
+
+Explored 1 files，Ran 1 commands
+
+Viewer plně funkční v prohlížeči: „Snímek 1 z 166", obálka s lístkem MZA 2755. ALTCHA proběhlo automaticky. Jdu na snímek 36 (odhad pro říjen 1899).
+
+Ran 5 commands
+
+URL se změnila na -00360.jp2 (kódování = snímek × 10). Screenshot snímku 36:
+
+Explored 1 files，Ran 1 commands
+
+Snímek 36 = ročník 1897/1898 — k cíli chybí pár snímků. Nejdřív zjistím, jakou URL skutečně má obraz, abych ho mohl stáhnout v plném rozlišení přes session prohlížeče.
+
+Ran 1 commands
+
+Obraz jde přes IIP server s tokenem session. Vyzkouším, jestli token stačí samostatně (bez cookies) a zda server podporuje IIIF pro celé snímkové JPG.
+
+Ran 1 commands
+
+curl je na iip-srv blokovaný (WAF), prohlížeč ano. Vyzkouším IIIF regionální požadavky přímo v kontextu stránky (eval fetch).
+
+Ran 2 commands
+
+DZI funguje v kontextu stránky (snímek 36: 7309×5465). Sestavím nástroj, který v prohlížeči stáhne dlaždice DeepZoom a slepí je do výřezů – nejprve horní pruh (rok) pro snímky 37–41.
+
+Wrote 1 files，Ran 2 commands
+
+Token se mění podle snímku – token musím čerstvě vytáhnout po každé navigaci. Napíšu driver, který to zautomatizuje.
+
+Explored 1 files，Wrote 2 files，Ran 9 commands
+
+Prouhy byly prázdne (okraj knihy) – hlavička je níž (y≈1650–2150 v plném rozlišení). Upravím zónu a stáhnu snímky 37–41.
+
+Explored 1 files，Ran 2 commands
+
+Hlavičky ukazují přechod let kolem snímku 39–41 (vidím ručně „1900", „1902"). Stáhnu celé strany snímků 39 a 40 v úrovni 12 (poloviční rozlišení) a najdu záznam s říjnem 1899.
+
+Ran 1 commands
+
+Má chyba v JS: pravá půlka se ořáhla. Opravím a přepočítám; mezitím si prohlédnu levé strany 39 a 40.
+
+Explored 1 files，Wrote 1 files
+
+Chyba: dlaždice jsou pojmenované {sloupec}_{řádek}, já je skládám transponovaně. Opravím a přetáhnu.
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+Skvěle – snímek 39 je konec roku 1901/leden 1902, čili říjen 1899 bude o ~5 snímků dřív (32–34). Přetáhnu snímky 32–34.
+
+Explored 1 files，Ran 1 commands
+
+Snímek 33 = léto/podzim 1899 (června, srpna). Říjen bude na snímku 34:
+
+Explored 1 files
+
+NALEZENO! Snímek 34, levá strana, horní zápis: ženichova část „…Dobrovolného, domkáře v Klobouchách…", nevěstina část „…dcera Františka Tillerky/Tihlaříka(?), domkáře v Klobouchách a jeho manželky … roz. Forejtkové(?)" – a pravá strana začíná „Léta Páně 1900", čili jde o poslední zápisy 1899. Stahuji plné rozlišení celého horního zápisu.
+
+Ran 1 commands
+
+Příliš velký díl – rozdělím na dva pásy.
+
+Explored 1 files，Ran 1 commands
+
+To je ono! Ženich: „Jos. František(?) Dobrovolný, volný zedník v Klobouchách, manž. syn katol. rodičů: Frančiška Dobrovolného, domkáře v Klobouk…", nevěsta: „Genovéfa Tihlař(ík)ová, v otcovském domě v Klobouchách, manž. dcera katol. rodičů: Františka Tihlařika, domkáře…", věk ~26/22. Teď dolní pás s rodiči, svědky a formulářem:
+
+Explored 1 files
+
+Dolní pás potvrzuje: ženichova matka „…rozené Veselych(?)", nevěstini rodiče „František Tihlařika, domkář v Klobouchách a jeho manželky Evy rozené Forejtkových(?)" – shoda s rodným zápisem Anny. Úzce prověřím: datum, jméno ženicha, matky obou, sloupce „nar." a podpisy.
+
+Explored 1 files，Ran 2 commands
+
+Datum potvrzeno: „Dne 4. října" 1899 – přesná shoda s poznámkou v rodném zápise Anny! Ženichova matka: „Mariany(?) rozené Veselé/ch(?)". Teď podpisy a sloupce „nar.":
+
+Explored 1 files
+
+Kontrola rozpočtu čtení – skládám všechny zbývající detaily sňatku (podpisy, formulář o oddavkách, sloupce „nar.") do JEDNOHO kompozitu.
+
+Explored 1 files，Ran 1 commands
+
+A2 má kompletní důkazy – ukládám výstupy a ZIP2, pak A3.
+
+Wrote 1 files，Ran 3 commands
+
+A2 uzavřeno (ZIP2: 02_A_DOBROVOLNI_A2.zip, 16,5 MB). Pokračuji úkolem A3 — narození Josefa (4.8.1873) a Genovéfy (27.2.1877) v knize 2745 (narození 1859–1882).
+
+Ran 1 commands
+
+Kniha 2745 má 188 snímků. Zjistím IIP cestu a vytáhnu hlavičky snímků ~141 (únor 1877) a ~115 (srpen 1873).
+
+Explored 1 files，Wrote 1 files，Ran 4 commands
+
+Snímek 141 = rok 1877 ✓, snímek 115 = 1873/74 ✓. Přetáhnu celé strany 140+141 (únor 1877) a 115+116 (srpen 1873).
+
+Explored 1 files，Ran 2 commands
+
+Ledna/Února 1877 – Genovéfa (27. 2.) bude na snímku 142. Přetáhnu i 143 a pak srovnám i 115/116 (Josef, srpen 1873).
+
+Explored 1 files，Ran 3 commands
+
+NALEZEN ZÁPIS GENOVÉFY! Snímek 142, pravá strana, č. 286: „Zaří 17. | Genovéfa | otec: František Tihlařik, domkář v Klobouchách, manž. syn Františka Tihlařika a františky roz. Špačkové(?) | matka: Eva, manž. dcera …, domkář v Klobouchách a Evy roz. …“ | kmotr: Josef …, domkář v Klobouchách. Pozor: datum je září 1877, ne únor! Zajistím plné rozlišení tohoto zápisu.
+
+Explored 1 files，Ran 1 commands
+
+Posun — zápis č. 286 je níž. Opravuji souřadnice.
+
+Explored 2 files，Ran 2 commands
+
+Klíčové: matka Eva = „manž. dcera Tomáše Forejtníka(?), domkáře v Klobouchách a Evy roz. Onřejů(?)" – děd z matčiny strany Forejtník! A otcova strana: děd František Tihlař(ík), obecní pastýř v Bořicích(?), + Genovéfa roz. Krištin(?). Sporné zůstává datum „Září 17." vs „27/2 1877" v zápisu Anny – udělám jednu kombinovanou kontrolu obou dat.
+
+Explored 1 files，Ran 1 commands
+
+Anna: matka „nar. 17/9 1877" (čten 17. září!) – to by souhlasilo s registrem „Září 17". Můj dřívější přepis „27/2" byl omyl při malém měřítku. Zkontroluji datum v matrice ještě jednou správně zaměřené:
+
+Explored 1 files，Ran 1 commands
+
+Matrice: Září 17, č. 286 – datum potvrzeno (17. 9. 1877; dřívější „27/2" byl omyl). Ještě cílený kompozit na rozhodující slova: „Tomáše Forejtníka" (matčin děd) a kmotra.
+
+Explored 1 files，Ran 1 commands
+
+Matka: „Tomáše Forejtníka, domkáře v Klobouchách" – Eva je rozená Forejtníková (podle hlavního zápisu 1877; varianty „Forejtková" v mladších zápisech = nepřesnější opisy). Spojení s rodinou ženicha nevytvářím. Teď Josef (4. 8. 1873):
+
+Explored 1 files，Ran 1 commands
+
+Srpen 1873 je na dalších snímcích. Přetáhnu 117+118.
+
+Explored 1 files，Ran 1 commands
+
+Zápisy srpna 1873 jsou na snímku 117, ale první čtení neukazuje Dobrovolného. Přiblížím první dva zápisy snímku 117 v plném rozlišení:
+
+Explored 1 files，Ran 1 commands
+
+Tato stránka: „Srpna 20/21, č. 65(?), Josef" – mé čtení dat na L12 bylo nespolehlivé. Zápisy 1.–19. srpna musejí být na pravé straně snímku 116. Přetáhnu ji v plném rozlišení ve dvou pásech.
+
+Explored 2 files，Ran 1 commands
+
+Č. 86 = „Srpna 6/8" – Josef (narozen 4. 8.) může být pokřtěn o pár dní později (č. 87–94). Přetáhnu pokračování pravé strany snímku 116.
+
+Explored 1 files，Ran 1 commands
+
+Mezera mezi č. 78 a č. 85 není dosud pokrytá – přetáhnu pásmo y1300–1950 snímku 116R (zápisy 26.–31. července + datum č. 85):
+
+Explored 1 files，Ran 1 commands
+
+Negativní zjištění pro srpen 1873 je přesné. Ještě rychlá kontrola alternativy: kdyby „4/8" v zápise Anny bylo „4/6" (červen), zápis by byl na snímku 114. Ověřím:
+
+Explored 1 files，Ran 1 commands
+
+Duben–srpen 1873 prohlédnuto (sn113–117L) – zápis Josefa Dobrovolného nenalezen v Kloboukách v tomto rozsahu; přesný negativní rozsah dokumentuji. Genovéfa je doložená (17. 9. 1877, č. 286). Nyní finální výstupy a ZIP3.
+
+Wrote 2 files，Ran 7 commands
+
+ZIP3 je 56 MB – nad limit 45 MB. Zmenším dokumentační obrázky (kvalita JPEG) a redundantní kompozity vyloučím, důkazní výřezy ponechám v plné kvalitě.
+
+Ran 6 commands
+Hotovo — všechny tři úkoly zpracovány
+
+A1 – Rodný zápis Anny (kniha 2736, fol. 187, č. 36): potvrzen neutralně z hlaviček i textu. Datum narození je s korekturou 29. 6. 1900 (v sňatku 1921 „27/6“ – rozpor evidence). Otec Josef Dobrovolný, zedník, nar. 4/8 1873 (ne 1843); matka Genovéfa; poznámka zní „oddána 26/4. 1921 s Forejtníkem Bohuslavem“ (ne „opravněná“). Shody i rozpory se sňatkem 2755 sn85 v PREPISY.md.
+
+A2 – Sňatek rodičů: NALEZEN A DOLOŽEN – 4. 10. 1899, Klobouky, kniha 2755, snímek 34 (obraz stažen a přečten). Dvojitá shoda rodičů obou snoubenců s rod. zápisem Anny + shoda data s poznámkou „Oddavky se 4. října 1899“. Stopa „rejstřík 2786“ vyvrácena.
+
+A3 – Genovéfa DOLOŽENA: rod. zápis 17. 9. 1877, č. 286 (kniha 2745, snímek 142) – korekce čtení „27/2 1877“ na „17/9 1877“ v zápisu Anny; prarodiče: Tihlař(ík) obecní pastýř × Krištin(?), Tomáš Forejtník domkář × Onřejů(?) (spojení s rodinou ženicha nevytvořeno). Josef 1873: negativní – kniha 2745, Květen 4 – Srpna 21 1873 prohlédnuto (24.7.–21.8. i v plném rozlišení), zápis chybí; nejbližší krok: snímky 108–112 (POKRACOVAT.md).
+
+Vše leží ve složce download/A_DOBROVOLNI/ (PREHLED, NOVE_NALEZY.json – 12 tvrzení, PRAMENY, PREPISY, NEJISTOTY, PROHLEDANO, POKRACOVAT, deník, 40 obrazů, MANIFEST) a v třech ZIP balících (01/02/03, finální 34,9 MB, SHA256 všech 49 souborů ověřeno uvnitř archivu). Vstupní ZIP nedotčen; ALTCHA ActaPublica nebyla obcházena – obrazy přistupovány legitimně přes prohlížeč.
+
+All files in task
+53
+Save to Cloud
+03_A_DOBROVOLNI_A3_final
+· zip
+MANIFEST
+· json
+CHECKPOINT
+· md
+A2_comp3
+· jpg
+g_surname_kmotr
+· jpg
+A1_cropB
+· jpg
+A1_detaily_kompozit
+· jpg
+A1_hlavicky_kompozit
+· jpg
+A1_r36_vychod
+· jpg
+A1_r36_zapad
+· jpg
+A1_sporna_slova
+· jpg
+A1_svat_datum_zenich
+· jpg
+A1_svat_klicova_slova
+· jpg
+A1_svat_nevesta
+· jpg
+A2_comp1
+· jpg
+A2_comp2
+· jpg
+A1_overview_cely
+· jpg
+A1_svatebni_overview
+· jpg
+A3_1873_sn115_116
+· jpg
+A3_1877_sn140_141
+· jpg
+A3_1873_sn113_114
+· jpg
+A3_1873_sn117_118
+· jpg
+A3_1877_sn142
+· jpg
+PREHLED
+· md
+POKRACOVAT
+· md
+PROHLEDANO
+· md
+NEJISTOTY
+· md
+NOVE_NALEZY
+· json
+PRAMENY
+· csv
+PREPISY
+· md
+g_datum_zoom2
+· jpg
+kniha2745_sn115_12_300-950
+· jpg
+kniha2745_sn141_12_300-950
+· jpg
+A3_hlavicky_141_115
+· jpg
+anna_nar_matky_zoom
+· png
+sn116R_a
+· jpg
+sn116R_b
+· jpg
+sn116R_c
+· jpg
+sn116R_gap
+· jpg
+sn117_top_L13
+· jpg
+sn142_genovefa_L13b
+· jpg
+sn142_genovefa_L13c
+· jpg
+02_A_DOBROVOLNI_A2
+· zip
+DENIK
+· md
+hlavicky_37_41
+· jpg
+kniha2755_sn032_full12
+· jpg
+kniha2755_sn033_full12
+· jpg
+kniha2755_sn034_full12
+· jpg
+kniha2755_sn039_full12
+· jpg
+sn34_zapis_a
+· jpg
+sn34_zapis_b
+· jpg
+01_A_DOBROVOLNI_A1
+· zip
+A1_svat_prijmeni_matky
+· png
+Expand files

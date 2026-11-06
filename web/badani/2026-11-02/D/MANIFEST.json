@@ -1,0 +1,150 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "cas": "2026-11-02T20:00:00+01:00",
+  "vstup": {
+    "zip": "/home/z/my-project/upload/D_KOSEK_TRPELKA_VSTUP.zip",
+    "bytes": 4166992,
+    "sha256": "1c6f92f6cca962d885e493b974319ab921795ec36c5e906012b60e1a947a333f",
+    "overeno_tohoto_behu": true
+  },
+  "primarni_obraz": {
+    "soubor": "D1_obrazy/D1_sn49_full2_kopie_vstupu.png",
+    "rozmery": "2147x1747",
+    "sha256": "23c2122f981c3417e25df7cacc0ffe4fb27336e703ba335a4278fe38bd9028e8",
+    "poznamka": "kopie původně přiloženého obrazu; nové skeny nebyly získány (ALTCHA)"
+  },
+  "soubory": [
+    {
+      "soubor": "D_checkpoint_resume.md",
+      "bytes": 4447,
+      "sha256": "f21ce8ec9280b270a9bbfa0142ecd0320440fc8a0ac76fc00b26248305ffef75"
+    },
+    {
+      "soubor": "D_checkpoint_resume.json",
+      "bytes": 2654,
+      "sha256": "e6e34d11b3a2e574a73bba88ba92985f2451d2f0fea973ca73088d2abdbca242"
+    },
+    {
+      "soubor": "D1_PREPIS_zapis53_1919.md",
+      "bytes": 9879,
+      "sha256": "c7a0fa652d88fab5dc03619dbe0347149ac8ca3df36b80a1695140039e9a6076"
+    },
+    {
+      "soubor": "D1_PREPIS_zapis53_1919.json",
+      "bytes": 6307,
+      "sha256": "5c720c040e98be6f5978eb89332aaf87dc2ec89f9ff681d4cc7145851a0daf57"
+    },
+    {
+      "soubor": "D1_DENIK.md",
+      "bytes": 3758,
+      "sha256": "19ad835f66168b88fbb53e56851709f5fc427a11f8f08033aa43cb2ccf9b78a1"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_full2_kopie_vstupu.png",
+      "bytes": 4194307,
+      "sha256": "23c2122f981c3417e25df7cacc0ffe4fb27336e703ba335a4278fe38bd9028e8"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_A1_zapis53_cele_levo.png",
+      "bytes": 1119249,
+      "sha256": "e4902a2029569efc3fd3795229e31f1cda69303bf2c80ca699d8ff09cfc247bc"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_A2_zenich.png",
+      "bytes": 1100905,
+      "sha256": "5ebdfaccd9b848d4b16bc1237a1e3f71c696023090fecad20c6d5a9b14fb499f"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_A3_nevesta.png",
+      "bytes": 644638,
+      "sha256": "f53f85a6dd08aa6501ef17eae7663444638164a10c8e0f145756058f123afc74"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_A4_svedci.png",
+      "bytes": 370951,
+      "sha256": "1cf68bf448cadbb4eaa9f7acd5a1c1119a52f361cf03f77a2fdf28adb92c3aff"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_C1_margin_zenich.png",
+      "bytes": 262526,
+      "sha256": "b55226956799ed5a35754bb17d1390dd79d4774ec15b6675e0e9cdec0955a820"
+    },
+    {
+      "soubor": "D1_obrazy/D1_sn49_C2_margin_nevesty.png",
+      "bytes": 262597,
+      "sha256": "805d901dbea497e90d6a3082f916f86f161db9bebb87153524282302986ef728"
+    },
+    {
+      "soubor": "D2_KROKY_narozeni_a_rodice.md",
+      "bytes": 5039,
+      "sha256": "ace4a4530128aed14fd52524eb99875f38699a48540e40638537736e02493bae"
+    },
+    {
+      "soubor": "D2_KROKY_narozeni_a_rodice.json",
+      "bytes": 4460,
+      "sha256": "38cff2d08b21ed9b716f9111bb72579fe8a17a3837997c57c160effc65f8aa66"
+    },
+    {
+      "soubor": "D23_DENIK.md",
+      "bytes": 1867,
+      "sha256": "99237245ed2efb612259af27e8c37c6ca99dce243113f1b8cd775c49531444ba"
+    },
+    {
+      "soubor": "D3_NAVAZANOST_EMILIE_1924.md",
+      "bytes": 5563,
+      "sha256": "df551cd6834aece611301d4a977ba64188f3641b0e4b3e25185298e406b31ffd"
+    },
+    {
+      "soubor": "D3_NAVAZANOST_EMILIE_1924.json",
+      "bytes": 2801,
+      "sha256": "f94f66661c8ba6dff18724360290c2483ada7a89466b99ba42ecc2e2d5e3a05a"
+    },
+    {
+      "soubor": "PRAMENY.csv",
+      "bytes": 2677,
+      "sha256": "19eb46a714e6bcc7420288fee07708ca1260be54b1c3a88c0ea3c7708f12087c"
+    },
+    {
+      "soubor": "CHECKPOINT.md",
+      "bytes": 2418,
+      "sha256": "7178d288316b01aebd9ae2d6f2bb04ead4e443ca203f2d8c2f072b93b09bf0fc"
+    },
+    {
+      "soubor": "PREHLED.md",
+      "bytes": 4834,
+      "sha256": "ade2ac6dbfc935ef46a6fe7cfe06655eea13a3eb9ad51063d54af69e9dd52adf"
+    },
+    {
+      "soubor": "NOVE_NALEZY.json",
+      "bytes": 5076,
+      "sha256": "0153cb056ffe0be03ac6d7ae69f30a45afa92d83af5406da484ceb1a6fe925b8"
+    },
+    {
+      "soubor": "PREPISY.md",
+      "bytes": 2494,
+      "sha256": "9d8a4634ef52beff563533b6effa8127455716c1724876eb7c1209ccb2333304"
+    },
+    {
+      "soubor": "NEJISTOTY.md",
+      "bytes": 2766,
+      "sha256": "bd45324bf95c8647f9d6ecd56e913cd6959d7d364b8233f253cb624001bccb85"
+    },
+    {
+      "soubor": "PROHLEDANO.md",
+      "bytes": 3022,
+      "sha256": "86a4895cd46bab4b04f32a8116a01ab55ddda59317e688c4f27e563febf8f0c9"
+    },
+    {
+      "soubor": "POKRACOVAT.md",
+      "bytes": 2614,
+      "sha256": "0f78cb21efe0a07ca035dd44b0c3997271389402a9b39d9cd2263f68d7ef1644"
+    }
+  ],
+  "zips": [
+    "D_KOSEK_TRPELKA_D1_VYSLEDKY.zip",
+    "D_KOSEK_TRPELKA_D2_VYSLEDKY.zip",
+    "D_KOSEK_TRPELKA_D3_VYSLEDKY.zip",
+    "D_KOSEK_TRPELKA_VYSLEDKY.zip"
+  ],
+  "poznamka": "Všechny SHA256 spočítány ze skutečných souborů 2026-11-02. Žádná data nejsou integrována do rodokmenu; vše candidate."
+}

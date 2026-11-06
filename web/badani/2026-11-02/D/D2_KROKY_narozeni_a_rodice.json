@@ -1,0 +1,54 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "uloha": "D2",
+  "cas": "2026-11-02T19:00:00+01:00",
+  "vystupni_charakter": "plán + katalogově ověřené rámce; žádná nová čtená matriční data (raster blokován ALTCHA)",
+  "vychozi_dolozene_udaje_z_D1": {
+    "zenich": {"jmeno": "Cyrill Kosek", "jistota": "zřetelné", "povolani": "délník", "bydliste": "Tvrdonice (čís. ma[t/x][?], dom čís. [?])", "vek_cteno": "2[8|9] 1/2 [?]", "interval_narozeni_z_veku": "1888-1892"},
+    "zenich_otec": {"jmeno": "Josef Kosek", "povolani": "chalupník", "misto": "Tvrdonice", "jistota": "zřetelné"},
+    "zenich_matka": {"jmeno": "Františka", "rodne_prijmeni_cteno": "roz. Josefa Štrukáni[x/k][?] — NEJISTÉ", "povolani": "chalupnice", "misto": "Tvrdonice"},
+    "nevesta": {"jmeno": "Alžběta Trpětka[?]/Trpětková[?]", "jistota": "jméno zřetelné; příjmení bez „l“", "povolani": "dělnice", "bydliste": "Kostice", "vek_cteno": "2[2|3] 1/2 [?]", "interval_narozeni_z_veku": "1893-1898"},
+    "nevesta_otec": {"jmeno": "Josef Trpětek/Trpětka[?]", "povolani": "chalupník", "misto": "Kostice", "jistota": "zřetelné (genitiv „Trpětky“)"},
+    "nevesta_matka": {"jmeno": "Julana", "rodne_prijmeni_cteno": "roz. Josefa Prokopa[?]", "misto": "Kostice"}
+  },
+  "katalog_overene_ramce": {
+    "kniha_3443": {"typ": "oddaní 1909-1925", "dusledek_pro_D2": "sňatky rodičů (do 1908) v ní nejsou; dřívější oddací svazky farnosti mají jiné signatury — v tomto běhu NEověřeno"},
+    "kniha_3454": {"typ": "svazek rejstříků", "index_narozenych": "1784-1912 (sn. 104-172)", "dusledek_pro_D2": "narození obou snoubenců spadají do rozsahu indexu; raster blokován"}
+  },
+  "plany_dohledani": [
+    "rejstřík oddaných 3454 sn.64-103: řádek Kosek×Trpět(ě)ková 1919 pag.94 (nezávislá kontrola)",
+    "narození ženicha: index narozených 3454, Kosek varianty, 1888-1892, Tvrdonice, otec Josef chalupník, den „24.“",
+    "narození nevěsty: index narozených 3454, Trpětka/Trpělková varianty, 1893-1898, Kostice, otec Josef chalupník, matka Julana",
+    "sňatek rodičů ženicha Josef Kosek × Františka r.Š…: oddací svazky farnosti do 1908 — signatury teprve ověřit",
+    "sňatek rodičů nevěsty Josef Trpětek × Julana r.Prokop: totéž",
+    "každý nový záznam: plný přepis kontextu + kontrola věků/obcí/domů"
+  ],
+  "prekazky": [
+    "raster MZA za ALTCHA (bypass zakázán)",
+    "hledání katalogu POST/JS; curl timeout 2×",
+    "matrika/obec/15 i matrika/puvodce 404 → signatury dalších knih farnosti neověřeny"
+  ],
+  "varianty_jmen": {
+    "zenich": ["Kosek", "Hosek", "Koseck", "Koßeck"], "zenich_krestni": ["Cyrill", "Cyril", "Kyrill"],
+    "nevesta": ["Trpětka", "Trpětková", "Trpělková", "Trpelka"], "nevesta_krestni": ["Alžběta"],
+    "matka_zenicha_rodne": ["Štrukánik[?]", "Škrhánka[?]", "Struhaňák[?]"],
+    "matka_nevesty_rodne": ["Prokopová[?] (otec Josef Prokop, chalupník)"]
+  },
+  "kriteria_totoznosti": [
+    "datum sňatku 1919 + pag. 94 knihy 3443",
+    "obce/domy: Tvrdonice vs Kostice; čísla 180/237 jen orientační (svědci)",
+    "povolání rodičů: chalupníci",
+    "věková konzistence jen intervalově",
+    "shoda jmen rodičů — shoda samotného jména NESTAČÍ"
+  ],
+  "candidate_osoby": [
+    {"typ": "osoba", "jmeno": "Cyril Kosek", "vazby": ["syn Josefa Koseka a Františky", "manžel Alžběty (1919 kandidát)"], "status": "candidate"},
+    {"typ": "osoba", "jmeno": "Alžběta Trpětková/Trpětka", "vazby": ["dcera Josefa Trpětky a Julany", "manželka Cyrilla (1919 kandidát)"], "status": "candidate"},
+    {"typ": "osoba", "jmeno": "Josef Kosek", "vazby": ["otec Cyrilla"], "status": "candidate"},
+    {"typ": "osoba", "jmeno": "Františka r. Štrukáni…[?]", "vazby": ["matka Cyrilla"], "status": "candidate — příjmení nejisté"},
+    {"typ": "osoba", "jmeno": "Josef Trpětek", "vazby": ["otec Alžběty"], "status": "candidate"},
+    {"typ": "osoba", "jmeno": "Julana r. Prokopová[?]", "vazby": ["matka Alžběty"], "status": "candidate"},
+    {"typ": "osoba", "jmeno": "Josef Prokop[?]", "vazby": ["otec Julany (děd nevěsty)"], "status": "candidate — jen čtení formulace"}
+  ],
+  "zabrana_chybam": "Nepropojovat automaticky s Emilií 1924; nezaměňovat s párem Jaroslav Forejtník (nar. 1921) × Emilia (nar. 1924); nepřipojovat dědy jen na základě formulace „roz. [jméno otce]“"
+}

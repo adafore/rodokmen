@@ -10,3 +10,4 @@ node_modules/
 tailscale-state/
 *.state
 *.htpasswd
+*.backup_*.json

@@ -1,0 +1,77 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "cas": "2026-11-02T19:50:00+01:00",
+  "pozn": "Vše níže je candidate/návrh ke kontrole — nic neintegrováno do rodokmenu. Pole 'jistota' popisuje spolehlivost ČTENÍ, ne totožnost osob.",
+  "nalezy": [
+    {
+      "id": "N1",
+      "typ": "katalog",
+      "tvrzeni": "Kniha 3443 (svazek IV): Tvrdonice římskokat., oddaní 1909-1925, obec Kostice (Kostitz) okr. Břeclav, 95 snímků, čeština; karta detail/258; pozn.: 'Brněnské biskupství děk. Podivín č. 12 R. 1938 farnost tvoří: Tvrdonice, Kostice.'",
+      "důkaz": "WebFetch https://www.mza.cz/actapublica/matrika/detail/258 v tomto běhu 2026-11-02",
+      "jistota": "katalogové metadata — vysoká",
+      "status": "ověřeno"
+    },
+    {
+      "id": "N2",
+      "typ": "katalog",
+      "tvrzeni": "Kniha 3454: svazek rejstříků Tvrdonice/Kostice — index zemřelých sn. 2-63, index oddaných sn. 64-103, index narozených sn. 104-172; pokrytí: narození 1784-1912, oddaní 1790-1925, zemřelí 1790-1946; něm./čes.",
+      "důkaz": "WebFetch https://www.mza.cz/actapublica/matrika/detail/12042 v tomto běhu 2026-11-02",
+      "jistota": "katalogové metadata — vysoká",
+      "status": "ověřeno",
+      "dusledek": "snímek 49 knihy 3454 = index zemřelých, NENÍ rejstřík oddaných"
+    },
+    {
+      "id": "N3",
+      "typ": "čtení_obrazu",
+      "tvrzeni": "Zápis č. 53, pag. 94 (dvojlist 94/95), Anno 1919, tomus V., ručně „Kostice[?]“: ženich 'Cyrill Kosek', délník, příslušný Tvrdonice; otec Josef Kosek chalupník v Tvrdonicích; matka Františka 'roz. Josefa Štrukáni[x/k][?]'; nevěsta 'Alžběta Trpětka[?]/Trpětková[?]' (BEZ l), dělnice, Kostice; otec Josef Trpětek/Trpětka[?] chalupník v Kosticích; matka Julana 'roz. Josefa Prokopa[?]' chalupníka v Kosticích; datum 25. června[?]; věky '2[8|9] 1/2[?]' a '2[2|3] 1/2[?]'; rotované 'Nar. 24. …' měsíc+rok nečitelné; svědci Jaroslav[?] František (Tvrdonice 180[?]) a Rudolf Jakub[?]/Jakob[?] (Kostice 237[?])",
+      "důkaz": "výřezy A1-A4, B1-B3, C1-C2 vstupního obrazu F_tvrdonice_3443_sn49_full2.png (SHA256 23c2122f…28e8); přepis v D1_PREPIS_zapis53_1919.md/.json",
+      "jistota": "jména párů a otců — vysoká; příjmení matek, zlomky věků, rotované údaje — NEJISTÉ ([?])",
+      "status": "candidate (jen čtení, bez totožnosti)"
+    },
+    {
+      "id": "N4",
+      "typ": "rozpor",
+      "tvrzeni": "Čtení 'Trpětka/Trpětková' (bez l) je v rozporu s rodinným údajem 'Trpělková'; rozpor nevyřešen — rozhodne narozená matrika/rejstřík",
+      "důkaz": "srovnání přepisu D1 s zadáním",
+      "jistota": "n/a",
+      "status": "otevřená otázka"
+    },
+    {
+      "id": "N5",
+      "typ": "interval",
+      "tvrzeni": "Vyhledávací intervaly narození (jen z věku, NIKOLI data): ženich ~1888-1892, nevěsta ~1893-1898; kontrolní znak 'Nar. 24.' z rotovaného údaje",
+      "důkaz": "přepis D1, sloupce věku",
+      "jistota": "nízká (zlomky věku nejisté)",
+      "status": "vyhledávací hypotéza"
+    },
+    {
+      "id": "N6",
+      "typ": "negativni",
+      "tvrzeni": "Kniha 3443 nemá narozené (oddaní 1909-1925); index narozených knihy 3454 končí rokem 1912 — žádný z těchto faktů nedokazuje nedostupnost narozeného záznamu 1924",
+      "důkaz": "N1, N2",
+      "jistota": "—",
+      "status": "ověřeno jako logické tvrzení"
+    },
+    {
+      "id": "N7",
+      "typ": "prekazka",
+      "tvrzeni": "Raster MZA (viewer/IIIF) je za ALTCHA; hledání katalogu POST/JS (curl 2× timeout); matrika/obec/15 404; matrika/puvodce 404; archivni-databaze 404 — signatury dalších knih farnosti zůstávají neověřené",
+      "důkaz": "tohoto běhu, bez obcházení ochran",
+      "jistota": "—",
+      "status": "zdokumentováno"
+    }
+  ],
+  "candidate_osoby_a_vazby": [
+    {"osoba": "Cyril(le) Kosek", "vazby": ["otec: Josef Kosek (chalupník, Tvrdonice)", "matka: Františka r. Š…[?]", "manžel Alžběty (sňatek 1919 kandidát)"], "status": "candidate"},
+    {"osoba": "Alžběta Trpětková/Trpětka[?]", "vazby": ["otec: Josef Trpětek (chalupník, Kostice)", "matka: Julana r. Prokopová[?]", "manželka Cyrilla (sňatek 1919 kandidát)"], "status": "candidate"},
+    {"osoba": "Josef Kosek", "vazby": ["otec Cyrilla"], "status": "candidate"},
+    {"osoba": "Františka r. Štrukáni…[?]", "vazby": ["matka Cyrilla"], "status": "candidate — příjmení nejisté"},
+    {"osoba": "Josef Trpětek/Trpětka", "vazby": ["otec Alžběty"], "status": "candidate"},
+    {"osoba": "Julana r. Prokopová[?]", "vazby": ["matka Alžběty"], "status": "candidate"},
+    {"osoba": "Josef Prokop[?]", "vazby": ["otec Julany = děd nevěsty (jen čtení formulace 'roz. Josefa Prokopa')"], "status": "candidate — slabé"}
+  ],
+  "nepropojeno": [
+    "kandidátní pár 1919 ↔ Emilia Kosková (1924) — teprve po narozeném záznamu 1924",
+    "kandidátní pár 1919 ≠ sňatek Jaroslava Forejtníka (nar. 1921) × Emílie (nar. 1924)"
+  ]
+}

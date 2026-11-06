@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1215" height="1592" viewBox="0 0 1215 1592" font-family="Segoe UI, Arial, sans-serif">
+<rect width="1215" height="1592" fill="#fafafa"/>
+<text x="190" y="30" font-size="19" font-weight="bold" fill="#212121">Vývod dítěte P19 (anonymizováno, pouze PID)</text>
+<text x="190" y="50" font-size="12" fill="#555">Horní polovina = větev otce P17, dolní polovina = větev matky P18 (celá prázdná). 16 obsazených pozic / 126 očekávaných do 6. generace (12,7 %).</text>
+<text x="190" y="78" font-size="11" fill="#333" text-anchor="middle">výchozí</text>
+<line x1="130.5" y1="86" x2="130.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="345" y="78" font-size="11" fill="#333" text-anchor="middle">1. gen. (rodiče)</text>
+<line x1="285.5" y1="86" x2="285.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="500" y="78" font-size="11" fill="#333" text-anchor="middle">2. gen. (prarodiče)</text>
+<line x1="440.5" y1="86" x2="440.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="655" y="78" font-size="11" fill="#333" text-anchor="middle">3. gen.</text>
+<line x1="595.5" y1="86" x2="595.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="810" y="78" font-size="11" fill="#333" text-anchor="middle">4. gen.</text>
+<line x1="750.5" y1="86" x2="750.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="965" y="78" font-size="11" fill="#333" text-anchor="middle">5. gen.</text>
+<line x1="905.5" y1="86" x2="905.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<text x="1120" y="78" font-size="11" fill="#333" text-anchor="middle">6. gen.</text>
+<line x1="1060.5" y1="86" x2="1060.5" y2="1572" stroke="#e0e0e0" stroke-width="1"/>
+<path d="M 252 832.0 C 306.25 832.0, 228.75 464.0, 283 464.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 407 464.0 C 461.25 464.0, 383.75 280.0, 438 280.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 562 280.0 C 616.25 280.0, 538.75 188.0, 593 188.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 717 188.0 C 771.25 188.0, 693.75 142.0, 748 142.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 872 142.0 C 926.25 142.0, 848.75 119.0, 903 119.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 1027 119.0 C 1081.25 119.0, 1003.75 107.5, 1058 107.5" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 1027 119.0 C 1081.25 119.0, 1003.75 130.5, 1058 130.5" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 872 142.0 C 926.25 142.0, 848.75 165.0, 903 165.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 1027 165.0 C 1081.25 165.0, 1003.75 153.5, 1058 153.5" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 1027 165.0 C 1081.25 165.0, 1003.75 176.5, 1058 176.5" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 717 188.0 C 771.25 188.0, 693.75 234.0, 748 234.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 872 234.0 C 926.25 234.0, 848.75 211.0, 903 211.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 1027 211.0 C 1081.25 211.0, 1003.75 199.5, 1058 199.5" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 1027 211.0 C 1081.25 211.0, 1003.75 222.5, 1058 222.5" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 872 234.0 C 926.25 234.0, 848.75 257.0, 903 257.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 562 280.0 C 616.25 280.0, 538.75 372.0, 593 372.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 717 372.0 C 771.25 372.0, 693.75 326.0, 748 326.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 872 326.0 C 926.25 326.0, 848.75 303.0, 903 303.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 872 326.0 C 926.25 326.0, 848.75 349.0, 903 349.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 717 372.0 C 771.25 372.0, 693.75 418.0, 748 418.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 872 418.0 C 926.25 418.0, 848.75 395.0, 903 395.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 872 418.0 C 926.25 418.0, 848.75 441.0, 903 441.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 407 464.0 C 461.25 464.0, 383.75 648.0, 438 648.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 252 832.0 C 306.25 832.0, 228.75 1200.0, 283 1200.0" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+<path d="M 407 1200.0 C 461.25 1200.0, 383.75 1016.0, 438 1016.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<path d="M 407 1200.0 C 461.25 1200.0, 383.75 1384.0, 438 1384.0" fill="none" stroke="#cccccc" stroke-dasharray="2,3" stroke-width="1"/>
+<rect x="128" y="823.0" width="124" height="18" rx="4" fill="#546e7a" stroke="#ffffff"/>
+<text x="134" y="836.0" font-size="10.5" fill="#ffffff" font-weight="bold">P19</text>
+<text x="240" y="836.0" font-size="9" fill="#ffffff" text-anchor="middle">·</text>
+<rect x="283" y="455.0" width="124" height="18" rx="4" fill="#e65100" stroke="#ffffff"/>
+<text x="289" y="468.0" font-size="10.5" fill="#ffffff" font-weight="bold">P17</text>
+<text x="395" y="468.0" font-size="9" fill="#ffffff" text-anchor="middle">S</text>
+<rect x="438" y="271.0" width="124" height="18" rx="4" fill="#e65100" stroke="#ffffff"/>
+<text x="444" y="284.0" font-size="10.5" fill="#ffffff" font-weight="bold">P11</text>
+<text x="550" y="284.0" font-size="9" fill="#ffffff" text-anchor="middle">S</text>
+<rect x="593" y="179.0" width="124" height="18" rx="4" fill="#1565c0" stroke="#ffffff"/>
+<text x="599" y="192.0" font-size="10.5" fill="#ffffff" font-weight="bold">P12</text>
+<text x="705" y="192.0" font-size="9" fill="#ffffff" text-anchor="middle">D</text>
+<rect x="748" y="133.0" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="754" y="146.0" font-size="10.5" fill="#ffffff" font-weight="bold">P3</text>
+<text x="860" y="146.0" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="903" y="110.0" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="909" y="123.0" font-size="10.5" fill="#ffffff" font-weight="bold">P1</text>
+<text x="1015" y="123.0" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="1058" y="98.5" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="1064" y="111.5" font-size="10.5" fill="#ffffff" font-weight="bold">P4</text>
+<text x="1170" y="111.5" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="1058" y="121.5" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="1064" y="134.5" font-size="10.5" fill="#ffffff" font-weight="bold">P5</text>
+<text x="1170" y="134.5" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="903" y="156.0" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="909" y="169.0" font-size="10.5" fill="#ffffff" font-weight="bold">P2</text>
+<text x="1015" y="169.0" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="1058" y="144.5" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="1064" y="157.5" font-size="10.5" fill="#ffffff" font-weight="bold">P7</text>
+<text x="1170" y="157.5" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="1058" y="167.5" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="1064" y="180.5" font-size="10.5" fill="#ffffff" font-weight="bold">P8</text>
+<text x="1170" y="180.5" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="748" y="225.0" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="754" y="238.0" font-size="10.5" fill="#ffffff" font-weight="bold">P9</text>
+<text x="860" y="238.0" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="903" y="202.0" width="124" height="18" rx="4" fill="#2e7d32" stroke="#ffffff"/>
+<text x="909" y="215.0" font-size="10.5" fill="#ffffff" font-weight="bold">P16</text>
+<text x="1015" y="215.0" font-size="9" fill="#ffffff" text-anchor="middle">M</text>
+<rect x="1058" y="192.0" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="1120" y="203.0" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="1058" y="215.0" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="1120" y="226.0" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="903" y="249.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="965" y="260.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="593" y="363.0" width="124" height="18" rx="4" fill="#1565c0" stroke="#ffffff"/>
+<text x="599" y="376.0" font-size="10.5" fill="#ffffff" font-weight="bold">P13</text>
+<text x="705" y="376.0" font-size="9" fill="#ffffff" text-anchor="middle">D</text>
+<rect x="748" y="317.0" width="124" height="18" rx="4" fill="#1565c0" stroke="#ffffff"/>
+<text x="754" y="330.0" font-size="10.5" fill="#ffffff" font-weight="bold">P14</text>
+<text x="860" y="330.0" font-size="9" fill="#ffffff" text-anchor="middle">D</text>
+<rect x="903" y="295.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="965" y="306.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="903" y="341.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="965" y="352.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="748" y="409.0" width="124" height="18" rx="4" fill="#1565c0" stroke="#ffffff"/>
+<text x="754" y="422.0" font-size="10.5" fill="#ffffff" font-weight="bold">P15</text>
+<text x="860" y="422.0" font-size="9" fill="#ffffff" text-anchor="middle">D</text>
+<rect x="903" y="387.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="965" y="398.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="903" y="433.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="965" y="444.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="438" y="640.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="500" y="651.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="283" y="1191.0" width="124" height="18" rx="4" fill="#e65100" stroke="#ffffff"/>
+<text x="289" y="1204.0" font-size="10.5" fill="#ffffff" font-weight="bold">P18</text>
+<text x="395" y="1204.0" font-size="9" fill="#ffffff" text-anchor="middle">S</text>
+<rect x="438" y="1008.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="500" y="1019.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="438" y="1376.5" width="124" height="15" rx="3" fill="#ffffff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="500" y="1387.5" font-size="9" fill="#999" text-anchor="middle">neznámý</text>
+<rect x="190" y="1496" width="1005" height="82" rx="6" fill="#ffffff" stroke="#ddd"/>
+<text x="202" y="1514" font-size="11.5" font-weight="bold" fill="#333">Legenda (podklad hrany k rodiči; M=matrika, D=dokument, S=sdělení, H=hypotéza/přepis, ·=neuvedeno)</text>
+<rect x="202" y="1524" width="14" height="14" rx="3" fill="#2e7d32"/>
+<text x="222" y="1535" font-size="10" fill="#444">značka „matrika“ + katalogová</text>
+<text x="222" y="1548" font-size="10" fill="#444">konkrétního zápisu</text>
+<rect x="437" y="1524" width="14" height="14" rx="3" fill="#1565c0"/>
+<text x="457" y="1535" font-size="10" fill="#444">rodinný dokument (evidován</text>
+<text x="457" y="1548" font-size="10" fill="#444">soubor, obsah neověřen)</text>
+<rect x="672" y="1524" width="14" height="14" rx="3" fill="#e65100"/>
+<text x="692" y="1535" font-size="10" fill="#444">rodinné sdělení (bez souboru,</text>
+<text x="692" y="1548" font-size="10" fill="#444">bez URL)</text>
+<rect x="907" y="1524" width="14" height="14" rx="3" fill="#6a1b9a"/>
+<text x="927" y="1535" font-size="10" fill="#444">hypotéza / přepis (sekundární</text>
+<text x="927" y="1548" font-size="10" fill="#444">podklad)</text>
+<rect x="1142" y="1524" width="14" height="14" rx="3" fill="#546e7a"/>
+<text x="1162" y="1535" font-size="10" fill="#444">bez uvedeného pramene</text>
+<text x="1162" y="1548" font-size="10" fill="#444">bez uvedeného pramene</text>
+<rect x="202" y="1558" width="14" height="12" rx="3" fill="#fff" stroke="#c9c9c9" stroke-dasharray="3,2"/>
+<text x="222" y="1568" font-size="10" fill="#444">prázdný slot — neznámá osoba (nevymýšlíme, jen evidujeme mezeru)</text>
+</svg>

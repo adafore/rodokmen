@@ -1,0 +1,39 @@
+Thought Process
+Explored 2 files，Ran 3 commands
+
+Vstupní balík je kompletní: 7 souborů, všechny SHA256 i velikosti odpovídají MANIFEST.json. Nastavím pracovní plán a prohlédnu si doklady.
+
+Explored 1 files
+
+Vstup ověřen. Nyní detailně prohlédnu oba hlavní doklady — sňatek 1883 a narození 1895.
+
+Explored 1 files
+
+Náhled ukazuje jen horní část záznamu. Vytvořím výřezy dolní části pro úplné čtení.
+
+Explored 1 files，Ran 1 commands
+
+Obrázek je jen horní pás záznamu. Zvětším jednotlivé buňky v plném rozlišení.
+
+Explored 8 files，Ran 3 commands
+
+Přesné zvětšeniny sporného slova (povolání otce ženicha) v obou dokladech:
+
+Explored 2 files，Ran 1 commands
+
+Výřez B zasáhl jiný řádek (užitečný: „Rožiči katoličí, otec živ, matka mrtva"). Cíleně na správný řádek:
+
+Explored 1 files，Ran 1 commands
+
+Musím systematicky vyříznout celou buňku ženicha i nevěsty, abych eliminoval omyly v řádcích:
+
+Explored 1 files，Ran 1 commands
+
+Buňka ženicha je nyní čitelná (pozn.: příjmení psáno „Foretník", v matrice narození 1895 „Forejtník" — důležitá varianta). Dokončím spodní řádky ženicha a prohlédnu buňku nevěsty:
+
+Explored 2 files，Ran 1 commands
+
+Skvělý čtení: nevěsta „Rozalie Veselých, dělnice v Kloboukách, mž. dcera Jakuba Veselého kožešníka v Kloboukách a Antonie roz. Josefa Halma". Dokončím zbývající řádky (status rodičů nevěsty, svědkové, rubriky s čísly zápisů):
+
+Explored 5 files，Ran 2 commands
+Read File B_hlava.png

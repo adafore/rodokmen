@@ -1,0 +1,237 @@
+{
+ "balik": "A_DOBROVOLNI",
+ "poznamka_k_id": "Všechna ID jsou pracovni (w_). Nejsou to definitivni ID rodokmenu. Nove osoby/vazby jsou oznaceny jako candidate a nebyly integrovany.",
+ "aktualizace": "2026-11-02T13:45:00Z",
+ "nalezy": [
+  {
+   "id": "w_a1_001",
+   "typ": "zapis_narozeni",
+   "status": "overeno_ctenim_z_originalu",
+   "osoba_candidate": {
+    "w_id": "w_per_anna_dobrovolna_1900",
+    "jmeno": "Anna",
+    "prijmeni_rodne": "Dobrovolná",
+    "narozena": "1900-06-29",
+    "narozena_alternativa": "1900-06-27 (takto uvedeno v matrice sňatku 1921; rozpor viz w_conf_001)",
+    "misto_narozeni": "Klobouky u Brna (farnost Klobouky u Brna)",
+    "legitimace": "legitimni dcera (zapis 'manz.' u matky, rouška 'ehelich')"
+   },
+   "doklad": {
+    "archiv": "MZA Brno (Acta Publica)",
+    "farnost": "Klobouky u Brna",
+    "kniha": "2736 (katalog ID 14893), tomus XI",
+    "cast": "narození 1883-1925",
+    "folio": "186/187 (pag. 187)",
+    "zapis_c": "36",
+    "snimek": "96 (dodany sken 03_anna_sn96_cely_fol186_187.jpg, 7455x5846)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/14893",
+    "souradnice_v_obraze": "pravá strana, poslední řádek; text x≈3830-7455, y≈4380-5846",
+    "sha256_sken": "971449ea12dbd969716e2d61fde6da7deef4d724a7749082c551a18514ade899"
+   },
+   "doslovne_cteni": "Anna; otec: Josef Dobrovol(ný), manž. syn Frančiška Dobrovolného, volného domkáře z Klobouk, a j. manželky Marie(?), roz. [nečitelné], nar: 4/8 1873; matka: Genovéfa manž., dcera Frančiška Tihlařika a jeho manželky Evy, roz: Forejtkové(?), Frančišek Tihlař(ík), domkář v Klobouchách; nar: 27/2 1877; kmotr: Josef Dobrovolný, nádeník(?)…",
+   "normalizace": {
+    "datum_narozeni": "1900-06-29 (po korektuře v matričním zápise; původní přeškrtnutá číslice [27/28?])",
+    "datum_krtu": "neuvedeno čitelně; podle sloupcové hlavičky byl křest evidován též (čas [nečitelné])"
+   },
+   "poznamka_odnosni": {
+    "doslovne": "oddána 26/4. 1921. roce s zedníkem v Klobou(kách) Forejtníkem Bohuslavem … č. 237",
+    "normalizace": "oddána 26. 4. 1921 s Bohuslavem Forejtníkem; zbytek věty (bydliště č. 237, místní jméno) čtení nejisté, hyp. '(Dobrá?) Voda č. 237'"
+   }
+  },
+  {
+   "id": "w_a1_002",
+   "typ": "osoba_otec",
+   "status": "candidate",
+   "osoba_candidate": {
+    "w_id": "w_per_josef_dobrovolny_1873",
+    "jmeno": "Josef",
+    "prijmeni": "Dobrovolný",
+    "povolani_1921": "zedník",
+    "narozena": "1873-08-04",
+    "rodice": [
+     "w_per_frantisek_dobrovolny_domkar_klobouky (candidate)",
+     "Marie(?) rozená [nečitelné K?o?yóh] (candidate)"
+    ]
+   },
+   "doklad": {
+    "zapis": "rod. zápis dcery č. 36 fol. 187 (kniha 2736) + sňatek 26.4.1921 (kniha 2755 sn85 pag. 172, podpis 'Josef Dobrovolný — Otec')",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/14893 a https://www.mza.cz/actapublica/matrika/detail/12400"
+   },
+   "vyzaduje_overeni": "vlastní rodný zápis (kniha narozených Klobouky, ročník 1873) — úkol A3"
+  },
+  {
+   "id": "w_a1_003",
+   "typ": "osoba_matka",
+   "status": "candidate",
+   "osoba_candidate": {
+    "w_id": "w_per_genovefa_tihlarkova_1877",
+    "jmeno": "Genovéfa / Jenovéfa (varianta téhož jména)",
+    "prijmeni_rodne": "Tihlař(ík)ová — čteno z obou zápisů 'Tihlařika' (rod. zápis) a 'Tihlařů' (sňatek 1921); dřívější varianta 'Tillerka' není z obrazů podepřena",
+    "narozena": "1877-02-27",
+    "rodice": [
+     "w_per_frantisek_tihlarik_domkar_klobouky (candidate)",
+     "Eva rozená Forejtková(?) (candidate, čteno 'roz: Forejtkové/Forejknové', NEZAMĚŇOVAT s Forejtník bez ověření)"
+    ]
+   },
+   "doklad": {
+    "zapis": "rod. zápis č. 36 fol. 187 (kniha 2736) + sňatek 26.4.1921 (kniha 2755 sn85: 'a Jenovéfy rozené Tihlařů, František(?)')",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/14893 a https://www.mza.cz/actapublica/matrika/detail/12400"
+   },
+   "vyzaduje_overeni": "vlastní rodný zápis (kniha narozených Klobouky, ročník 1877) — úkol A3"
+  },
+  {
+   "id": "w_a1_004",
+   "typ": "zapis_snatek",
+   "status": "overeno_ctenim_z_originalu",
+   "tvrzeni": "Anna Dobrovolná (20 let, nar. 27/6 1900 dle tohoto zápisu) se 26. 4. 1921 v Kloboukách provdala za Bohuslava Forejtníka (26 let, nar. 3/4 1895, syn Karla Forejtníka, domkáře, a Rosalie rozené Veselé). Svatbu konal Jan Vavřinec Novotný z Nové Říše. Souhlas otce: podpis 'Josef Dobrovolný — Otec'. Svědci: Forejtník Rudolf; Josef Dobrovolný (dům č. 206?, Klobouky). Odkaz na osvědčení bisk. ordinariátu Brno č. 512.",
+   "doklad": {
+    "archiv": "MZA Brno (Acta Publica)",
+    "farnost": "Klobouky u Brna",
+    "kniha": "2755 (katalog ID 12400), tomus 9",
+    "cast": "oddaní 1883-1948",
+    "strana": "171/172 (zapis na pag. 172)",
+    "snimek": "85 (dodany sken C_2755_sn85_native.jpg, 7353x5434)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/12400",
+    "sha256_sken": "c28fc96cac22f320a204fdfbef7f618aed053223c7fcac385ccf19047aaebc59"
+   },
+   "poznamka": "rodiče ženicha (Forejtník Karel × Rosalie Veselá) patří do jiné větve; zde jen pro identifikaci"
+  },
+  {
+   "id": "w_a1_005",
+   "typ": "kontrola_dat",
+   "status": "rozpor_zaznamenan",
+   "tvrzeni": "Datum narození Anny: rod. zápis po korektuře 29.6.1900 vs. sňatek 1921 'nar. 27/6. 1900'. Korektura v rod. zápisu je explicitní (přeškrtnutí + dopsání '29.').",
+   "dusledek": "rozhodne až nezávislý pramen (rejstřík narozených, matriční výtah, zápis pokřtěných v jiné knize)"
+  },
+  {
+   "id": "w_a2_001",
+   "typ": "zapis_snatek_rodicu",
+   "status": "overeno_ctenim_z_originalu",
+   "tvrzeni": "Josef (František) Dobrovolný, volný zedník v Klobouchách, 26 let, manž. syn Frančiška Dobrovolného, domkáře v Kloboukách, a Mariany(?) rozené Veselé(?) (otec žije, matka zemřela), se 4. 10. 1899 v Kloboukách oženil s Genovéfu Tihlař(ík)ovou, 22 let, v otcovském domě v Klobouchách, manž. dcerou Františka Tihlařika, domkáře v Klobouchách, a Evy rozené Forejtkové(?). Svědci: Vavřinec Waller(?), Tomáš Tihlař(?). Ohlášky uloženy farní chrám Klobouky, čís. 16.",
+   "doklad": {
+    "archiv": "MZA Brno (Acta Publica)",
+    "farnost": "Klobouky u Brna",
+    "kniha": "2755 (katalog ID 12400), tomus IX",
+    "cast": "oddaní 1883-1948",
+    "snimek": "34, levá strana, horní zápis (pag. cca 67/68)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/12400",
+    "ziskani": "viewer ActaPublica + dlaždice DeepZoom L12/L13 přes prohlížečovou session (scripts/iip_pull.py)"
+   },
+   "shody_s_rod_zapisem_anny": [
+    "otec ženicha Frančiška Dobrovolný domkář v Kloboukách (doslovně)",
+    "rodiče nevěsty František Tihlař(ík) domkář + Eva rozená Forejtková (doslovně)",
+    "datum 4.10.1899 = poznámka 'Oddavky se 4. října 1899' v rod. zápise Anny",
+    "věky 26/22 konzistentní s nar. 4/8 1873 a 27/2 1877"
+   ]
+  },
+  {
+   "id": "w_a2_002",
+   "typ": "osoba_jenovefa_rodice",
+   "status": "candidate",
+   "osoba_candidate": {
+    "w_id": "w_per_frantisek_tihlarik_domkar",
+    "jmeno": "František (Frančišek) Tihlař(ík)",
+    "povolani": "domkář v Klobouchách",
+    "status_1899": "žije"
+   },
+   "doklad": {
+    "zapis": "sňatek 4.10.1899 (kniha 2755 sn34) + rod. zápis Anny č. 36/1900 (kniha 2736 fol. 187)"
+   },
+   "vyzaduje_overeni": "rodný zápis Genovéfy (27.2.1877) — úkol A3"
+  },
+  {
+   "id": "w_a2_003",
+   "typ": "osoba_jenovefa_matka",
+   "status": "candidate",
+   "osoba_candidate": {
+    "w_id": "w_per_eva_forejtkova",
+    "jmeno": "Eva",
+    "prijmeni_rodne": "Forejtková (?) — čteno 'rozené Forejtkové/Forejtkových' v obou nezávislých zápisech (sňatek 1899 i rod. zápis 1900); POZOR: neplyne z toho spojení s rodinou Forejtníků ženicha",
+    "status_1899": "nevylučitelně žije (uvedena bez poznámky)"
+   },
+   "doklad": {
+    "zapis": "sňatek 4.10.1899 + rod. zápis Anny č. 36/1900"
+   },
+   "vyzaduje_overeni": "rodný zápis Genovéfy (27.2.1877) — úkol A3"
+  },
+  {
+   "id": "w_a2_004",
+   "typ": "osoba_josefova_matka",
+   "status": "candidate",
+   "osoba_candidate": {
+    "w_id": "w_per_mariana_vesela",
+    "jmeno": "Maria / Mariana",
+    "prijmeni_rodne": "Veselá(?) — čtení NEJISTÉ ('rozené Veselé/ch'); NEZAMĚŇOVAT s Rosalií Veselou (matkou ženicha z r. 1921, jiná větev)",
+    "status_10_1899": "zemřela"
+   },
+   "doklad": {
+    "zapis": "sňatek 4.10.1899 (kniha 2755 sn34): 'a jeho manželky Mariany(?) rozené Veselé/ch(?), otec žije, matka zemřela'"
+   },
+   "vyzaduje_overeni": "rodný zápis Josefa (4.8.1873) — úkol A3"
+  },
+  {
+   "id": "w_a3_001",
+   "typ": "zapis_narozeni_genovefy",
+   "status": "overeno_ctenim_z_originalu",
+   "tvrzeni": "Genovéfa Tihlař(ík)ová se narodila a byla pokřtěna 17. 9. 1877 v Kloboukách (kniha 2745, zápis č. 286). Otec František Tihlarik, domkář v Klobouchách (manž. syn Františka Tihlařika, obecního pastýře v Clam/Bořicích(?), a Genovéfy roz. Krištin/Krišťan(?)); matka Eva, manž. dcera Tomáše Forejtníka, domkáře v Klobouchách, a Evy roz. Onřejů/Ondřejů(?). Bába Anna Janoušek (Klobouky č. 106); kmotr [nejisté], domkář v Klobouchách, s chotí; křtil Jan Chmelíček, děkan a farář.",
+   "doklad": {
+    "archiv": "MZA Brno (Acta Publica)",
+    "farnost": "Klobouky u Brna",
+    "kniha": "2745 (katalog ID 2745)",
+    "cast": "narození 1859-1882",
+    "snimek": "142, pravá strana, zápis č. 286",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/2745",
+    "ziskani": "viewer + dlaždice DeepZoom L12/L13 (scripts/iip_pull2745.py)"
+   },
+   "korekce_drivejsiho_cteni": "datum narození Genovéfy je 17.9.1877, nikoli 27.2.1877; rodný zápis Anny má 'nar: 17/9 1877' (dřívější čtení '27/2' bylo omyl)"
+  },
+  {
+   "id": "w_a3_002",
+   "typ": "osoby_prarodice_genovefy",
+   "status": "candidate",
+   "tvrzeni": "Prarodiče Genovéfy: (a) František Tihlař(ík), obecní pastýř v Clam/Bořicích(?) + Genovéfa rozená Krištin/Krišťan(?) [rodideda]; (b) Tomáš Forejtník, domkář v Klobouchách + Eva rozená Onřejů/Ondřejů(?) [prababička]. Vše candidate, čeká nezávislé potvrzení (např. jejich vlastní sňatek/narození).",
+   "doklad": {
+    "zapis": "rod. zápis Genovéfy č. 286/1877, kniha 2745 snímek 142"
+   },
+   "varovani": "Příjmení Forejtník u praděda Tomáše NEZAKLADUJE příbuznost s rodinou ženicha Bohuslava Forejtníka (otec Karel Forejtník, domkář) — vyžaduje samostatné důkazy; spojení nevytvořeno."
+  },
+  {
+   "id": "w_a3_003",
+   "typ": "negativni_nalez_josef_1873",
+   "status": "negativni_rozsah",
+   "tvrzeni": "Rodný zápis Josefa Dobrovolného (nar. 4.8.1873 dle rod. zápisu dcery z r. 1900) NEBYL nalezen v matrice narozených Klobouky (kniha 2745) v rozsahu duben–srpen 1873 (snímky 113–117L; Květen 4 – Srpna 21 1873; pásmo 24.7.–21.8. čteno navíc v plném rozlišení).",
+   "doklad": {
+    "rozsah": "sn115 (června 17+), sn116 (července–srpna, č. 78–86+), sn117 (srpna 20+), sn113–114 (duben–květen–červen zaří... Května–Června)",
+    "url": "https://www.mza.cz/actapublica/matrika/detail/2745"
+   },
+   "hypotezy": [
+    "rodina žila 1873 mimo farnost Klobouky",
+    "datum 4/8 1873 v pozdějším zápisu je nepřesné (vyskytuje se jen v zápise z r. 1900 a nejistě v sňatku 1899)",
+    "zápis je v knize mimo prohlédnutý rozsah (březen 1873 a dříve = snímky ≤112)"
+   ],
+   "dalsi_krok": "snímky 110–112 (březen–duben 1873); příp. verifikace data z okrajového údaje sňatku 1899"
+  }
+ ],
+ "odmitnuta_tvrzeni_predchoziho_behu": [
+  {
+   "tvrzeni": "křest Anny před narozením / datum 27/26",
+   "duvod": "čtení originálu: přeškrtnutá číslice + korektura '29.'; nepřijato"
+  },
+  {
+   "tvrzeni": "poznámka 'opravněná' (legitimace)",
+   "duvod": "čtení originálu: 'oddána' — jde o poznámku o sňatku 26.4.1921; nepřijato"
+  },
+  {
+   "tvrzeni": "otec nar. 1843",
+   "duvod": "čtení originálu: 'Nar: 4/8 1873.' — jednoznačné; nepřijato"
+  },
+  {
+   "tvrzeni": "rodne prijmeni matky 'Tillerka' (hypotéza)",
+   "duvod": "oba originály (sňatek 1899 i rod. zápis 1900) čtou 'Tihlařika/Tihlař' — variantě 'Tillerka' odpovídá méně prvků; ponecháno jen jako vymírající hypotéza"
+  },
+  {
+   "tvrzeni": "citace 'rejstřík 2786' pro sňatek 1899",
+   "duvod": "katalog ActaPublica ID 2786 = Křepice narození 1841-1875; rejstřík oddaných Klobouk neexistuje (index oddaní '-'); správná citace: kniha 2755 snímek 34"
+  }
+ ]
+}

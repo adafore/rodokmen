@@ -1,0 +1,97 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "uloha": "D1",
+  "typ_dokumentu": "neutralni_prepis_zapisu",
+  "cas": "2026-11-02T18:20:00+01:00",
+  "pramen": {
+    "archiv": "Moravský zemský archiv v Brně — Acta Publica",
+    "url_katalog": "https://www.mza.cz/actapublica/matrika/detail/258",
+    "cislo_knihy": "3443",
+    "svazek": "IV",
+    "puvodce": "Tvrdonice (římskokatolická církev)",
+    "typ": "oddaní",
+    "rozsah": "1909-1925",
+    "obec": "Kostice (Kostitz), okr. Břeclav",
+    "jazyk": "čeština",
+    "pocet_snimku": 95,
+    "snimek_tvrdene": 49,
+    "snimek_pixelove_overeno": false,
+    "tistena_strana": "pag. 94 (dvojlist 94/95)",
+    "hlavicka": "Anno 1919, tomus V., ručně „Kostice[?]“",
+    "obraz_sha256": "23c2122f981c3417e25df7cacc0ffe4fb27336e703ba335a4278fe38bd9028e8",
+    "obraz_rozmery": "2147x1747"
+  },
+  "zapis": {
+    "poradove_cislo": 53,
+    "datum_cteno": "25. června[?] 1919",
+    "oddavajici": "Jan Scheyba[l][?], farář[?]"
+  },
+  "zenich": {
+    "cislo_kolonce": "4[5|3][?]",
+    "jmeno_doslovne": "Cyrill Kosek",
+    "jmeno_normalizovane": "Cyril Kosek",
+    "povolani": "délník",
+    "bydliste_citaci": "délník v [nečitelné krátké slovo], čís. ma[t/x][?] v Tvrdonicích, a dom čís. [nečitelné], příslušný",
+    "otec": "Josef Kosek, chalupník v Tvrdonicích",
+    "matka": "Františka, rozená — čtení „roz. Josefa Štrukáni[x/k][?]“ NEJISTÉ",
+    "vek_cteno": "2[8|9] 1/2 [?]",
+    "narozeni_margin_cteno": "Nar. 24. [měsíc nečitelný — snad června/prosince][?] 189[0|1][?]",
+    "narozeni_interval_z_veku": "1888-1892 (pouze vyhledávací interval, ne datum)",
+    "pencil": "32[?] nad věkem, význam nejasný"
+  },
+  "nevesta": {
+    "cislo_kolonce": "1[6][?]",
+    "jmeno_doslovne": "Alžběta Trpětka[?]/Trpětková[?]",
+    "jmeno_normalizovane": "Alžběta Trpětková [příjmení NEJISTÉ; rodinný údaj uvádí „Trpělková“ — rozpor nevyřešen]",
+    "povolani": "dělnice",
+    "bydliste_citaci": "v Kosticích, tuto příslušnice",
+    "otec": "Josef Trpětek/Trpětka[?], chalupník v Kosticích (genitiv „Trpětky“)",
+    "matka": "Julana, „roz. Josefa Prokopa[?], chalupníka v Kosticích“ — tj. otec matky čten Josef Prokop[?]",
+    "vek_cteno": "2[2|3] 1/2 [?]",
+    "narozeni_margin_cteno": "Nar. 24. [měsíc nečitelný][?] 189[5|6|7][?]",
+    "narozeni_interval_z_veku": "1893-1898 (pouze vyhledávací interval, ne datum)",
+    "pencil": "22[?] nad věkem, význam nejasný"
+  },
+  "svedci": [
+    "Jaroslav[?] František, dělník v Tvrdonicích čís. 180[?]",
+    "Rudolf Jakub[?]/Jakob[?], dělník v Kosticích čís. 237[?]",
+    "dále „oba Kab[l]áči[?]“ — nejisté, nečíst jako rodinnou vazbu"
+  ],
+  "poznamky_pod_zapisem": [
+    "…[nečitelná formule o oddavkách]… poznamenáno v Kn. oddaných[?] … dn. 17. května[?] …",
+    "Snubní listiny ve farním actí[?]/archivu[?] … rok 1919[?] … str./č. 4…[nečitelné]"
+  ],
+  "rodice_na_zapise": "formule čtena částečně: „Rodiče na hlášení teh[?] příměsí k blahovoli[?]…“, u nevěsty dále „což její matka nechá[?]“",
+  "katalog_overeno_tohoto_behu": {
+    "kniha_3443_detail_258": "Tvrdonice ř.k., oddaní 1909-1925, obec Kostice, svazek IV, 95 snímků, čeština — potvrzeno WebFetch 2026-11-02",
+    "kniha_3454_detail_12042": "Tvrdonice ř.k., obec Kostice; narození 1784-1912, oddaní 1790-1925, zemřelí 1790-1946; index zemřelých sn. 2-63, index oddaných sn. 64-103, index narozených sn. 104-172; jazyk něm./čes. — potvrzeno WebFetch 2026-11-02",
+    "dusledek": "snímek 49 knihy 3454 patří indexu zemřelých, NENÍ rejstříkem oddaných"
+  },
+  "prekazky": [
+    "raster MZA za ALTCHA (bypass zakázán) — pixelová identifikace snímku a čtení rejstříku 3454 nedostupné",
+    "hledání katalogu vyžaduje POST/JS; curl timeout 2×; WebFetch jen GET",
+    "katalogový odkaz matrika/obec/15 vrací 404 (2 varianty)"
+  ],
+  "hypotezy_candidate": [
+    {"id": "H1", "text": "zápis č. 53 = sňatek rodičů Emilie Koskové (1924)", "stav": "candidate, NEPROKÁZÁNO"},
+    {"id": "H2", "text": "rodne prijmeni nevesty Trpětka/Trpětková (bez l); „Trpělková“ je varianta", "stav": "otevřená"},
+    {"id": "H3", "text": "čtení příjmení matky ženicha „Štrukáni…“ je chybné", "stav": "otevřená"}
+  ],
+  "co_musi_dolozit_jiny_pramen": [
+    "narození Cyril[le] Kosek ~1888-1892 (rodiče, datum)",
+    "narození Alžběty Trpětkové/Trpělkové ~1893-1898 (příjmení l/n, rodiče)",
+    "rejstříkový řádek K/T 1919 v indexu oddaných knihy 3454 (sn. 64-103)",
+    "narození Emilie Koskové 10.5.1924 Kostice (napojení páru na rodinu)",
+    "sňatky rodičů obou snoubenců (další generace — až po bodech 1-2)"
+  ],
+  "zdrojove_vyrezy": [
+    {"soubor": "D1_obrazy/D1_sn49_A1_zapis53_cele_levo.png", "box": "(0,0,1085,960)", "zoom": 1, "sha256": "e4902a2029569efc3fd3795229e31f1cda69303bf2c80ca699d8ff09cfc247bc"},
+    {"soubor": "D1_obrazy/D1_sn49_A2_zenich.png", "box": "(60,390,620,960)", "zoom": 2, "sha256": "5ebdfaccd9b848d4b16bc1237a1e3f71c696023090fecad20c6d5a9b14fb499f"},
+    {"soubor": "D1_obrazy/D1_sn49_A3_nevesta.png", "box": "(540,390,800,960)", "zoom": 2.4, "sha256": "f53f85a6dd08aa6501ef17eae7663444638164a10c8e0f145756058f123afc74"},
+    {"soubor": "D1_obrazy/D1_sn49_A4_svedci.png", "box": "(760,390,1035,960)", "zoom": 2.4, "sha256": "1cf68bf448cadbb4eaa9f7acd5a1c1119a52f361cf03f77a2fdf28adb92c3aff"},
+    {"soubor": "D1_obrazy/D1_sn49_C1_margin_zenich.png", "box": "(383,390,470,860)", "zoom": 3.5, "sha256": "b55226956799ed5a35754bb17d1390dd79d4774ec15b6675e0e9cdec0955a820"},
+    {"soubor": "D1_obrazy/D1_sn49_C2_margin_nevesty.png", "box": "(672,390,760,860)", "zoom": 3.5, "sha256": "805d901dbea497e90d6a3082f916f86f161db9bebb87153524282302986ef728"},
+    {"soubor": "D1_obrazy/D1_sn49_full2_kopie_vstupu.png", "box": "celý vstup", "zoom": 1, "sha256": "23c2122f981c3417e25df7cacc0ffe4fb27336e703ba335a4278fe38bd9028e8"}
+  ],
+  "varovani": "Výřez B4_veky_final.png nemá dokumentovaný box v zachovaných skriptech — použit jen k orientaci. Žádné jméno/vazba z tohoto přepisu nesmí být zapsáno do rodokmenu jako fakt; vše je kandidátní k revizi."
+}

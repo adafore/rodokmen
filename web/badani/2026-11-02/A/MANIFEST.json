@@ -1,0 +1,252 @@
+{
+ "balik": "A_DOBROVOLNI",
+ "generovano": "2026-11-02T14:41:00Z",
+ "poznamka": "Finální výstupy balíku A (úkoly A1–A3). Důkazní a dokumentační výřezy byly před zabalením zredukovány: PNG->JPEG q92, velké dokumentační kompozity JPEG q78; obsah/rozlišení výřezů nezměněny. Vstupní skeny (03_anna…, C_2755…) zde duplikovány nejsou; jejich SHA256 viz MANIFEST vstupního ZIPu. Mezikusy 01_/02_ ZIP zachycují stav po A1/A2 (názvy některých výřezů se později změnily PNG->JPG).",
+ "soubory": [
+  {
+   "file": "CHECKPOINT.md",
+   "bytes": 1515,
+   "sha256": "d20cfe6a13f491ef4d6d1c554fb804b21576210d1d003ab1b1e0b59c2d3c2c07"
+  },
+  {
+   "file": "DENIK.md",
+   "bytes": 4670,
+   "sha256": "c7282b0a8f43e8b35b08a786793df0192866019a6429e60ee21a07b4dd4e23de"
+  },
+  {
+   "file": "NEJISTOTY.md",
+   "bytes": 4465,
+   "sha256": "a36d04cd1b046815021de1ad528f6845edb1577048a63f7fac5faad6e6b4991f"
+  },
+  {
+   "file": "NOVE_NALEZY.json",
+   "bytes": 12746,
+   "sha256": "616ebecaa3479b6627e8bdd10dc15695fe9f8d5793b563e6f11bb4abcbc0ccef"
+  },
+  {
+   "file": "POKRACOVAT.md",
+   "bytes": 929,
+   "sha256": "9555bbbc067acf9daaaaac17a24e746329dcdfbd48dcb81070697b8baebf1de1"
+  },
+  {
+   "file": "PRAMENY.csv",
+   "bytes": 3276,
+   "sha256": "582c890da1b588545d92f8ae84ec1bfc4255b62eb551309b3c1a477b63c294ad"
+  },
+  {
+   "file": "PREHLED.md",
+   "bytes": 5273,
+   "sha256": "301cc415ff99b1737d873581bc694ad879650a4fe3c0421aba86e77fda264d7c"
+  },
+  {
+   "file": "PREPISY.md",
+   "bytes": 17202,
+   "sha256": "24732b3cc3e98547f8453eef327ccb6e0842c4270ef2ea0b2409ad6f3bd6c87a"
+  },
+  {
+   "file": "PROHLEDANO.md",
+   "bytes": 3284,
+   "sha256": "26edce5095e98909a8fdfc799b9a4deb266bfdffec33bb49d4b875e6545b1990"
+  },
+  {
+   "file": "obrazy_A1/A1_cropB.jpg",
+   "bytes": 545545,
+   "sha256": "d62938019f4ff20ca5895db7817dfdf693cd5ece398cf4c7c0bf446db8efab53"
+  },
+  {
+   "file": "obrazy_A1/A1_detaily_kompozit.jpg",
+   "bytes": 371929,
+   "sha256": "85770b5da28fff13975c9c0c7d65c325ae9ca24843f3612fc4f4d5a2362ed2f3"
+  },
+  {
+   "file": "obrazy_A1/A1_hlavicky_kompozit.jpg",
+   "bytes": 469656,
+   "sha256": "a28f678f6e1e6fa18ecdccf3c1787d7125d1e0d3ab94b26f758eee9f341d8fce"
+  },
+  {
+   "file": "obrazy_A1/A1_overview_cely.jpg",
+   "bytes": 511544,
+   "sha256": "5cec04b4fe1c693087f509864e7a4d8d894e23a5a252bf87e7df93cfedf1f5df"
+  },
+  {
+   "file": "obrazy_A1/A1_r36_vychod.jpg",
+   "bytes": 687269,
+   "sha256": "ba7400f127187d4d1ef254a15c763f4199609f785c16c13911b31a00ba8a1468"
+  },
+  {
+   "file": "obrazy_A1/A1_r36_zapad.jpg",
+   "bytes": 634638,
+   "sha256": "cb7ef2d00444147f514970cf84a884489200444fa6241b2f133a1a59b6be76e5"
+  },
+  {
+   "file": "obrazy_A1/A1_sporna_slova.jpg",
+   "bytes": 371611,
+   "sha256": "961ee9b79d0dd88e87731a1a09a099c9d45952684959c84dd29b1d2bb3dd56f7"
+  },
+  {
+   "file": "obrazy_A1/A1_svat_datum_zenich.jpg",
+   "bytes": 768744,
+   "sha256": "98566106585876a2d53068d96e49b1ffe33e12ca0c5aa6547afaa019f417427b"
+  },
+  {
+   "file": "obrazy_A1/A1_svat_klicova_slova.jpg",
+   "bytes": 81476,
+   "sha256": "57435d4b1f95d5aacc17785b6141548064cb71f68f2ed32a0054c8d0b4026e31"
+  },
+  {
+   "file": "obrazy_A1/A1_svat_nevesta.jpg",
+   "bytes": 838346,
+   "sha256": "323ace1e0b320d41cc2b8058cf97ae272ba91995ceca0bc70c6498ed81cec3e2"
+  },
+  {
+   "file": "obrazy_A1/A1_svat_prijmeni_matky.png",
+   "bytes": 233338,
+   "sha256": "de0dc111f235ff216526aec88b3d9dba00d50e11c60faf612a526e62a19a72eb"
+  },
+  {
+   "file": "obrazy_A1/A1_svatebni_overview.jpg",
+   "bytes": 423332,
+   "sha256": "685d8dc4191bb5c110cd788fa761d704eebf1391652feebe91125e72b62081aa"
+  },
+  {
+   "file": "obrazy_A2/A2_comp1.jpg",
+   "bytes": 222346,
+   "sha256": "255d364100262a949f60adb7f1e7fcf971017acd21a351679ea948e5752aef37"
+  },
+  {
+   "file": "obrazy_A2/A2_comp2.jpg",
+   "bytes": 390991,
+   "sha256": "fbc0cf47b41fa5059dca69af93852e340537d52c84b5de9040d7884bbba32c62"
+  },
+  {
+   "file": "obrazy_A2/A2_comp3.jpg",
+   "bytes": 647255,
+   "sha256": "688c58f9a4e619c6dc265567dc0e7872e4ae0b4bb757f9525a15fc3a7841f505"
+  },
+  {
+   "file": "obrazy_A2/hlavicky_37_41.jpg",
+   "bytes": 854193,
+   "sha256": "673b824b05f39390124ff7de5965e03c11a09e188b7796e49b4864845a255707"
+  },
+  {
+   "file": "obrazy_A2/kniha2755_sn032_full12.jpg",
+   "bytes": 2170597,
+   "sha256": "5ae5fc38239602769525a6ca160e9c7944c50cf80b078099e234500b77f549e7"
+  },
+  {
+   "file": "obrazy_A2/kniha2755_sn033_full12.jpg",
+   "bytes": 2293917,
+   "sha256": "4a43f8b4a10d5822fe6dbbaca29bc91243499bebdf9491e0770b882a430c1a15"
+  },
+  {
+   "file": "obrazy_A2/kniha2755_sn034_full12.jpg",
+   "bytes": 2342157,
+   "sha256": "8aeb33326355da90288c129c92d500f7802309b134bb5b21c88ec1c45e798eee"
+  },
+  {
+   "file": "obrazy_A2/kniha2755_sn039_full12.jpg",
+   "bytes": 2011956,
+   "sha256": "d754028e7f1d98947c5112acf42dce9ca64b2c48e88771fb53a8a841a2ffb466"
+  },
+  {
+   "file": "obrazy_A2/sn34_zapis_a.jpg",
+   "bytes": 1288034,
+   "sha256": "73a0f9ff3fe769df25bc3b0e5df1083272e99379716893534f4fdf7cc99ce140"
+  },
+  {
+   "file": "obrazy_A2/sn34_zapis_b.jpg",
+   "bytes": 613715,
+   "sha256": "2de40f68c067062271a86f8a4afc7a476e67adceee987e5a83cd2ab9cadfbf47"
+  },
+  {
+   "file": "obrazy_A3/A3_1873_sn113_114.jpg",
+   "bytes": 2762008,
+   "sha256": "3979c22276070ec472d070bcab3672dce0dce48a74a013a22001356e59b4b6a0"
+  },
+  {
+   "file": "obrazy_A3/A3_1873_sn115_116.jpg",
+   "bytes": 2610561,
+   "sha256": "0b3b4267df3ebf27037adbb6c4f374a4762f8b65568a0c75d28cdc3c9a46e9c2"
+  },
+  {
+   "file": "obrazy_A3/A3_1873_sn117_118.jpg",
+   "bytes": 2716368,
+   "sha256": "bf041d15e8d3a4247797cd931cb6ef246baa5b96881e7a0f884367338926263a"
+  },
+  {
+   "file": "obrazy_A3/A3_1877_sn140_141.jpg",
+   "bytes": 2568824,
+   "sha256": "ef6ccfcf63f47883f300df977b7189519ec1f7a18439c0776fce1276ddda8b1b"
+  },
+  {
+   "file": "obrazy_A3/A3_1877_sn142.jpg",
+   "bytes": 1366818,
+   "sha256": "25042b3f1dbc3f99eba1fd5b99c1c9dc3b1b60fe6033162f3da89555e20ab226"
+  },
+  {
+   "file": "obrazy_A3/A3_hlavicky_141_115.jpg",
+   "bytes": 396742,
+   "sha256": "3f7568e1816500c74548bf0c44e5e70ad180087bef42bca2372c0cf751343342"
+  },
+  {
+   "file": "obrazy_A3/anna_nar_matky_zoom.png",
+   "bytes": 91154,
+   "sha256": "afd87bce0dda897a404e41477678a90283c2bdf480fd470b046e72aa571586c6"
+  },
+  {
+   "file": "obrazy_A3/g_datum_zoom2.jpg",
+   "bytes": 23267,
+   "sha256": "f5249206e901a91bb57109b6318e19a30e1065f8bb7eabd156901d137bc98e2f"
+  },
+  {
+   "file": "obrazy_A3/g_surname_kmotr.jpg",
+   "bytes": 82639,
+   "sha256": "a1896f8c2abf92476c576c222e946d17beebf55a441580928fb3c68fb9f241ae"
+  },
+  {
+   "file": "obrazy_A3/kniha2745_sn115_12_300-950.jpg",
+   "bytes": 246281,
+   "sha256": "f49bf4d8e001ffb6e36e0c0ef18ef831fa878ae7bd7faa58eaf7562d4c74b328"
+  },
+  {
+   "file": "obrazy_A3/kniha2745_sn141_12_300-950.jpg",
+   "bytes": 230153,
+   "sha256": "d76992ab3639c4025b4a5246fcfcbb50d5e9c766da776b878748d18e35d57e82"
+  },
+  {
+   "file": "obrazy_A3/sn116R_a.jpg",
+   "bytes": 551604,
+   "sha256": "f367d127efd75af4dc5bcfb0b20c5bb912adc4f30bff71ec4dda4e1afa515985"
+  },
+  {
+   "file": "obrazy_A3/sn116R_b.jpg",
+   "bytes": 642887,
+   "sha256": "f2ddc57d5919d25e2e503b02230fe1e6209dff80c1e343474ca887b6fcc64dc0"
+  },
+  {
+   "file": "obrazy_A3/sn116R_c.jpg",
+   "bytes": 624531,
+   "sha256": "4d2223545e62a590df0fc4403e79b96f42a0e282a859c291f809421039c7f276"
+  },
+  {
+   "file": "obrazy_A3/sn116R_gap.jpg",
+   "bytes": 424310,
+   "sha256": "bef6d3b986abc4d7e7ea9b50232960a7d659d75e1ca41d639acda4836f56c259"
+  },
+  {
+   "file": "obrazy_A3/sn117_top_L13.jpg",
+   "bytes": 171995,
+   "sha256": "17b0164b2f9b445abcc03f1d2a013254f5ffde341c5038f4e5b220b8f319006f"
+  },
+  {
+   "file": "obrazy_A3/sn142_genovefa_L13b.jpg",
+   "bytes": 372484,
+   "sha256": "9ad11238474755085c479eab601c51f38685c503eb7f64db2f83c164ace5eda7"
+  },
+  {
+   "file": "obrazy_A3/sn142_genovefa_L13c.jpg",
+   "bytes": 430500,
+   "sha256": "dcf29faaefd0c66080316cbd85018008953d7339df880b107a7a479801a36673"
+  }
+ ]
+}

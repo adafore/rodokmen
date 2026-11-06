@@ -1,0 +1,144 @@
+Thought Process
+
+Začínám. Nejdřív skutečně ověřím obsah vstupního ZIP.
+
+Explored 4 files，Ran 2 commands
+
+Vstupní ZIP je rozbalen. Ověřím SHA256 proti MANIFEST.json a pak spustím výpočty.
+
+Ran 1 commands
+
+✅ SHA256 všech tří souborů odpovídá MANIFEST.json. Důležité zjištění k dokumentaci: vstupní ZIP neobsahuje žádné archivní obrazy (jen 3 JSON + zadání) — to zdokumentím jako odchylku od obecné šablony.
+
+Nyní píšu výpočetní skript pro ÚKOL F1 (pokrytí předků, integrita struktury):
+
+Wrote 2 files，Ran 2 commands
+
+F1 výpočet hotový a reprodukovatelný. Klíčová zjištění: žádné cykly/visící reference/kolize; 16 unikátních předků P17 i 16 osob ve vývodu P19; dvojice P4–P5 a P7–P8 chybí jako partnerské hrany; PR-G a PR-H jsou osamocené prameny. Nyní vytvořím anonymizovaný diagram SVG/HTML:
+
+Wrote 1 files
+
+Opravím překlep v proměnné _radky (chybná indentace):
+
+Wrote 1 files，Ran 1 commands
+
+Diagramy vygenerovány. Rychle vizuálně ověřím, že SVG se vykresluje správně:
+
+Explored 1 files，Ran 3 commands
+
+Diagram P19 vypadá správně (barvy dle provenience, prázdné sloty, legenda). Poslední sloupec je u pravého okraje — mírně rozšířím plátno a zkontroluji i vývod P17:
+
+Explored 1 files，Wrote 1 files，Ran 1 commands
+
+Oba diagramy jsou v pořádku. Ukládám výstupy Úkolu F1 (MEZERY.md, deník, checkpoint) a hned vytvořím očíslovaný ZIP:
+
+Wrote 4 files，Ran 1 commands
+
+F1 kompletně uloženo. ✅ Pokračuji ÚKOLEM F2 — nejprve jednorázový ověřovací pokus o přístup k oficiálnímu katalogu MZA ActaPublica (bez obcházení, bez cyklů):
+
+Ran 3 commands
+
+Server odpovídá (302 → stránka hledání), ale ta nedočekala. Zkusím přímo 4 knihovní detaily z katalogových stop — každý právě jednou, s delším timeoutem:
+
+Ran 3 commands
+
+Katalog MZA je živý (nginx, HTTP/2 302), ale obsahové stránky se z tohoto prostředí nedočekávají (timeouts 20–40 s). Podle metodiky to nezkouším v cyklu — katalogová identita knih zůstává „neověřeno“ (nikoli „neexistuje“). Strukturu URL ale mohu spolehlivě analyzovat ze vstupního souboru. Píšu skript F2:
+
+Wrote 1 files，Ran 1 commands
+
+F2 matice hotová (31 řádků: 20 rodičovských hran + 7 partnerských párů + 4 osoby jádra). Aktualizuji checkpoint a ukládám ZIP F2:
+
+Wrote 1 files，Ran 1 commands
+
+F2 uloženo. Pokračuji ÚKOLEM F3 — seznam maximálně 5 účelných rodinných dokladů:
+
+Wrote 1 files，Ran 1 commands
+
+F3 hotové. Nyní závěrečné výstupy celého balíku:
+
+Wrote 6 files，Ran 1 commands
+
+Aktualizuji checkpoint na finální stav a píšu ověřovací skript (existence, velikosti, JSON parse, SHA256, ZIP integrita):
+
+Wrote 2 files，Ran 1 commands
+
+Všechny kontroly prošly. Poslední ověření integrity FINÁLNÍHO ZIPu zevnitř:
+
+Ran 1 commands
+
+Balík F_MAPA_CHYBEJICICH_VETVI je kompletní — všechny tři úkoly zpracovány, ověřeny a odevzdány.
+
+Co vyšlo
+Vstup ověřen: SHA256 všech 3 souborů souhlasí s MANIFEST.json (3/3). Odchylka zdokumentována: ZIP neobsahuje žádné obrazy (jen JSON + zadání) — žádné tvrzení o skenech jsem tedy nečinil.
+F1 (pokrytí): P17 má 16 unikátních předků = 16/126 pozic do 6. generace (12,7 %); „čtvrtina stromu“ platí jen pro hloubky 1–5 (22,6 %). U dítěte P19 je větev matky P18 0/63. Integrita čistá: 0 cyklů, 0 visících referencí, 0 kolizí, žádný pedigrée kolaps. Přesné procento je závislé na výchozí osobě i hloubce.
+F2 (prameny): Zásadní nález — PR-B=PR-D → kniha 14893 a PR-C=PR-E → 12400 (sdílený detail URL), tedy dvojice zdrojů nejsou vzájemně nezávislé. Katalogová identita MZA zůstává „neověřeno“ (host živý na 302, obsahové stránky timeout; jednorázové pokusy, bez obcházení). PR-G, PR-H osamocené; jádro P17–P20 stojí jen na sdělení s 0 soubory.
+F3 (doklady): 5 doporučení, nejhodnotnější oddací list P17×P18 — odkrývá 3 hrany najednou (matka P17 + oba rodiče P18). Nic nekontaktováno, žádné žádosti.
+Kde to je
+
+Vše ve složce download/F_MAPA_CHYBEJICICH_VETVI/ (PREHLED.md, POKRYTI.json, NOVE_NALEZY.json, VAZBY_A_ZDROJE.csv, MEZERY.md, DOPORUCENE_DOKLADY.md, PRAMENY.csv, PREPISY.md, NEJISTOTY.md, PROHLEDANO.md, POKRACOVAT.md, MAPA_STRUKTURY.html + 2 SVG, deník, checkpoint) a čtyři integritou testované ZIPy:
+
+ZIP
+	
+VELIKOST
+	
+SHA256 (PRVNÍCH 16)
+
+…_F1_v1.zip	17,7 kB	3e7ed17efce9cbf4…
+…_F2_v1.zip	7,8 kB	fb982f9006647a62…
+…_F3_v1.zip	5,7 kB	c61fb825b5346a36…
+…_FINAL_v1.zip (18 souborů)	39,6 kB	67f01ff7315b5dd9…
+
+Kompletní hashovací tabulka: VYSLEDKY_SHA256.csv. Vše ověřeno skripty (JSON parse, ZIP testzip, SHA256, vizuální render SVG).
+
+Nejlepší další krok (POKRACOVAT.md): zajistit rodinnou kopii oddacího listu P17×P18 — ostatní (ověření knih MZA z jiného prostředí) na něj navazuje.
+
+All files in task
+23
+Save to Cloud
+F_MAPA_CHYBEJICICH_VETVI_FINAL_v1
+· zip
+MANIFEST
+· json
+VYSLEDKY_SHA256
+· csv
+CHECKPOINT
+· md
+PREHLED
+· md
+POKRACOVAT
+· md
+PROHLEDANO
+· md
+NEJISTOTY
+· md
+PREPISY
+· md
+NOVE_NALEZY
+· json
+DOPORUCENE_DOKLADY
+· md
+F_MAPA_CHYBEJICICH_VETVI_F3_v1
+· zip
+F_MAPA_CHYBEJICICH_VETVI_F2_v1
+· zip
+PRAMENY
+· csv
+PRAMENY_AUDIT
+· json
+VAZBY_A_ZDROJE
+· csv
+F_MAPA_CHYBEJICICH_VETVI_F1_v1
+· zip
+DENIK
+· md
+MEZERY
+· md
+MAPA_STRUKTURY
+· html
+MAPA_STRUKTURY
+· svg
+MAPA_VYVOD_P17
+· svg
+POKRYTI
+· json
+Expand files

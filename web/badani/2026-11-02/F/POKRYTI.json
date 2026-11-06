@@ -1,0 +1,1120 @@
+{
+  "balik": "F_MAPA_CHYBEJICICH_VETVI",
+  "ukol": "F1",
+  "vstup": {
+    "soubor": "STRUKTURA_ANONYMIZOVANA.json",
+    "sha256": "c731bde69ad0f0d6328c571ec4cd584cb17d7f266c34bbfad17bafcc5d750c22",
+    "poznamka": "anonymizovaná struktura; PID = stabilní pracovní identifikátor"
+  },
+  "definice": {
+    "ocekavane_pozice": "2^d slotů v dvojrodičovském vývodu v hloubce d (bez pedigrée kolapsu)",
+    "obsazene_pozice": "sloty obsazené známou osobou (známý PID)",
+    "unikatni_osoby": "počet různých PID mezi obsazenými sloty",
+    "mezery_pozice": "očekávané − obsazené; neznámé osoby NIKDY nevyplněny fiktivními",
+    "hloubka": "1 = rodiče výchozí osoby, 2 = prarodiče, …",
+    "narozeni_zname": "pouze existence údaje v pracovních datech, NIKOLI ověření"
+  },
+  "integrita": {
+    "pocet_osob": 20,
+    "unikatni_ids_osob": 20,
+    "id_unikatni": true,
+    "visici_reference": [],
+    "visici_reference_ok": true,
+    "cykly": [],
+    "cykly_ok": true,
+    "kolize_otec_matka_partner": [],
+    "kolize_ok": true,
+    "rodicovske_hrany_osoby_vs_vztahy": {
+      "pocet_v_osobach": 20,
+      "pocet_v_vztazich": 20,
+      "rozdily": [],
+      "konzistentni": true
+    },
+    "partnerstvi": {
+      "pary_podle_partneri_pole": [
+        [
+          "P1",
+          "P2"
+        ],
+        [
+          "P12",
+          "P13"
+        ],
+        [
+          "P14",
+          "P15"
+        ],
+        [
+          "P17",
+          "P18"
+        ],
+        [
+          "P3",
+          "P9"
+        ],
+        [
+          "P4",
+          "P5"
+        ],
+        [
+          "P7",
+          "P8"
+        ]
+      ],
+      "pary_podle_vztahy": [
+        [
+          "P1",
+          "P2"
+        ],
+        [
+          "P12",
+          "P13"
+        ],
+        [
+          "P14",
+          "P15"
+        ],
+        [
+          "P17",
+          "P18"
+        ],
+        [
+          "P3",
+          "P9"
+        ]
+      ],
+      "pary_bez_hrany_ve_vztazich": [
+        [
+          "P4",
+          "P5"
+        ],
+        [
+          "P7",
+          "P8"
+        ]
+      ],
+      "hrany_bez_pary_v_partneri": [],
+      "jednosmerne_hrany_vztahy": [
+        "P1->P2",
+        "P3->P9",
+        "P14->P15",
+        "P12->P13"
+      ]
+    },
+    "duplicitni_hrany": [],
+    "osamocene_prameny": [
+      "PR-G",
+      "PR-H"
+    ],
+    "nezname_prameny_v_citacich": []
+  },
+  "pokryti_P17": {
+    "start": "P17",
+    "per_depth": [
+      {
+        "hloubka": 1,
+        "ocekavane_pozice": 2,
+        "obsazene_pozice": 1,
+        "unikatni_osoby": 1,
+        "mezery_pozice": 1,
+        "unikatni_pidy": [
+          "P11"
+        ],
+        "mezery_sloty": [
+          "M"
+        ]
+      },
+      {
+        "hloubka": 2,
+        "ocekavane_pozice": 4,
+        "obsazene_pozice": 2,
+        "unikatni_osoby": 2,
+        "mezery_pozice": 2,
+        "unikatni_pidy": [
+          "P12",
+          "P13"
+        ],
+        "mezery_sloty": []
+      },
+      {
+        "hloubka": 3,
+        "ocekavane_pozice": 8,
+        "obsazene_pozice": 4,
+        "unikatni_osoby": 4,
+        "mezery_pozice": 4,
+        "unikatni_pidy": [
+          "P14",
+          "P15",
+          "P3",
+          "P9"
+        ],
+        "mezery_sloty": []
+      },
+      {
+        "hloubka": 4,
+        "ocekavane_pozice": 16,
+        "obsazene_pozice": 3,
+        "unikatni_osoby": 3,
+        "mezery_pozice": 13,
+        "unikatni_pidy": [
+          "P1",
+          "P16",
+          "P2"
+        ],
+        "mezery_sloty": [
+          "OOMM",
+          "OMOO",
+          "OMOM",
+          "OMMO",
+          "OMMM"
+        ]
+      },
+      {
+        "hloubka": 5,
+        "ocekavane_pozice": 32,
+        "obsazene_pozice": 4,
+        "unikatni_osoby": 4,
+        "mezery_pozice": 28,
+        "unikatni_pidy": [
+          "P4",
+          "P5",
+          "P7",
+          "P8"
+        ],
+        "mezery_sloty": [
+          "OOMOO",
+          "OOMOM"
+        ]
+      },
+      {
+        "hloubka": 6,
+        "ocekavane_pozice": 64,
+        "obsazene_pozice": 2,
+        "unikatni_osoby": 2,
+        "mezery_pozice": 62,
+        "unikatni_pidy": [
+          "P10",
+          "P6"
+        ],
+        "mezery_sloty": [
+          "OOOOOO",
+          "OOOOOM",
+          "OOOOMM",
+          "OOOMOO",
+          "OOOMOM",
+          "OOOMMM"
+        ]
+      }
+    ],
+    "kumulativne": [
+      {
+        "do_hloubky": 1,
+        "ocekavane_pozice": 2,
+        "obsazene_pozice": 1,
+        "unikatni_osoby": 1,
+        "procento_pozic": 50.0
+      },
+      {
+        "do_hloubky": 2,
+        "ocekavane_pozice": 6,
+        "obsazene_pozice": 3,
+        "unikatni_osoby": 3,
+        "procento_pozic": 50.0
+      },
+      {
+        "do_hloubky": 3,
+        "ocekavane_pozice": 14,
+        "obsazene_pozice": 7,
+        "unikatni_osoby": 7,
+        "procento_pozic": 50.0
+      },
+      {
+        "do_hloubky": 4,
+        "ocekavane_pozice": 30,
+        "obsazene_pozice": 10,
+        "unikatni_osoby": 10,
+        "procento_pozic": 33.3
+      },
+      {
+        "do_hloubky": 5,
+        "ocekavane_pozice": 62,
+        "obsazene_pozice": 14,
+        "unikatni_osoby": 14,
+        "procento_pozic": 22.6
+      },
+      {
+        "do_hloubky": 6,
+        "ocekavane_pozice": 126,
+        "obsazene_pozice": 16,
+        "unikatni_osoby": 16,
+        "procento_pozic": 12.7
+      }
+    ],
+    "obsazene_sloty": [
+      {
+        "hloubka": 1,
+        "slot": "O",
+        "pid": "P11",
+        "zdroj_hrany": "PR-RODINA-2026",
+        "provenience": "sdeleni"
+      },
+      {
+        "hloubka": 2,
+        "slot": "OO",
+        "pid": "P12",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OOO",
+        "pid": "P3",
+        "zdroj_hrany": "PR-B",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOOO",
+        "pid": "P1",
+        "zdroj_hrany": "PR-D",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOOO",
+        "pid": "P4",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOOM",
+        "pid": "P5",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOOMO",
+        "pid": "P6",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOOM",
+        "pid": "P2",
+        "zdroj_hrany": "PR-D",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOMO",
+        "pid": "P7",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOMM",
+        "pid": "P8",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOMMO",
+        "pid": "P10",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OOM",
+        "pid": "P9",
+        "zdroj_hrany": "PR-B",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOMO",
+        "pid": "P16",
+        "zdroj_hrany": "PR-C",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 2,
+        "slot": "OM",
+        "pid": "P13",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OMO",
+        "pid": "P14",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OMM",
+        "pid": "P15",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      }
+    ],
+    "unikatni_osoby": [
+      {
+        "pid": "P1",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P10",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P11",
+        "min_hloubka": 1
+      },
+      {
+        "pid": "P12",
+        "min_hloubka": 2
+      },
+      {
+        "pid": "P13",
+        "min_hloubka": 2
+      },
+      {
+        "pid": "P14",
+        "min_hloubka": 3
+      },
+      {
+        "pid": "P15",
+        "min_hloubka": 3
+      },
+      {
+        "pid": "P16",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P2",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P3",
+        "min_hloubka": 3
+      },
+      {
+        "pid": "P4",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P5",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P6",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P7",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P8",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P9",
+        "min_hloubka": 3
+      }
+    ],
+    "pedigree_kolaps": [],
+    "rodicovske_hrany_dle_provenience": {
+      "sdeleni": 1,
+      "dokument": 4,
+      "matrika": 11
+    },
+    "max_obsazena_hloubka": 6
+  },
+  "pokryti_P19": {
+    "start": "P19",
+    "per_depth": [
+      {
+        "hloubka": 1,
+        "ocekavane_pozice": 2,
+        "obsazene_pozice": 2,
+        "unikatni_osoby": 2,
+        "mezery_pozice": 0,
+        "unikatni_pidy": [
+          "P17",
+          "P18"
+        ],
+        "mezery_sloty": []
+      },
+      {
+        "hloubka": 2,
+        "ocekavane_pozice": 4,
+        "obsazene_pozice": 1,
+        "unikatni_osoby": 1,
+        "mezery_pozice": 3,
+        "unikatni_pidy": [
+          "P11"
+        ],
+        "mezery_sloty": [
+          "OM",
+          "MO",
+          "MM"
+        ]
+      },
+      {
+        "hloubka": 3,
+        "ocekavane_pozice": 8,
+        "obsazene_pozice": 2,
+        "unikatni_osoby": 2,
+        "mezery_pozice": 6,
+        "unikatni_pidy": [
+          "P12",
+          "P13"
+        ],
+        "mezery_sloty": []
+      },
+      {
+        "hloubka": 4,
+        "ocekavane_pozice": 16,
+        "obsazene_pozice": 4,
+        "unikatni_osoby": 4,
+        "mezery_pozice": 12,
+        "unikatni_pidy": [
+          "P14",
+          "P15",
+          "P3",
+          "P9"
+        ],
+        "mezery_sloty": []
+      },
+      {
+        "hloubka": 5,
+        "ocekavane_pozice": 32,
+        "obsazene_pozice": 3,
+        "unikatni_osoby": 3,
+        "mezery_pozice": 29,
+        "unikatni_pidy": [
+          "P1",
+          "P16",
+          "P2"
+        ],
+        "mezery_sloty": [
+          "OOOMM",
+          "OOMOO",
+          "OOMOM",
+          "OOMMO",
+          "OOMMM"
+        ]
+      },
+      {
+        "hloubka": 6,
+        "ocekavane_pozice": 64,
+        "obsazene_pozice": 4,
+        "unikatni_osoby": 4,
+        "mezery_pozice": 60,
+        "unikatni_pidy": [
+          "P4",
+          "P5",
+          "P7",
+          "P8"
+        ],
+        "mezery_sloty": [
+          "OOOMOO",
+          "OOOMOM"
+        ]
+      }
+    ],
+    "kumulativne": [
+      {
+        "do_hloubky": 1,
+        "ocekavane_pozice": 2,
+        "obsazene_pozice": 2,
+        "unikatni_osoby": 2,
+        "procento_pozic": 100.0
+      },
+      {
+        "do_hloubky": 2,
+        "ocekavane_pozice": 6,
+        "obsazene_pozice": 3,
+        "unikatni_osoby": 3,
+        "procento_pozic": 50.0
+      },
+      {
+        "do_hloubky": 3,
+        "ocekavane_pozice": 14,
+        "obsazene_pozice": 5,
+        "unikatni_osoby": 5,
+        "procento_pozic": 35.7
+      },
+      {
+        "do_hloubky": 4,
+        "ocekavane_pozice": 30,
+        "obsazene_pozice": 9,
+        "unikatni_osoby": 9,
+        "procento_pozic": 30.0
+      },
+      {
+        "do_hloubky": 5,
+        "ocekavane_pozice": 62,
+        "obsazene_pozice": 12,
+        "unikatni_osoby": 12,
+        "procento_pozic": 19.4
+      },
+      {
+        "do_hloubky": 6,
+        "ocekavane_pozice": 126,
+        "obsazene_pozice": 16,
+        "unikatni_osoby": 16,
+        "procento_pozic": 12.7
+      }
+    ],
+    "obsazene_sloty": [
+      {
+        "hloubka": 1,
+        "slot": "O",
+        "pid": "P17",
+        "zdroj_hrany": "PR-RODINA-2026",
+        "provenience": "sdeleni"
+      },
+      {
+        "hloubka": 2,
+        "slot": "OO",
+        "pid": "P11",
+        "zdroj_hrany": "PR-RODINA-2026",
+        "provenience": "sdeleni"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OOO",
+        "pid": "P12",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOOO",
+        "pid": "P3",
+        "zdroj_hrany": "PR-B",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOOO",
+        "pid": "P1",
+        "zdroj_hrany": "PR-D",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOOOO",
+        "pid": "P4",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOOOM",
+        "pid": "P5",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOOM",
+        "pid": "P2",
+        "zdroj_hrany": "PR-D",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOOMO",
+        "pid": "P7",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 6,
+        "slot": "OOOOMM",
+        "pid": "P8",
+        "zdroj_hrany": "PR-E",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOOM",
+        "pid": "P9",
+        "zdroj_hrany": "PR-B",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 5,
+        "slot": "OOOMO",
+        "pid": "P16",
+        "zdroj_hrany": "PR-C",
+        "provenience": "matrika"
+      },
+      {
+        "hloubka": 3,
+        "slot": "OOM",
+        "pid": "P13",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOMO",
+        "pid": "P14",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 4,
+        "slot": "OOMM",
+        "pid": "P15",
+        "zdroj_hrany": "PR-A",
+        "provenience": "dokument"
+      },
+      {
+        "hloubka": 1,
+        "slot": "M",
+        "pid": "P18",
+        "zdroj_hrany": "PR-RODINA-2026",
+        "provenience": "sdeleni"
+      }
+    ],
+    "unikatni_osoby": [
+      {
+        "pid": "P1",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P11",
+        "min_hloubka": 2
+      },
+      {
+        "pid": "P12",
+        "min_hloubka": 3
+      },
+      {
+        "pid": "P13",
+        "min_hloubka": 3
+      },
+      {
+        "pid": "P14",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P15",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P16",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P17",
+        "min_hloubka": 1
+      },
+      {
+        "pid": "P18",
+        "min_hloubka": 1
+      },
+      {
+        "pid": "P2",
+        "min_hloubka": 5
+      },
+      {
+        "pid": "P3",
+        "min_hloubka": 4
+      },
+      {
+        "pid": "P4",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P5",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P7",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P8",
+        "min_hloubka": 6
+      },
+      {
+        "pid": "P9",
+        "min_hloubka": 4
+      }
+    ],
+    "pedigree_kolaps": [],
+    "rodicovske_hrany_dle_provenience": {
+      "sdeleni": 3,
+      "dokument": 4,
+      "matrika": 9
+    },
+    "max_obsazena_hloubka": 6
+  },
+  "vlastni_vs_partnerovi": {
+    "P19": {
+      "vetev_P17_otec": {
+        "obsazene_pozice": 15,
+        "unikatni_osoby": [
+          "P1",
+          "P11",
+          "P12",
+          "P13",
+          "P14",
+          "P15",
+          "P16",
+          "P17",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P7",
+          "P8",
+          "P9"
+        ],
+        "poznamka": "vlastní předci P19 přes otce P17"
+      },
+      "vetev_P18_matka": {
+        "obsazene_pozice": 1,
+        "unikatni_osoby": [
+          "P18"
+        ],
+        "poznamka": "předci přes matku P18: žádný známý (otec=null, matka=null u P18)"
+      }
+    },
+    "P17": {
+      "vlastni_predci": {
+        "unikatni_osoby": [
+          "P1",
+          "P10",
+          "P11",
+          "P12",
+          "P13",
+          "P14",
+          "P15",
+          "P16",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P6",
+          "P7",
+          "P8",
+          "P9"
+        ]
+      },
+      "predci_partnera_P18": {
+        "unikatni_osoby": [],
+        "poznamka": "P18 je partner P17, NE předek P17; předci P18 nejsou vůbec evidováni"
+      }
+    }
+  },
+  "mezery_hrany": [
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P17",
+      "dite": "P17",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P18"
+      ],
+      "zdroje_ditete": [
+        "PR-RODINA-2026"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P18",
+      "dite": "P18",
+      "rola": "otec",
+      "zname_partnery_rodice": [
+        "P17"
+      ],
+      "zdroje_ditete": [
+        "PR-RODINA-2026"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P18",
+      "dite": "P18",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P17"
+      ],
+      "zdroje_ditete": [
+        "PR-RODINA-2026"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P9",
+      "dite": "P9",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P3"
+      ],
+      "zdroje_ditete": [
+        "PR-C",
+        "PR-D",
+        "PR-B"
+      ],
+      "narozeni_zname_dite": true
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P14",
+      "dite": "P14",
+      "rola": "otec",
+      "zname_partnery_rodice": [
+        "P15"
+      ],
+      "zdroje_ditete": [
+        "PR-A",
+        "PR-F"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P14",
+      "dite": "P14",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P15"
+      ],
+      "zdroje_ditete": [
+        "PR-A",
+        "PR-F"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P15",
+      "dite": "P15",
+      "rola": "otec",
+      "zname_partnery_rodice": [
+        "P14"
+      ],
+      "zdroje_ditete": [
+        "PR-A",
+        "PR-F"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P15",
+      "dite": "P15",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P14"
+      ],
+      "zdroje_ditete": [
+        "PR-A",
+        "PR-F"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P16",
+      "dite": "P16",
+      "rola": "otec",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-C",
+        "PR-B"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P16",
+      "dite": "P16",
+      "rola": "matka",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-C",
+        "PR-B"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P4",
+      "dite": "P4",
+      "rola": "otec",
+      "zname_partnery_rodice": [
+        "P5"
+      ],
+      "zdroje_ditete": [
+        "PR-E",
+        "PR-D"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P4",
+      "dite": "P4",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P5"
+      ],
+      "zdroje_ditete": [
+        "PR-E",
+        "PR-D"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P5",
+      "dite": "P5",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P4"
+      ],
+      "zdroje_ditete": [
+        "PR-E",
+        "PR-D"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P6",
+      "dite": "P6",
+      "rola": "otec",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P6",
+      "dite": "P6",
+      "rola": "matka",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P7",
+      "dite": "P7",
+      "rola": "otec",
+      "zname_partnery_rodice": [
+        "P8"
+      ],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P7",
+      "dite": "P7",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P8"
+      ],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P8",
+      "dite": "P8",
+      "rola": "matka",
+      "zname_partnery_rodice": [
+        "P7"
+      ],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící otec osoby P10",
+      "dite": "P10",
+      "rola": "otec",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    },
+    {
+      "kandidat": true,
+      "typ": "chybějící matka osoby P10",
+      "dite": "P10",
+      "rola": "matka",
+      "zname_partnery_rodice": [],
+      "zdroje_ditete": [
+        "PR-E"
+      ],
+      "narozeni_zname_dite": false
+    }
+  ],
+  "mezery_partnerstvi": [
+    {
+      "kandidat": true,
+      "typ": "partnerství evidované v partneri, bez hrany ve vztahy",
+      "par": [
+        "P4",
+        "P5"
+      ]
+    },
+    {
+      "kandidat": true,
+      "typ": "partnerství evidované v partneri, bez hrany ve vztahy",
+      "par": [
+        "P7",
+        "P8"
+      ]
+    }
+  ],
+  "shrnuti_tvrzeni": {
+    "P17": [
+      "Do hloubky 3 známe 7/14 pozic (50,0 %) vlastních předků P17.",
+      "Do hloubky 5 známe 14/62 pozic (22,6 %) — teprve zde se tvrzení „čtvrtina stromu“ blíží pravdě.",
+      "Do hloubky 6 známe 16/126 pozic (12,7 %), tj. 16 unikátních osob.",
+      "Předci partnera P18 nejsou předci P17 a nejsou vůbec evidováni (0 osob)."
+    ],
+    "P19": [
+      "Do hloubky 1 známe 2/2 rodiče (100 %), do hloubky 2 jen 3/6 (50,0 %) — celá větev matky P18 je prázdná.",
+      "Do hloubky 6 známe 16/126 pozic (12,7 %), 16 unikátních osob.",
+      "Větev otce P17: 15 osob; větev matky P18: 1 osob."
+    ],
+    "obecne": [
+      "Žádný cyklus, žádná visící reference, žádná kolize otec/matka/partner nebyla zjištěna.",
+      "Pedigrée kolaps: žádný (každý předek zaujímá právě jeden slot)."
+    ]
+  }
+}

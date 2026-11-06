@@ -1,0 +1,60 @@
+{
+  "balik": "D_KOSEK_TRPELKA",
+  "typ": "checkpoint_resume",
+  "cas": "2026-11-02T17:39:00+01:00",
+  "timezone": "Europe/Prague",
+  "vstup": {
+    "zip": "upload/D_KOSEK_TRPELKA_VSTUP.zip",
+    "bytes": 4166992,
+    "sha256": "1c6f92f6cca962d885e493b974319ab921795ec36c5e906012b60e1a947a333f",
+    "sha256_sedi_pokyn": true,
+    "obsah_byte_identicky_s_work_input": true
+  },
+  "zachovane_soubory": [
+    "work/input/F_tvrdonice_3443_sn49_full2.png",
+    "work/input/MANIFEST.json",
+    "work/input/NEZKONTROLOVANY_POPIS_05.txt",
+    "work/input/ZADANI.txt",
+    "work/crops/A1_levo_hlavicka_zapis53_full.png",
+    "work/crops/A2_zapis53_zenich.png",
+    "work/crops/A3_zapis53_nevesta.png",
+    "work/crops/A4_zapis53_svedci.png",
+    "work/crops/A5_hlavicka_levo.png",
+    "work/crops/B1_vekove_sloupce_z53.png",
+    "work/crops/B2_rodice_zenicha.png",
+    "work/crops/B3_rodice_nevesty.png",
+    "work/crops/B4_veky_final.png",
+    "work/crops/full_preview.png",
+    "scripts/crops_d1.py",
+    "scripts/crops_d1b.py"
+  ],
+  "chybejici_soubory": [
+    "download/05_kosek_1919.md",
+    "download/05_kosek_1919.json",
+    "download/05_sn49_zapis53_vyrez.png",
+    "download/05_checkpoint_0.md",
+    "download/05_checkpoint_1.md",
+    "download/05_checkpoint_2.md"
+  ],
+  "chybejici_zduvod": "download/ minuleho behu byla recyklovana; 1:1 obnova nemozna, znovuvytvoreni ze zachovaneho vstupu je mozne",
+  "hotove_kroky": [
+    "overeni SHA256 vstupniho ZIPu a byte-identita work/input",
+    "cteni hlavicky Anno 1919, tomus V., pag. 94/95 (dle popisu 05, v tomto behu znovu prectu)",
+    "cteni zapisu c. 53: zenich Cyrill Kosek (zretelne), nevesta Alzbeta Trp...[?]kova (nejiste)",
+    "katalog 3443=detail/258 a 3454=detail/12042 tvrzen v 05; v tomto behu vlastne overim",
+    "prekazka ALTCHA u rasteru MZA zdokumentovana v 05; bypass se neprovede"
+  ],
+  "rozpracovano": "cteni bloku rodicu obou snoubencu (vyrezy B2, B3 zachovany, do prepisu nedocitany)",
+  "nejistoty": [
+    "nevesta: Alzbeta vs. Matilde",
+    "rodne prijmeni nevesty: Trpetka vs. Trepelkova (Kurrent l/n)",
+    "zlomky cislic u veku",
+    "svedci a rodice zatim s [?]"
+  ],
+  "zdroje": [
+    "místní vstupní obraz F_tvrdonice_3443_sn49_full2.png (SHA256 dle MANIFEST.json)",
+    "https://www.mza.cz/actapublica/ (oficiální katalog MZA) — v tomto behu teprve overuji",
+    "NEZKONTROLOVANY_POPIS_05.txt = nerecenzovany popis jineho modelu, NENI pramen"
+  ],
+  "dalsi_krok": "vlastni neutralni cteni zapisu c. 53 (full_preview + A2 + A3 + B2 + B3 + B1/B4) do D1 prepisu s [?] u nejistych poli; poté katalogové ověření 3443/detail258 a 3454/detail12042 v tomto běhu"
+}
