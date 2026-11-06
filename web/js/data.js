@@ -1,7 +1,7 @@
 // Vygenerováno scripts/build_web.py z data/rodokmen_data.json – needitovat ručně.
 var RODOKMEN_DATA = {
  "meta": {
-  "nazev": "Rodokmen Forejtníkových",
+  "nazev": "Rodokmen Forejtníků",
   "podtitul": "Soukromý rodinný archiv z matrik Moravského zemského archivu v Brně",
   "vychozi_osoba": "P17",
   "verze": "Aktualizace 5. 11. 2026 – větve Němčičky (Cvan, Stávek, Kameník) a Klobouky u Brna",
@@ -61,7 +61,7 @@ var RODOKMEN_DATA = {
    "zdroje": [
     "PR-RODINA-2026"
    ],
-   "poznamka": "Syn Miroslava Forejtníka staršího (*26. 4. 1954) a Marie Forejtníkové, rozené Kameníkové. Otec Adama a Ondřeje Forejtníkových.",
+   "poznamka": "Syn Miroslava Forejtníka staršího (*26. 4. 1954) a Marie Forejtníkové, rozené Kameníkové. Otec Adama a Ondřeje Forejtníků.",
    "nejistoty": [],
    "role": "výchozí osoba rodokmenu; otec Adama a Ondřeje"
   },
@@ -85,7 +85,7 @@ var RODOKMEN_DATA = {
    "zdroje": [
     "PR-RODINA-2026"
    ],
-   "poznamka": "Matka Adama a Ondřeje Forejtníkových, dcera Milana Cvana a Marie Cvanové, rozené Stávkové z Němčiček. Školní a dětská psycholožka v Hustopečích.",
+   "poznamka": "Matka Adama a Ondřeje Forejtníků, dcera Milana Cvana a Marie Cvanové, rozené Stávkové z Němčiček. Školní a dětská psycholožka v Hustopečích.",
    "nejistoty": [],
    "rodne_prijmeni": "Cvanová",
    "foto": "img/portrety/P18.jpg"
@@ -684,7 +684,7 @@ var RODOKMEN_DATA = {
    ],
    "poznamka": "Matka Genovéfy, dcera Tomáše Forejtníka.",
    "nejistoty": [
-    "Jde o samostatně doloženou rodinu. Spojení s větví Karla a Josefa Forejtníkových není doložené."
+    "Jde o samostatně doloženou rodinu. Spojení s větví Karla a Josefa Forejtníků není doložené."
    ],
    "vyrez_rukopisu": "img/dukazy/20261102_sn142_genovefa_L13c.jpg"
   },
